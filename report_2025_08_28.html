@@ -25,7 +25,6 @@
                 .somewhat-relevant-badge { background-color: #f39c12; }
                 .not-relevant-badge { background-color: #e74c3c; }
                 .error-badge { background-color: #95a5a6; }
-                .abstract { margin: 10px 0; text-align: justify; }
                 .link { margin-top: 10px; }
                 .keyword-section { margin-bottom: 40px; }
                 .summary { background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
@@ -52,7 +51,7 @@
                 <div class="keyword-section">
                     <h2>Relevant Papers for "GWAS" (2 found)</h2>
                 <h3>PubMed Papers (1)</h3>
-                        <div class="paper pubmed-paper somewhat-relevant">
+                        <div class="paper pubmed-paper ">
                             <div class="title">Gene expression QTL mapping in stimulated iPSC-derived macrophages provides insights into common complex diseases.</div>
                             <div class="authors"><strong>Authors:</strong> Nikolaos I Panousis, Omar El Garwany, Andrew Knights, Jesse Cheruiyot Rop, Natsuhiko Kumasaka, Maria Imaz, Lorena Boquete Vilarino, Anthi Tsingene, Alex Tokolyi, Alice Barnett, Celine Gomez, Carl A Anderson, Daniel J Gaffney</div>
                             <div class="journal"><strong>Journal:</strong> Nature communications</div>
@@ -60,19 +59,17 @@
                             <div class="abstract"><strong>Abstract:</strong> Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate expression in specific biological contexts, such as stimulated immune cells. Here, we used human iPSC-derived macrophages to map eQTLs across 24 cellular conditions. We found that 76% of eQTLs detected in at least one stimulated condition were also found in naive cells. The percentage of response eQTLs (reQTLs) varied widely across conditions (3.7% - 28.4%), with reQTLs specific to a single condition being rare (1.11%). Despite their relative rarity, reQTLs were overrepresented among disease-colocalizing eQTLs. We nominated an additional 21.7% of disease effector genes at GWAS loci via colocalization of reQTLs, with 38.6% of these not found in the Genotype-Tissue Expression (GTEx) catalogue. Our study highlights the diversity of genetic effects on expression and demonstrates how condition-specific regulatory variation can enhance our understanding of common disease risk alleles.</div>
                         
                             <div class="evaluation">
-                                <span class="relevance-badge somewhat-relevant-badge">Somewhat Relevant</span>
-                                <div><strong>AI Evaluation:</strong> 1) Relevance: Somewhat Relevant
+                                <span class="relevance-badge error-badge">Unclear</span>
+                                <div><strong>AI Evaluation:</strong> 1) Somewhat Relevant
 
-2) Why: The paper investigates context-specific regulatory variants (reQTLs) by mapping eQTLs in stimulated iPSC-derived macrophages and demonstrates that these context-specific signals colocalize with GWAS loci, uncovering disease effector genes not captured in GTEx. This aligns with your emphasis on regulatory variants and colocalization, but it does not cover multi-omics QTLs beyond eQTLs, nor AI/3D genome analyses or large-scale PheWAS.
+2) Justification: The paper investigates context-specific regulatory variation by mapping eQTLs in stimulated iPSC-derived macrophages and uses colocalization with GWAS signals to nominate disease effector genes—including many not present in GTEx. This directly informs how regulatory variants in specific contexts contribute to complex diseases, aligning with your interest in colocalization and regulatory mechanisms. However, it does not cover large-scale GWAS/PheWAS across thousands of traits, multi-omics QTL integration (eQTLs, pQTLs, etc.), 3D genome modeling, or AI-based in silico perturbations for target prioritization.
 
-3) Connections to your research
-- Context-specific QTLs: demonstrates that regulatory effects can be revealed only under certain cellular conditions, relevant to designing context-aware GWAS/PheWAS analyses.
-- Colocalization with GWAS: directly pertains to linking regulatory variants to disease drivers, a core aspect of your integrative approach.
-- Discovery beyond GTEx: shows that disease-associated regulatory mechanisms can be missed in reference datasets, highlighting the value of diverse contexts in QTL mapping.
-- Potential method insights: supports applying colocalization to condition-specific QTLs and could inspire expansion to multi-omics QTLs (eQTLs, pQTLs, etc.) in disease contexts.
+3) Connections to your research focus:
+- GWAS colocalization: uses colocalization to link regulatory variants to disease risk loci.
+- Context-specific regulation: demonstrates significant role of condition/stimulus-specific eQTLs (reQTLs) in disease associations.
+- Disease mechanism inference: identifies disease effector genes at GWAS loci, including genes not captured in GTEx, informing regulatory element–disease links.
 
-4) If you decide to read it: Key reason
-- Read this to gain insights into how context-specific regulatory variation (reQTLs) enhances disease gene mapping and to consider incorporating stimulated-condition QTL designs and context-aware colocalization into your large-scale GWAS/PheWAS and multi-omics integration framework. Note that you may need to complement with studies that address multi-omics QTLs, 3D genome architecture, and AI-driven perturbation analyses for a closer fit to your broader goals.</div>
+4) If it were Highly Relevant: Key reason to read would be its demonstration that condition-specific regulatory variants (reQTLs) can reveal disease drivers at GWAS loci that are missed in static reference datasets, highlighting the importance of context in regulatory genomics for target discovery.</div>
                             </div>
                             
                             <div class="link"><a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank">View on PubMed</a></div>
@@ -89,21 +86,23 @@
                                 <span class="relevance-badge highly-relevant-badge">Highly Relevant</span>
                                 <div><strong>AI Evaluation:</strong> 1) Relevance: Highly Relevant
 
-2) Brief justification: The paper delivers gpu-coloc, a GPU-accelerated implementation of colocalisation that enables large-scale testing across millions of traits using UK Biobank, FinnGen, and molQTL data. This directly supports your goals of integrating expansive GWAS with multi-omics QTLs and conducting scalable colocalisation analyses.
+2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated, scalable approach to colocalisation using UK Biobank, FinnGen, and molQTL data, addressing the need to test millions of trait-signal pairs. It directly enables large-scale colocalisation analyses to link genetic variants to regulatory elements and disease drivers, a core aspect of your integration of multi-omics QTLs with GWAS/PheWAS.
 
-3) Connecting elements to your research:
-- GWAS and multi-omics QTL integration: Focuses on colocalisation between GWAS/molQTL signals, enabling linkage of variants to regulatory effects and potential disease drivers.
-- Large-scale scope: Specifically designed for millions of traits and signals, aligning with your ~2,500-trait, large-cohort ambitions.
-- UK Biobank and molQTL data: Uses UKB summary stats and eQTL Catalogue, matching the data types you work with.
-- Methodological rigor for large-scale colocalisation: Introduces a colocalisation collider metric to manage spurious results and provides practical guidelines for thresholding in big graphs.
-- Speed and practicality: GPU acceleration promises substantial runtime improvements, facilitating iterative analyses and integration steps in your pipeline.
+3) Connections to your work:
+- Colocalisation across large trait sets (aligns with your large-scale GWAS/PheWAS and multi-omics integration)
+- Use of molQTLs (eQTLs, pQTLs) and summary statistics to identify shared causal variants
+- Scalability and practical guidelines for large-scale colocalisation analyses (important for processing ~2,500 traits)
+- Provides a method to prioritize variants/ loci for downstream interpretation (e.g., regulatory elements and potential targets)
 
-4) If Highly Relevant, key reason to read: It provides a scalable, validated tool (gpu-coloc) and actionable guidelines for conducting large-scale colocalisation between GWAS and molQTL signals, a foundational step for mapping regulatory variants to genes and pathways in your multi-omics and 3D-genome-informed target discovery workflow. This could substantially accelerate and improve the robustness of your colocalization analyses across thousands of traits.</div>
+Not directly addressing:
+- 3D genome organization (loops, TADs, spatial nodes) or in silico perturbation/therapeutic targeting via AI; no explicit ML explainability or 3D-genome perturbation simulation
+
+4) If highly relevant, key reason to read: It offers a fast, scalable framework for robust colocalisation across millions of trait signals with molQTL data, including a novel collider metric to reduce spurious results, which is central to reliably linking regulatory variants to diseases at the scale you pursue. This method could be foundational for your colocalisation step before downstream multi-omics integration and target prioritization.</div>
                             </div>
                             
                             <div class="link"><a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank">View on bioRxiv</a></div>
                         </div>
-                        </div>
+                        </div><p>No new papers found for this keyword.</p>
         </body>
         </html>
         
