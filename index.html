@@ -38,6 +38,112 @@
             font-size: 1.2rem;
             margin: 10px 0;
         }
+        /* Statistics Counter Styles */
+        .stats-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        .stats-content {
+            position: relative;
+            z-index: 2;
+        }
+        .stats-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .stats-counter {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 20px 0;
+            color: #fff;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+        .stats-tagline {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        .stats-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .stats-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .stats-icon {
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .stats-icon:nth-child(1) { animation-delay: 0s; }
+        .stats-icon:nth-child(2) { animation-delay: 0.5s; }
+        .stats-icon:nth-child(3) { animation-delay: 1s; }
+        .stats-icon:nth-child(4) { animation-delay: 1.5s; }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-counter {
+            animation: countUp 2s ease-out;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .stats-hero {
+                padding: 40px 20px;
+                margin: 20px 0;
+            }
+            .stats-title {
+                font-size: 2rem;
+            }
+            .stats-counter {
+                font-size: 3rem;
+            }
+            .stats-tagline {
+                font-size: 1.2rem;
+            }
+            .stats-icons {
+                gap: 20px;
+            }
+            .stats-icon {
+                font-size: 1.5rem;
+            }
+        }
         .latest-report-cta {
             background: linear-gradient(135deg, #27ae60, #2ecc71);
             color: white;
@@ -181,15 +287,35 @@
 </head>
 <body>
     <div class="container">
+        
         <div class="header">
             <h1>📊 Daily Paper Reports</h1>
             <p>Automated Research Paper Monitoring from PubMed & bioRxiv</p>
             <p><strong>Focus:</strong> GWAS, PheWAS, Multi-omics QTLs, AI in Genomics</p>
         </div>
         
+        <!-- Statistics Hero Section -->
+        <div class="stats-hero">
+            <div class="stats-content">
+                <h2 class="stats-title">🤖 AI-Powered Research Discovery</h2>
+                <div class="stats-counter animate-counter" id="paperCounter">15,100</div>
+                <p class="stats-tagline">Saving you hours of manual reading</p>
+                <p class="stats-description">
+                    Our system continuously parses PubMed and bioRxiv, highlights the most relevant findings, 
+                    and filters out the noise so you can focus only on what matters.
+                </p>
+                <div class="stats-icons">
+                    <span class="stats-icon">🔬</span>
+                    <span class="stats-icon">🤖</span>
+                    <span class="stats-icon">📊</span>
+                    <span class="stats-icon">⚡</span>
+                </div>
+            </div>
+        </div>
+        
         <div class="latest-report-cta">
             <h2>🆕 Latest Report Available</h2>
-            <p><strong>Generated:</strong> 2025-08-28 at 15:39:07 UTC</p>
+            <p><strong>Generated:</strong> 2025-08-28 at 15:49:31 UTC</p>
             <p><strong>File:</strong> report_2025_08_28.html</p>
             <a href="report_2025_08_28.html" class="cta-button">📄 View Latest Report →</a>
         </div>
@@ -218,7 +344,7 @@
         
         <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1;">
             <p><strong>🤖 Automated by Paper Parser Bot</strong></p>
-            <p>Last updated: 2025-08-28 15:39:07 UTC</p>
+            <p>Last updated: 2025-08-28 15:49:31 UTC</p>
             <p><a href="https://github.com/danielzugasti/Paper-parser" target="_blank">View Source Code →</a></p>
         </div>
     </div>
@@ -232,9 +358,29 @@
         
         <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1;">
             <p><strong>🤖 Automated by Paper Parser Bot</strong></p>
-            <p>Last updated: 2025-08-28 15:39:07 UTC</p>
+            <p>Last updated: 2025-08-28 15:49:31 UTC</p>
             <p><a href="https://github.com/danielzugasti/Paper-parser" target="_blank">View Source Code →</a></p>
         </div>
     </div>
+    
+    <script>
+        // Animate counter on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const counter = document.getElementById('paperCounter');
+            const target = 15100;
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                counter.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        });
+    </script>
 </body>
 </html>
