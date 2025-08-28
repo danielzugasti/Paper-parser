@@ -1,338 +1,398 @@
 
         <!DOCTYPE html>
-        <html>
+        <html lang="en">
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Daily PubMed & bioRxiv Paper Report</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+            <script>
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                'primary': {
+                                    50: '#f0f9ff',
+                                    500: '#3b82f6',
+                                    600: '#2563eb',
+                                    700: '#1d4ed8',
+                                    900: '#1e3a8a'
+                                },
+                                'accent': {
+                                    400: '#34d399',
+                                    500: '#10b981',
+                                    600: '#059669'
+                                }
+                            },
+                            animation: {
+                                'fade-in': 'fadeIn 0.8s ease-in-out',
+                                'slide-up': 'slideUp 0.6s ease-out'
+                            }
+                        }
+                    }
+                }
+            </script>
             <style>
-                * { box-sizing: border-box; }
-                body { 
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
-                    margin: 0; 
-                    padding: 20px; 
-                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
-                    min-height: 100vh;
-                    line-height: 1.6;
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
                 }
-                
-                .container {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    background: white;
-                    border-radius: 20px;
-                    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-                    overflow: hidden;
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
-                
-                h1 { 
-                    color: #2c3e50; 
-                    border-bottom: 3px solid #3498db; 
-                    margin: 0;
-                    padding: 30px 40px;
-                    background: white;
-                    font-size: 2.5rem;
-                    font-weight: 700;
-                    text-align: center;
+                .gradient-text {
                     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-                }
-                
-                .content {
-                    padding: 0 40px 40px 40px;
-                }
-                
-                h2 { color: #34495e; margin-top: 40px; font-size: 2rem; font-weight: 600; }
-                h3 { color: #2980b9; margin-top: 25px; font-size: 1.5rem; font-weight: 500; }
-                
-                /* Statistics Counter Section */
-                .stats-hero {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    padding: 60px 40px;
-                    border-radius: 20px;
-                    text-align: center;
-                    margin: 40px 0;
-                    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
-                    position: relative;
-                    overflow: hidden;
-                }
-                
-                .stats-hero::before {
-                    content: '';
-                    position: absolute;
-                    top: -50%;
-                    left: -50%;
-                    width: 200%;
-                    height: 200%;
-                    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-                    background-size: 50px 50px;
-                    animation: float 20s infinite linear;
-                    pointer-events: none;
-                }
-                
-                @keyframes float {
-                    0% { transform: translate(0, 0); }
-                    100% { transform: translate(-50px, -50px); }
-                }
-                
-                .stats-hero h2 {
-                    font-size: 2.5rem;
-                    margin: 0 0 20px 0;
-                    color: white;
-                    font-weight: 700;
-                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-                }
-                
-                .counter-container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 30px 0;
-                    position: relative;
-                    z-index: 2;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                }
-                
-                .ai-icon {
-                    font-size: 4rem;
-                    animation: pulse 2s ease-in-out infinite;
-                }
-                
-                @keyframes pulse {
-                    0%, 100% { transform: scale(1); opacity: 0.8; }
-                    50% { transform: scale(1.1); opacity: 1; }
-                }
-                
-                .counter-number {
-                    font-size: 5rem;
-                    font-weight: 900;
-                    background: linear-gradient(45deg, #ffffff, #e8f4fd);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
-                    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                    animation: countUp 3s ease-out;
-                    min-width: 200px;
-                    text-align: center;
                 }
-                
-                @keyframes countUp {
-                    0% { transform: scale(0.5); opacity: 0; }
-                    50% { transform: scale(1.2); }
-                    100% { transform: scale(1); opacity: 1; }
+                .glass-effect {
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
-                
-                .brain-icon {
-                    font-size: 4rem;
-                    animation: think 3s ease-in-out infinite;
+                .cyber-grid {
+                    background-image: 
+                        linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+                    background-size: 50px 50px;
                 }
-                
-                @keyframes think {
-                    0%, 100% { transform: rotate(-5deg); }
-                    50% { transform: rotate(5deg); }
-                }
-                
-                .tagline {
-                    font-size: 1.4rem;
-                    font-weight: 600;
-                    margin: 25px 0 15px 0;
-                    color: #ffffff;
-                    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-                }
-                
-                .description {
-                    font-size: 1.1rem;
-                    line-height: 1.6;
-                    opacity: 0.9;
-                    max-width: 800px;
-                    margin: 0 auto;
-                    color: #f8f9fa;
-                }
-                
-                .tech-badges {
-                    display: flex;
-                    justify-content: center;
-                    gap: 15px;
-                    margin-top: 30px;
-                    flex-wrap: wrap;
-                }
-                
-                .tech-badge {
-                    background: rgba(255, 255, 255, 0.2);
-                    color: white;
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    backdrop-filter: blur(10px);
+                .paper-card {
                     transition: all 0.3s ease;
                 }
-                
-                .tech-badge:hover {
-                    background: rgba(255, 255, 255, 0.3);
-                    transform: translateY(-2px);
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                .paper-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
                 }
-                
-                .paper { 
-                    margin: 20px 0; 
-                    padding: 20px; 
-                    border: 1px solid #e1e8ed; 
-                    border-radius: 15px; 
-                    background: white; 
-                    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                .relevance-glow-high {
+                    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
                 }
-                
-                .paper:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-                }
-                
-                .pubmed-paper { border-left: 4px solid #3498db; }
-                .biorxiv-paper { border-left: 4px solid #e67e22; }
-                .highly-relevant { background-color: #d5f4e6; border: 2px solid #27ae60; }
-                .somewhat-relevant { background-color: #fef9e7; border: 2px solid #f39c12; }
-                .not-relevant { background-color: #fadbd8; border: 2px solid #e74c3c; }
-                .title { font-weight: bold; font-size: 18px; color: #2980b9; margin-bottom: 10px; }
-                .authors { color: #7f8c8d; margin: 8px 0; font-size: 14px; }
-                .journal { font-style: italic; color: #27ae60; font-weight: 500; }
-                .date { color: #e74c3c; font-size: 14px; }
-                .abstract { margin: 15px 0; text-align: justify; color: #34495e; }
-                .evaluation { 
-                    margin: 15px 0; 
-                    padding: 15px; 
-                    background-color: #f8f9fa; 
-                    border-radius: 8px; 
-                    border-left: 4px solid #3498db; 
-                }
-                .relevance-badge { 
-                    display: inline-block; 
-                    padding: 6px 12px; 
-                    border-radius: 15px; 
-                    font-size: 12px; 
-                    font-weight: bold; 
-                    color: white; 
-                    margin: 8px 0; 
-                }
-                .highly-relevant-badge { background-color: #27ae60; }
-                .somewhat-relevant-badge { background-color: #f39c12; }
-                .not-relevant-badge { background-color: #e74c3c; }
-                .error-badge { background-color: #95a5a6; }
-                .link { margin-top: 15px; }
-                .link a {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    background: #3498db;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 25px;
-                    font-weight: 500;
-                    transition: background 0.3s ease;
-                }
-                .link a:hover {
-                    background: #2980b9;
-                }
-                .keyword-section { margin-bottom: 40px; }
-                .summary { 
-                    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-                    padding: 25px; 
-                    border-radius: 15px; 
-                    margin-bottom: 30px; 
-                    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-                    border: 1px solid #dee2e6;
-                }
-                .source-section { margin: 20px 0; }
-                
-                /* Mobile Responsiveness */
-                @media (max-width: 768px) {
-                    body { padding: 10px; }
-                    .content { padding: 0 20px 20px 20px; }
-                    h1 { font-size: 1.8rem; padding: 20px; }
-                    .paper { padding: 15px; }
-                    .title { font-size: 1.2rem; }
-                    .tech-badges { gap: 8px; }
-                    .tech-badge { font-size: 0.8rem; padding: 6px 12px; }
-                    .paper { padding: 15px; margin: 15px 0; }
-                    .title { font-size: 16px; }
+                .relevance-glow-med {
+                    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
                 }
             </style>
         </head>
-        <body>
-        <div class="container">
-        
-        <h1>Daily PubMed & bioRxiv Paper Report - August 28, 2025</h1>
-        <div class="content">
-        
-        <div class="summary">
-            <h3>📊 Today's Analysis Summary</h3>
-            <p><strong>Total relevant papers identified:</strong> <span style="color: #27ae60; font-size: 1.2em; font-weight: bold;">2</span></p>
-            <div style="display: flex; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 200px;">
-                    <strong>📚 PubMed papers:</strong> <span style="color: #3498db; font-weight: bold;">1</span>
-                </div>
-                <div style="flex: 1; min-width: 200px;">
-                    <strong>🧬 bioRxiv preprints:</strong> <span style="color: #e67e22; font-weight: bold;">1</span>
-                </div>
-            </div>
-            <p style="margin-top: 15px; color: #7f8c8d; font-style: italic;">
-                AI filtered out irrelevant papers, showing only 2 papers that match your research focus
-            </p>
-        </div>
-        <h2>PubMed Papers (1)</h2>
-                <div class="paper pubmed-paper ">
-                    <div class="title">Gene expression QTL mapping in stimulated iPSC-derived macrophages provides insights into common complex diseases.</div>
-                    <div class="authors"><strong>Authors:</strong> Nikolaos I Panousis, Omar El Garwany, Andrew Knights, Jesse Cheruiyot Rop, Natsuhiko Kumasaka, Maria Imaz, Lorena Boquete Vilarino, Anthi Tsingene, Alex Tokolyi, Alice Barnett, Celine Gomez, Carl A Anderson, Daniel J Gaffney</div>
-                    <div class="journal"><strong>Journal:</strong> Nature communications</div>
-                    <div class="date"><strong>Publication Date:</strong> 2025 Aug 27</div>
-                    <div class="abstract"><strong>Abstract:</strong> Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate expression in specific biological contexts, such as stimulated immune cells. Here, we used human iPSC-derived macrophages to map eQTLs across 24 cellular conditions. We found that 76% of eQTLs detected in at least one stimulated condition were also found in naive cells. The percentage of response eQTLs (reQTLs) varied widely across conditions (3.7% - 28.4%), with reQTLs specific to a single condition being rare (1.11%). Despite their relative rarity, reQTLs were overrepresented among disease-colocalizing eQTLs. We nominated an additional 21.7% of disease effector genes at GWAS loci via colocalization of reQTLs, with 38.6% of these not found in the Genotype-Tissue Expression (GTEx) catalogue. Our study highlights the diversity of genetic effects on expression and demonstrates how condition-specific regulatory variation can enhance our understanding of common disease risk alleles.</div>
-                
-                    <div class="evaluation">
-                        <span class="relevance-badge error-badge">Unclear</span>
-                        <div><strong>AI Evaluation:</strong> 1) Somewhat Relevant
+        <body class="bg-gray-900 text-white min-h-screen">
+            <!-- Background Effects -->
+            <div class="fixed inset-0 cyber-grid opacity-10"></div>
+            <div class="fixed top-20 left-20 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+            <div class="fixed bottom-20 right-20 w-72 h-72 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
 
-2) Justification: The paper maps expression QTLs in stimulated iPSC-derived macrophages and uses colocalization to link context-specific regulatory variants to disease GWAS signals, identifying disease effector genes not captured in GTEx. This directly touches on regulatory variant mapping and colocalization, which aligns with your focus, though it does not involve UK Biobank-scale GWAS/PheWAS, other omics QTLs, AI, or 3D genome analysis.
+            <!-- Navigation -->
+            <nav class="relative z-50 bg-gray-900/80 glass-effect border-b border-gray-700 sticky top-0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-primary-500 p-2 rounded-lg">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">
+                                <i class="fas fa-home mr-2"></i>Home
+                            </a>
+                            <span class="text-gray-500">|</span>
+                            <span class="text-sm text-gray-400">Daily Report</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+                <!-- Header -->
+                <div class="text-center mb-12 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="gradient-text">Daily Research Report</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-6">Thursday, August 28, 2025</p>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800/50 glass-effect rounded-full px-6 py-3">
+                        <i class="fas fa-robot text-accent-400"></i>
+                        <span class="text-gray-300">AI-Powered Research Discovery</span>
+                    </div>
+                </div>
+        
+                <!-- Summary Stats -->
+                <div class="bg-gray-800/50 glass-effect rounded-3xl p-8 mb-12 border border-gray-700 animate-slide-up">
+                    <h2 class="text-2xl font-bold text-center mb-8 text-white">
+                        <i class="fas fa-chart-bar mr-3 text-accent-400"></i>Analysis Summary
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent-400 mb-2">2</div>
+                            <p class="text-gray-400">Relevant Papers Found</p>
+                            <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
+                            <p class="text-gray-400">PubMed Papers</p>
+                            <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">1</div>
+                            <p class="text-gray-400">bioRxiv Preprints</p>
+                            <p class="text-sm text-gray-500 mt-1">Latest Research</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <p class="text-gray-400">
+                            <i class="fas fa-filter mr-2 text-accent-400"></i>
+                            AI filtered out irrelevant papers, showing only research that matches your focus areas
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- PubMed Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-database mr-4 text-primary-400"></i>
+                        <span class="gradient-text">PubMed Papers</span>
+                        <span class="ml-4 text-lg text-gray-400">(1)</span>
+                    </h2>
+                    <div class="grid gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
+                                        Highly Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Gene expression QTL mapping in stimulated iPSC-derived macrophages provides insights into common complex diseases.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Nikolaos I Panousis, Omar El Garwany, Andrew Knights, Jesse Cheruiyot Rop, Natsuhiko Kumasaka, Maria Imaz, Lorena Boquete Vilarino, Anthi Tsingene, Alex Tokolyi, Alice Barnett, Celine Gomez, Carl A Anderson, Daniel J Gaffney</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 27</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40866338</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed text-justify">Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate expression in specific biological contexts, such as stimulated immune cells. Here, we used human iPSC-derived macrophages to map eQTLs across 24 cellular conditions. We found that 76% of eQTLs detected in at least one stimulated condition were also found in naive cells. The percentage of response eQTLs (reQTLs) varied widely across conditions (3.7% - 28.4%), with reQTLs specific to a single condition being rare (1.11%). Despite their relative rarity, reQTLs were overrepresented among disease-colocalizing eQTLs. We nominated an additional 21.7% of disease effector genes at GWAS loci via colocalization of reQTLs, with 38.6% of these not found in the Genotype-Tissue Expression (GTEx) catalogue. Our study highlights the diversity of genetic effects on expression and demonstrates how condition-specific regulatory variation can enhance our understanding of common disease risk alleles.</p>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+
+2) Brief justification: The paper performs context-specific eQTL mapping in stimulated immune cells and shows that reQTLs colocalize with disease GWAS signals, identifying disease effector genes (including some not present in GTEx). This directly informs approaches for linking regulatory variants to disease drivers via colocalization.
 
 3) Connections to your research:
-- Colocalization of regulatory variants with disease GWAS loci (directly relevant).
-- Context- and condition-specific regulatory effects (reQTLs), informing how stimulation or cell state modulates genetic risk.
-- Expansion beyond GTEx in identifying disease effector genes at GWAS loci.
+- GWAS/PheWAS interpretation: Demonstrates how condition- and context-specific regulatory variation can illuminate disease signals at GWAS loci.
+- Multi-omics QTL integration via colocalization: Highlights a strategy for linking regulatory variants to target genes and disease mechanisms beyond bulk eQTLs.
+- Disease gene prioritization: Provides evidence that a subset of disease genes may be missed in standard catalogs (GTEx) but captured through context-specific QTLs.
+- Therapeutic target rationale: By prioritizing disease effector genes at loci, it informs target prioritization workflows, a step toward identifying actionable targets.
 
-4) If Highly Relevant: Key reason to read — It demonstrates that context-specific regulatory variants (reQTLs) can be enriched at disease loci and uncover additional effector genes not present in GTEx, providing a valuable paradigm for integrating condition-specific QTL data into causal inference for common diseases and informing strategies for multi-omics colocalization and pathway targeting.</div>
-                    </div>
+4) If Highly Relevant, key reason to read:
+- It shows that context- or condition-specific regulatory effects (reQTLs) can be disproportionately informative for disease associations and that colocalization can nominate additional disease effector genes not present in standard catalogs, offering practical insights for enhancing GWAS/PheWAS interpretation and target prioritization in your projects.</p>
+                            </div>
                     
-                    <div class="link"><a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank">View on PubMed</a></div>
-                </div>
-                <h2>bioRxiv Preprints (1)</h2>
-                <div class="paper biorxiv-paper ">
-                    <div class="title">Ultra-fast genetic colocalisation across millions of traits</div>
-                    <div class="authors"><strong>Authors:</strong> M. Jesse, A.-E. Riet, K. Alasoo</div>
-                    <div class="journal"><strong>Source:</strong> bioRxiv (preprint)</div>
-                    <div class="date"><strong>Publication Date:</strong> 2025-08-27</div>
-                    <div class="abstract"><strong>Abstract:</strong> Colocalisation is a powerful approach to assess if two genetic association signals are likely to share a causal variant. However, association analyses in large biobanks and molecular quantitative trait loci (molQTL) studies now routinely identify millions of association signals across thousands of traits, making it infeasible to test for colocalisation between all pairs of signals. Here we introduce gpu-coloc, a GPU-accelerated re-implementation of the coloc algorithm that combines efficient data storage with parallelisation to achieve a 1000-fold speed increase while maintaining near-identical results. As a result, the run time of gpu-coloc now approaches the colocalisation posterior probability (CLPP) method, a competing method that only uses information from fine mapped credible sets to detect colocalisations. Using summary statistics from UK Biobank, FinnGen, and eQTL Catalogue, we demonstrate that gpu-coloc and CLPP detect highly concordant results, especially when restricting the analysis to confidently fine mapped signals. We introduce the colocalisation collider metric to quantify spurious colocalisations in large-scale colocalisation graphs and use it to choose decision thresholds that provide a reasonable trade-off between sensitivity and specificity. Finally, we demonstrate how gpu-coloc can also be applied to marginal GWAS summary statistics from studies that lack fine mapping, where it is still able to recover molQTL colocalisations for ~80% of the GWAS loci. Our efficient software and comprehensive analyses provide practical guidelines for future large-scale colocalisation analyses.</div>
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Direct Link Available
+                                </div>
+                            </div>
+                        </div>
                 
-                    <div class="evaluation">
-                        <span class="relevance-badge error-badge">Unclear</span>
-                        <div><strong>AI Evaluation:</strong> 1) Highly Relevant
-
-2) Brief justification: The paper introduces gpu-coloc, a GPU-accelerated reimplementation of the coloc colocalisation method that enables rapid colocalisation analyses across millions of trait signals using large consortia data (UK Biobank, FinnGen, eQTL Catalogue). This directly supports large-scale integration of GWAS and molQTL signals, a core part of your research.
-
-3) Which parts connect to your work:
-- GWAS and molQTL colocalisation at scale (GWAS + eQTL/pQTL data)
-- Use of UK Biobank and other large biobank summary statistics
-- Efficient, scalable methodology with concepts like fine-mapped signals and a collider metric to reduce false positives
-- Practical guidance for large-scale colocalisation analyses, relevant to building your multi-trait, multi-omics pipelines
-
-4) If highly relevant, key reason to read: It provides a foundational, scalable toolset that could dramatically reduce compute time for your colocalisation analyses across thousands of traits, enabling you to robustly link regulatoryvariants to diseases/drivers in a high-throughput manner and informing downstream multi-omics integration and target prioritization.</div>
                     </div>
-                    
-                    <div class="link"><a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank">View on bioRxiv</a></div>
                 </div>
+            
+                <!-- bioRxiv Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-flask mr-4 text-orange-400"></i>
+                        <span class="gradient-text">bioRxiv Preprints</span>
+                        <span class="ml-4 text-lg text-gray-400">(1)</span>
+                    </h2>
+                    <div class="grid gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
+                                        Highly Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Ultra-fast genetic colocalisation across millions of traits</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">M. Jesse, A.-E. Riet, K. Alasoo</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-27</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.672103</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed text-justify">Colocalisation is a powerful approach to assess if two genetic association signals are likely to share a causal variant. However, association analyses in large biobanks and molecular quantitative trait loci (molQTL) studies now routinely identify millions of association signals across thousands of traits, making it infeasible to test for colocalisation between all pairs of signals. Here we introduce gpu-coloc, a GPU-accelerated re-implementation of the coloc algorithm that combines efficient data storage with parallelisation to achieve a 1000-fold speed increase while maintaining near-identical results. As a result, the run time of gpu-coloc now approaches the colocalisation posterior probability (CLPP) method, a competing method that only uses information from fine mapped credible sets to detect colocalisations. Using summary statistics from UK Biobank, FinnGen, and eQTL Catalogue, we demonstrate that gpu-coloc and CLPP detect highly concordant results, especially when restricting the analysis to confidently fine mapped signals. We introduce the colocalisation collider metric to quantify spurious colocalisations in large-scale colocalisation graphs and use it to choose decision thresholds that provide a reasonable trade-off between sensitivity and specificity. Finally, we demonstrate how gpu-coloc can also be applied to marginal GWAS summary statistics from studies that lack fine mapping, where it is still able to recover molQTL colocalisations for ~80% of the GWAS loci. Our efficient software and comprehensive analyses provide practical guidelines for future large-scale colocalisation analyses.</p>
+                            </div>
                 
-        </div> <!-- end content -->
-        </div> <!-- end container -->
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+
+2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated, scalable implementation of colocalisation that can test thousands to millions of trait pairs using UK Biobank, FinnGen, and eQTL data. This directly supports large-scale GWAS/PheWAS analyses and integration with molQTLs to map causal variants to regulatory elements.
+
+3) Connections to your research:
+- GWAS/PheWAS scale: Designed for large-scale colocalisation across many traits, matching your ~2,500-trait scope.
+- Integration with molQTLs: Uses eQTL Catalogue data, enabling linking GWAS signals to regulatory QTLs.
+- 3D/-regulatory mapping impact: While focused on colocalisation rather than 3D structure, it provides a crucial step to connect variants with regulatory elements before downstream 3D genome integration.
+- Large-scale efficiency and practicality: GPU acceleration and collider metric address false positives in large colocalisation graphs, aiding robust target prioritization.
+
+4) If Highly Relevant, key reason to read: It offers a fast, scalable toolset to perform colocalisation across millions of trait signals, dramatically speeding up the integration of GWAS with molQTLs and regulatory annotations—core to your pipeline for identifying disease drivers and potential druggable targets at scale.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Preprint Available
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900/80 border-t border-gray-800 py-12 mt-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="flex justify-center items-center space-x-3 mb-6">
+                        <div class="bg-primary-500 p-2 rounded-lg">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        <i class="fas fa-robot mr-2 text-accent-400"></i>
+                        Generated by Paper Parser Bot
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        Report generated at 2025-08-28 18:06:03 UTC
+                    </p>
+                    <div class="mt-6">
+                        <a href="index.html" 
+                           class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
+                            <i class="fas fa-home mr-2"></i>
+                            Return to Home
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTop" 
+                    class="fixed bottom-8 right-8 bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <script>
+                // Scroll to top functionality
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.add('opacity-100', 'visible');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                
+                // Add smooth reveal animations for papers
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.paper-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            </script>
         </body>
         </html>
         
