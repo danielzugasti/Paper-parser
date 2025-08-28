@@ -61,22 +61,22 @@
                         
                             <div class="evaluation">
                                 <span class="relevance-badge somewhat-relevant-badge">Somewhat Relevant</span>
-                                <div><strong>AI Evaluation:</strong> 1. Relevance: Somewhat Relevant
+                                <div><strong>AI Evaluation:</strong> 1) Relevance: Somewhat Relevant
 
-2. Brief justification: The paper investigates context-specific eQTLs by mapping them in stimulated iPSC-derived macrophages and shows that such reQTLs colocalize with disease GWAS signals, including many not found in GTEx. While this aligns with your focus on GWAS/colocalization and linking variants to regulatory elements and disease drivers, it does not address PheWAS, multi-omics QTLs (eQTL/pQTL/etc.), 3D genome topology, or AI-driven perturbation modeling.
+2) Brief justification: The paper investigates context-specific gene expression QTLs (reQTLs) in stimulated iPSC-derived macrophages and uses colocalization with disease GWAS to nominate disease effector genes, including many not found in GTEx. This directly touches regulatory variants and colocalization, which align with your focus on linking genetic variants to regulatory elements and disease drivers. However, it does not cover large-scale UK Biobank GWAS/PheWAS, multi-omics QTLs (beyond eQTLs), 3D genome analyses, or AI-based in silico perturbations.
 
-3. Connections to your research:
-- GWAS and colocalization: demonstrates how context-specific regulatory variation can illuminate disease-associated loci.
-- Linking variants to regulatory elements and disease drivers: identifies disease effector genes via colocalization, expanding beyond bulk-tissue catalogs like GTEx.
-- Context-specific regulatory mechanisms: highlights the importance of cellular context (stimulated states) in interpreting regulatory variants.
+3) Parts connected to your research:
+- GWAS and colocalization: demonstrates how context-specific eQTLs can colocalize with disease loci to nominate causal genes.
+- Regulatory elements and disease drivers: highlights regulatory mechanisms and disease effector genes that may be missed in bulk-tissue catalogs.
+- Context-specific QTL mapping: supports the importance of cellular context in regulatory variant interpretation.
 
-4. If you still want a primary takeaway: This paper is not Highly Relevant, but reading it could inform your pipeline by illustrating the value of context-specific eQTL mapping and advanced colocalization to identify disease-relevant regulatory genes that GTEx may miss, which could enhance your target prioritization in GWAS/PheWAS analyses.</div>
+4) If Highly Relevant, key reason to read: It provides a compelling example that context- and condition-specific regulatory variation can reveal disease-associated genes not visible in standard catalogs, underscoring the need to integrate context-specific QTL data into large-scale GWAS/PheWAS analyses and downstream target prioritization.</div>
                             </div>
                             
                             <div class="link"><a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank">View on PubMed</a></div>
                         </div>
                         <h3>bioRxiv Preprints (1)</h3>
-                        <div class="paper biorxiv-paper ">
+                        <div class="paper biorxiv-paper highly-relevant">
                             <div class="title">Ultra-fast genetic colocalisation across millions of traits</div>
                             <div class="authors"><strong>Authors:</strong> M. Jesse, A.-E. Riet, K. Alasoo</div>
                             <div class="journal"><strong>Source:</strong> bioRxiv (preprint)</div>
@@ -84,21 +84,19 @@
                             <div class="abstract"><strong>Abstract:</strong> Colocalisation is a powerful approach to assess if two genetic association signals are likely to share a causal variant. However, association analyses in large biobanks and molecular quantitative trait loci (molQTL) studies now routinely identify millions of association signals across thousands of traits, making it infeasible to test for colocalisation between all pairs of signals. Here we introduce gpu-coloc, a GPU-accelerated re-implementation of the coloc algorithm that combines efficient data storage with parallelisation to achieve a 1000-fold speed increase while maintaining near-identical results. As a result, the run time of gpu-coloc now approaches the colocalisation posterior probability (CLPP) method, a competing method that only uses information from fine mapped credible sets to detect colocalisations. Using summary statistics from UK Biobank, FinnGen, and eQTL Catalogue, we demonstrate that gpu-coloc and CLPP detect highly concordant results, especially when restricting the analysis to confidently fine mapped signals. We introduce the colocalisation collider metric to quantify spurious colocalisations in large-scale colocalisation graphs and use it to choose decision thresholds that provide a reasonable trade-off between sensitivity and specificity. Finally, we demonstrate how gpu-coloc can also be applied to marginal GWAS summary statistics from studies that lack fine mapping, where it is still able to recover molQTL colocalisations for ~80% of the GWAS loci. Our efficient software and comprehensive analyses provide practical guidelines for future large-scale colocalisation analyses.</div>
                         
                             <div class="evaluation">
-                                <span class="relevance-badge error-badge">Unclear</span>
-                                <div><strong>AI Evaluation:</strong> 1) Highly Relevant
+                                <span class="relevance-badge highly-relevant-badge">Highly Relevant</span>
+                                <div><strong>AI Evaluation:</strong> 1) Relevance: Highly Relevant
 
-2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated colocalisation method that enables large-scale testing across millions of traits using UK Biobank, FinnGen, and molQTL data (eQTL Catalogue). This directly supports rapid integration of GWAS/PheWAS signals with multi-omics QTLs to identify shared causal variants and regulatory drivers.
+2) Why: The paper introduces gpu-coloc, a GPU-accelerated implementation of the coloc colocalisation method that enables ultra-fast testing across millions of traits, using large datasets like UK Biobank, FinnGen, and molQTL resources (eQTL Catalogue). This directly supports your core goal of large-scale GWAS/PheWAS with multi-omics QTL integration and colocalization to link variants to regulatory elements and disease drivers.
 
-3) Connects to your research:
-- GWAS/PheWAS scale: designed for massively parallel colocalisation across many traits.
-- Multi-omics QTL integration: uses eQTL data and other molQTL signals to inform colocalisation.
-- Colocalization methodology: provides a scalable way to link variants to regulatory elements and disease drivers.
-- Tools for large datasets: GPU acceleration and handling of fine-mapped vs non-fine-mapped signals align with your large-scale data workflows.
-- UK Biobank relevance: uses UKB data, matching your resource base.
+3) Connects to your research (which parts apply):
+- Colocalisation of GWAS and molQTL signals at scale (central to linking variants to regulatory mechanisms).
+- Use of UK Biobank and eQTL Catalogue data for colocalisation analyses.
+- Scalability and speed, enabling analyses across thousands/millions of traits signals.
+- Introduction of the colocalisation collider metric to gauge and control false positives in large colocalisation graphs.
+- Applicability to marginal GWAS when fine-mapping is unavailable, broadening the data you can integrate.
 
-4) If highly relevant, key reason to read: It offers a practical, scalable solution to perform comprehensive colocalisation analyses across vast trait spaces and QTL catalogs, with metrics (colocalisation collider) to manage false positives and guidance for analyses lacking fine mapping—all critical for your aim of connecting regulatory architecture to human phenotypes at scale.
-
-Note: It does not address 3D genome perturbations or AI-driven in silico perturbation of chromatin directly, so those aspects of your research would need complementary papers or methods.</div>
+4) If you should read it: Yes. Key reason: It provides a practical, scalable tool and methodological advances (GPU-accelerated colocalisation and collider metric) that can significantly enhance your pipeline for multi-omics colocalisation, regulatory element linking, and downstream target prioritization in UKB-based analyses. Note: the paper focuses on colocalisation; it does not address 3D genome modeling or AI-driven perturbation simulations, but it would substantially strengthen the colocalisation step of your workflow.</div>
                             </div>
                             
                             <div class="link"><a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank">View on bioRxiv</a></div>
