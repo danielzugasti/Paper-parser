@@ -4,47 +4,335 @@
         <head>
             <title>Daily PubMed & bioRxiv Paper Report</title>
             <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                h1 { color: #2c3e50; border-bottom: 2px solid #3498db; }
-                h2 { color: #34495e; margin-top: 30px; }
-                h3 { color: #2980b9; margin-top: 25px; }
-                .paper { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+                * { box-sizing: border-box; }
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+                    margin: 0; 
+                    padding: 20px; 
+                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+                    min-height: 100vh;
+                    line-height: 1.6;
+                }
+                
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 20px;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                    overflow: hidden;
+                }
+                
+                h1 { 
+                    color: #2c3e50; 
+                    border-bottom: 3px solid #3498db; 
+                    margin: 0;
+                    padding: 30px 40px;
+                    background: white;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    text-align: center;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                }
+                
+                .content {
+                    padding: 0 40px 40px 40px;
+                }
+                
+                h2 { color: #34495e; margin-top: 40px; font-size: 2rem; font-weight: 600; }
+                h3 { color: #2980b9; margin-top: 25px; font-size: 1.5rem; font-weight: 500; }
+                
+                /* Statistics Counter Section */
+                .stats-hero {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 60px 40px;
+                    border-radius: 20px;
+                    text-align: center;
+                    margin: 40px 0;
+                    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .stats-hero::before {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                    background-size: 50px 50px;
+                    animation: float 20s infinite linear;
+                    pointer-events: none;
+                }
+                
+                @keyframes float {
+                    0% { transform: translate(0, 0); }
+                    100% { transform: translate(-50px, -50px); }
+                }
+                
+                .stats-hero h2 {
+                    font-size: 2.5rem;
+                    margin: 0 0 20px 0;
+                    color: white;
+                    font-weight: 700;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                }
+                
+                .counter-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 30px 0;
+                    position: relative;
+                    z-index: 2;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                
+                .ai-icon {
+                    font-size: 4rem;
+                    animation: pulse 2s ease-in-out infinite;
+                }
+                
+                @keyframes pulse {
+                    0%, 100% { transform: scale(1); opacity: 0.8; }
+                    50% { transform: scale(1.1); opacity: 1; }
+                }
+                
+                .counter-number {
+                    font-size: 5rem;
+                    font-weight: 900;
+                    background: linear-gradient(45deg, #ffffff, #e8f4fd);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    animation: countUp 3s ease-out;
+                    min-width: 200px;
+                    text-align: center;
+                }
+                
+                @keyframes countUp {
+                    0% { transform: scale(0.5); opacity: 0; }
+                    50% { transform: scale(1.2); }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+                
+                .brain-icon {
+                    font-size: 4rem;
+                    animation: think 3s ease-in-out infinite;
+                }
+                
+                @keyframes think {
+                    0%, 100% { transform: rotate(-5deg); }
+                    50% { transform: rotate(5deg); }
+                }
+                
+                .tagline {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin: 25px 0 15px 0;
+                    color: #ffffff;
+                    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                }
+                
+                .description {
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    opacity: 0.9;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    color: #f8f9fa;
+                }
+                
+                .tech-badges {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-top: 30px;
+                    flex-wrap: wrap;
+                }
+                
+                .tech-badge {
+                    background: rgba(255, 255, 255, 0.2);
+                    color: white;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    backdrop-filter: blur(10px);
+                    transition: all 0.3s ease;
+                }
+                
+                .tech-badge:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                }
+                
+                .paper { 
+                    margin: 20px 0; 
+                    padding: 20px; 
+                    border: 1px solid #e1e8ed; 
+                    border-radius: 15px; 
+                    background: white; 
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                
+                .paper:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                }
+                
                 .pubmed-paper { border-left: 4px solid #3498db; }
                 .biorxiv-paper { border-left: 4px solid #e67e22; }
                 .highly-relevant { background-color: #d5f4e6; border: 2px solid #27ae60; }
                 .somewhat-relevant { background-color: #fef9e7; border: 2px solid #f39c12; }
                 .not-relevant { background-color: #fadbd8; border: 2px solid #e74c3c; }
-                .title { font-weight: bold; font-size: 16px; color: #2980b9; }
-                .authors { color: #7f8c8d; margin: 5px 0; }
-                .journal { font-style: italic; color: #27ae60; }
+                .title { font-weight: bold; font-size: 18px; color: #2980b9; margin-bottom: 10px; }
+                .authors { color: #7f8c8d; margin: 8px 0; font-size: 14px; }
+                .journal { font-style: italic; color: #27ae60; font-weight: 500; }
                 .date { color: #e74c3c; font-size: 14px; }
-                .abstract { margin: 10px 0; text-align: justify; }
-                .evaluation { margin: 10px 0; padding: 10px; background-color: #f8f9fa; border-radius: 3px; border-left: 3px solid #3498db; }
-                .relevance-badge { display: inline-block; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; margin: 5px 0; }
+                .abstract { margin: 15px 0; text-align: justify; color: #34495e; }
+                .evaluation { 
+                    margin: 15px 0; 
+                    padding: 15px; 
+                    background-color: #f8f9fa; 
+                    border-radius: 8px; 
+                    border-left: 4px solid #3498db; 
+                }
+                .relevance-badge { 
+                    display: inline-block; 
+                    padding: 6px 12px; 
+                    border-radius: 15px; 
+                    font-size: 12px; 
+                    font-weight: bold; 
+                    color: white; 
+                    margin: 8px 0; 
+                }
                 .highly-relevant-badge { background-color: #27ae60; }
                 .somewhat-relevant-badge { background-color: #f39c12; }
                 .not-relevant-badge { background-color: #e74c3c; }
                 .error-badge { background-color: #95a5a6; }
-                .link { margin-top: 10px; }
+                .link { margin-top: 15px; }
+                .link a {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background: #3498db;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 25px;
+                    font-weight: 500;
+                    transition: background 0.3s ease;
+                }
+                .link a:hover {
+                    background: #2980b9;
+                }
                 .keyword-section { margin-bottom: 40px; }
-                .summary { background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+                .summary { 
+                    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                    padding: 25px; 
+                    border-radius: 15px; 
+                    margin-bottom: 30px; 
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+                    border: 1px solid #dee2e6;
+                }
                 .source-section { margin: 20px 0; }
+                
+                /* Mobile Responsiveness */
+                @media (max-width: 768px) {
+                    body { padding: 10px; }
+                    .content { padding: 0 20px 20px 20px; }
+                    h1 { font-size: 1.8rem; padding: 20px; }
+                    .stats-hero { padding: 40px 20px; margin: 20px 0; }
+                    .stats-hero h2 { font-size: 1.8rem; }
+                    .counter-number { font-size: 3.5rem; }
+                    .ai-icon, .brain-icon { font-size: 3rem; }
+                    .counter-container { flex-direction: column; gap: 15px; }
+                    .tagline { font-size: 1.2rem; }
+                    .description { font-size: 1rem; }
+                    .tech-badges { gap: 8px; }
+                    .tech-badge { font-size: 0.8rem; padding: 6px 12px; }
+                    .paper { padding: 15px; margin: 15px 0; }
+                    .title { font-size: 16px; }
+                }
             </style>
         </head>
         <body>
+        <div class="container">
         
         <h1>Daily PubMed & bioRxiv Paper Report - August 28, 2025</h1>
+        <div class="content">
+        
+        <div class="stats-hero">
+            <h2>🤖 AI-Powered Research Assistant</h2>
+            <div class="counter-container">
+                <div class="ai-icon">🔬</div>
+                <div class="counter-number" id="counter">15,100</div>
+                <div class="brain-icon">🧠</div>
+            </div>
+            <div class="tagline">Saving you hours of manual reading.</div>
+            <div class="description">
+                Our system continuously parses PubMed and bioRxiv, highlights the most relevant findings, 
+                and filters out the noise so you can focus only on what matters. Today we analyzed <strong>2</strong> new papers.
+            </div>
+            <div class="tech-badges">
+                <div class="tech-badge">🤖 GPT-5 Nano</div>
+                <div class="tech-badge">📚 PubMed API</div>
+                <div class="tech-badge">🧬 bioRxiv</div>
+                <div class="tech-badge">🔍 Smart Filtering</div>
+                <div class="tech-badge">⚡ Auto-Updated</div>
+            </div>
+        </div>
+        
+        <script>
+        // Animated counter effect
+        function animateCounter() {
+            const counter = document.getElementById('counter');
+            const target = 15100;
+            const duration = 2500;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // Start animation when page loads
+        window.addEventListener('load', animateCounter);
+        </script>
         
         <div class="summary">
-            <h3>Summary</h3>
-            <p>Total relevant papers: <strong>2</strong></p>
-            <ul>
-                <li>PubMed papers: <strong>1</strong></li>
-                <li>bioRxiv preprints: <strong>1</strong></li>
-            </ul>
+            <h3>📊 Today's Analysis Summary</h3>
+            <p><strong>Total relevant papers identified:</strong> <span style="color: #27ae60; font-size: 1.2em; font-weight: bold;">2</span></p>
+            <div style="display: flex; gap: 30px; margin-top: 15px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <strong>📚 PubMed papers:</strong> <span style="color: #3498db; font-weight: bold;">1</span>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <strong>🧬 bioRxiv preprints:</strong> <span style="color: #e67e22; font-weight: bold;">1</span>
+                </div>
+            </div>
+            <p style="margin-top: 15px; color: #7f8c8d; font-style: italic;">
+                AI filtered out irrelevant papers, showing only 2 papers that match your research focus
+            </p>
         </div>
         <h2>PubMed Papers (1)</h2>
-                <div class="paper pubmed-paper highly-relevant">
+                <div class="paper pubmed-paper somewhat-relevant">
                     <div class="title">Gene expression QTL mapping in stimulated iPSC-derived macrophages provides insights into common complex diseases.</div>
                     <div class="authors"><strong>Authors:</strong> Nikolaos I Panousis, Omar El Garwany, Andrew Knights, Jesse Cheruiyot Rop, Natsuhiko Kumasaka, Maria Imaz, Lorena Boquete Vilarino, Anthi Tsingene, Alex Tokolyi, Alice Barnett, Celine Gomez, Carl A Anderson, Daniel J Gaffney</div>
                     <div class="journal"><strong>Journal:</strong> Nature communications</div>
@@ -52,24 +340,25 @@
                     <div class="abstract"><strong>Abstract:</strong> Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate expression in specific biological contexts, such as stimulated immune cells. Here, we used human iPSC-derived macrophages to map eQTLs across 24 cellular conditions. We found that 76% of eQTLs detected in at least one stimulated condition were also found in naive cells. The percentage of response eQTLs (reQTLs) varied widely across conditions (3.7% - 28.4%), with reQTLs specific to a single condition being rare (1.11%). Despite their relative rarity, reQTLs were overrepresented among disease-colocalizing eQTLs. We nominated an additional 21.7% of disease effector genes at GWAS loci via colocalization of reQTLs, with 38.6% of these not found in the Genotype-Tissue Expression (GTEx) catalogue. Our study highlights the diversity of genetic effects on expression and demonstrates how condition-specific regulatory variation can enhance our understanding of common disease risk alleles.</div>
                 
                     <div class="evaluation">
-                        <span class="relevance-badge highly-relevant-badge">Highly Relevant</span>
-                        <div><strong>AI Evaluation:</strong> 1) Relevance: Highly Relevant
+                        <span class="relevance-badge somewhat-relevant-badge">Somewhat Relevant</span>
+                        <div><strong>AI Evaluation:</strong> 1) Relevance: Somewhat Relevant
 
-2) Justification: The paper demonstrates context-specific eQTLs (reQTLs) in stimulated immune cells and shows that these regulatory effects systematically colocalize with disease GWAS signals, revealing disease effector genes—including many not found in GTEx. This directly informs how to link genetic variants to regulatory mechanisms and disease drivers in a context-relevant (immune) setting, aligning with your GWAS/PheWAS and colocalization-focused workflow.
+2) Why: The paper performs context-specific eQTL mapping (stimulated iPSC-derived macrophages) and uses colocalization with disease GWAS loci to nominate disease effector genes, including signals not seen in GTEx. This directly touches on linking regulatory variants to disease drivers via colocalization, aligning with your emphasis on regulatory elements and disease mechanisms. However, it does not cover large-scale UK Biobank–level GWAS/PheWAS, multi-omics QTL integration (beyond eQTLs), 3D genome architecture, or AI-driven in silico perturbations.
 
-3) Connections to your research:
-- GWAS/PheWAS and colocalization: Uses colocalization to map disease loci to regulatory variants, directly relevant to linking variants to phenotypes.
-- Multi-omics QTL integration: Provides a context-specific eQTL framework; while primarily eQTL-focused, it offers a blueprint for integrating regulatory effects with disease traits and could be extended to other QTL types (eQTL, pQTL) in multi-omics analyses.
-- 3D genome and regulatory networks: While not addressing 3D genome organization, the work highlights context-dependent regulation that could be connected to chromatin interaction data in future analyses to prioritize regulatory nodes.
-- Therapeutic targeting: Identifies disease effector genes at GWAS loci, including genes absent from GTEx catalogs—a valuable source for potential drug targets and pathway prioritization.
+3) Connecting to your research goals:
+- GWAS/PheWAS: Indirectly relevant through GWAS-colocalization of eQTLs; not a large-scale GWAS or PheWAS analysis.
+- Multi-omics QTLs: Limited to eQTLs; no direct multi-omics integration (e.g., pQTLs, meQTLs) presented.
+- Colocalization: Central to the study; highly relevant to your aim of linking variants to regulatory mechanisms and disease drivers.
+- AI/3D genome/therapeutic targeting: Not addressed (no machine learning explainable AI or 3D genome perturbation analysis).
+- Therapeutic targeting implications: Identifies disease effector genes at GWAS loci, which could inform target prioritization, though without causal modeling or 3D-context analyses.
 
-4) If Highly Relevant, key reason to read: It provides a compelling, context-specific approach to map regulatory effects to disease risk via colocalization, expanding beyond bulk-tissue eQTL catalogs and uncovering novel disease effector genes—a core need in your target pipeline for identifying actionable targets in immune-related diseases.</div>
+4) If highly relevant, key reason to read: Not applicable here, but a takeaway is that context-specific (stimulus-driven) regulatory effects can substantially augment colocalization-based discovery of disease effector genes, revealing signals missed by bulk-tissue eQTL catalogs like GTEx. This could inspire extension to cell types and conditions you study to improve target prioritization.</div>
                     </div>
                     
                     <div class="link"><a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank">View on PubMed</a></div>
                 </div>
                 <h2>bioRxiv Preprints (1)</h2>
-                <div class="paper biorxiv-paper ">
+                <div class="paper biorxiv-paper highly-relevant">
                     <div class="title">Ultra-fast genetic colocalisation across millions of traits</div>
                     <div class="authors"><strong>Authors:</strong> M. Jesse, A.-E. Riet, K. Alasoo</div>
                     <div class="journal"><strong>Source:</strong> bioRxiv (preprint)</div>
@@ -77,23 +366,26 @@
                     <div class="abstract"><strong>Abstract:</strong> Colocalisation is a powerful approach to assess if two genetic association signals are likely to share a causal variant. However, association analyses in large biobanks and molecular quantitative trait loci (molQTL) studies now routinely identify millions of association signals across thousands of traits, making it infeasible to test for colocalisation between all pairs of signals. Here we introduce gpu-coloc, a GPU-accelerated re-implementation of the coloc algorithm that combines efficient data storage with parallelisation to achieve a 1000-fold speed increase while maintaining near-identical results. As a result, the run time of gpu-coloc now approaches the colocalisation posterior probability (CLPP) method, a competing method that only uses information from fine mapped credible sets to detect colocalisations. Using summary statistics from UK Biobank, FinnGen, and eQTL Catalogue, we demonstrate that gpu-coloc and CLPP detect highly concordant results, especially when restricting the analysis to confidently fine mapped signals. We introduce the colocalisation collider metric to quantify spurious colocalisations in large-scale colocalisation graphs and use it to choose decision thresholds that provide a reasonable trade-off between sensitivity and specificity. Finally, we demonstrate how gpu-coloc can also be applied to marginal GWAS summary statistics from studies that lack fine mapping, where it is still able to recover molQTL colocalisations for ~80% of the GWAS loci. Our efficient software and comprehensive analyses provide practical guidelines for future large-scale colocalisation analyses.</div>
                 
                     <div class="evaluation">
-                        <span class="relevance-badge error-badge">Unclear</span>
-                        <div><strong>AI Evaluation:</strong> 1. Highly Relevant
+                        <span class="relevance-badge highly-relevant-badge">Highly Relevant</span>
+                        <div><strong>AI Evaluation:</strong> 1) Relevance: Highly Relevant
 
-2. Brief justification: The paper introduces gpu-coloc, a GPU-accelerated colocalisation method enabling large-scale testing of shared causal variants across millions of traits using UK Biobank and molQTL data. This directly supports your goals of large-scale GWAS/PheWAS integration with colocalisation to link variants to regulatory elements and disease drivers.
+2) Brief justification: The paper introduces gpu-coloc, a GPU-accelerated, scalable colocalisation method tested on UK Biobank, FinnGen, and eQTL Catalogue data, enabling rapid analysis across millions of traits/SNP signals. This directly supports large-scale colocalisation workflows and integration with molQTL data, which are central to your research.
 
-3. Connecting parts to your research:
-- GWAS/PheWAS scale analyses: scalable colocalisation across many traits.
-- Integration with molQTLs (eQTLs, pQTLs): uses eQTL Catalogue and other molQTL resources to map signals to regulatory biology.
-- Colocalisation methodology: near-identical results to established methods with a new collider metric to assess spurious signals, helpful for robust target prioritization.
-- Practical workflow: demonstrates application to real biobank data (UKB, FinnGen), which aligns with your data sources and analysis scale.
+3) Connections to your work:
+- GWAS / large-scale trait analyses: demonstrates scalable colocalisation across many traits using UK Biobank and other large datasets.
+- Multi-omics QTL integration: uses eQTL data (molQTL context) to assess shared causal variants.
+- Colocalisation methodology: offers a fast alternative to traditional coloc, with near-identical results and a collider metric to assess spurious colocalisations.
+- Practical guidelines: provides thresholds and strategies for large-scale analyses, useful for PheWAS-like trait catalogs.
+- Data types: relies on summary statistics, aligning with typical GWAS and QTL data pipelines.
 
-4. Key reason to read it: It provides a practical, scalable tool and methodology to perform large-scale colocalisation across millions of trait signals, which could dramatically accelerate your pipeline for linking genetic variants to regulatory mechanisms and potential therapeutic targets, while offering metrics to interpret complex colocalisation graphs.</div>
+4) If highly relevant, key reason to read: It delivers a fast, scalable colocalisation framework tailored for massive trait datasets and molQTL integration, with practical guidelines and quality metrics, enabling you to perform robust colocalisation-driven linking of regulatory elements to diseases at a scale aligned with your UK Biobank–scale research agenda.</div>
                     </div>
                     
                     <div class="link"><a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank">View on bioRxiv</a></div>
                 </div>
                 
+        </div> <!-- end content -->
+        </div> <!-- end container -->
         </body>
         </html>
         
