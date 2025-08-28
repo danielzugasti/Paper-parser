@@ -1,0 +1,19 @@
+# GitHub Pages configuration for Paper Parser
+title: "Daily Paper Reports"
+description: "Automated daily reports of relevant research papers from PubMed and bioRxiv"
+
+# GitHub Pages settings
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Default layout for HTML files
+defaults:
+  - scope:
+      path: "*.html"
+    values:
+      layout: none

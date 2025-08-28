@@ -61,16 +61,17 @@
                         
                             <div class="evaluation">
                                 <span class="relevance-badge somewhat-relevant-badge">Somewhat Relevant</span>
-                                <div><strong>AI Evaluation:</strong> - Relevance: Somewhat Relevant
+                                <div><strong>AI Evaluation:</strong> 1) Relevance: Somewhat Relevant
 
-- Brief justification: The paper investigates GWAS-colocalization of disease loci with context-specific eQTLs in stimulated macrophages, highlighting how regulatory variation in particular conditions can illuminate disease risk genes. However, it is limited to single-cell–derived gene expression regulation (eQTLs) rather than multi-omics QTLs (eQTL/pQTL/etc.), and it does not address 3D genome organization, AI/perturbation simulations, or large-scale PheWAS.
+2) Justification: The paper demonstrates context-specific regulatory variation (reQTLs) in stimulated iPSC-derived macrophages and uses colocalization to link these regulatory signals to disease risk loci, including loci not captured in GTEx. This aligns with your interest in context-specific QTLs and colocalization to identify disease drivers, though it focuses on eQTLs in a specific cell type/condition and does not cover multi-omics QTLs, large-scale UK Biobank data, or 3D genome/AI-based perturbation analyses.
 
-- Connections to your research:
-  - GWAS and colocalization: Directly relevant to linking variants to regulatory effects at disease loci.
-  - Context-specific regulation: Supports your interest in condition- or context-dependent regulatory variants that may drive disease.
-  - Disease effector genes: Provides examples of identifying genes at GWAS loci that mediate disease risk, which can inform target prioritization.
+3) Connections to your research interests:
+- Context-specific regulatory QTLs: relevance to capturing regulatory effects that may be missed in bulk or static eQTL maps.
+- Colocalization with disease loci: directly pertinent to linking variants to regulatory elements and potential disease drivers.
+- Discovery beyond GTEx: expands the resource base for interpreting GWAS signals beyond existing catalogs.
+- Immune cell context: provides insights potentially translatable to immune-related diseases you study in large-scale GWAS/PheWAS.
 
-- If Highly Relevant, key reason to read: N/A (not Highly Relevant). The key value here is context-dependent regulatory insights at disease loci, which can complement broader multi-omics and 3D genome–driven target discovery but does not cover those aspects itself.</div>
+4) If you’re considering reading it: A key takeaway is how context-specific regulatory variation (in stimulated immune cells) can uncover disease-associated regulatory mechanisms and identify additional disease effector genes beyond GTEx, which could inform design choices for context-rich QTL integration in GWAS analyses.</div>
                             </div>
                             
                             <div class="link"><a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank">View on PubMed</a></div>
@@ -87,15 +88,15 @@
                                 <span class="relevance-badge highly-relevant-badge">Highly Relevant</span>
                                 <div><strong>AI Evaluation:</strong> - Relevance: Highly Relevant
 
-- Brief justification: The paper presents gpu-coloc, a GPU-accelerated, scalable implementation of genetic colocalisation that can analyze colocalisation across millions of traits using large consortia data (UK Biobank, FinnGen, eQTL Catalogue). This directly supports large-scale GWAS/molQTL integration and robust colocalisation necessary for linking variants to regulatory elements and disease drivers in your research framework.
+- Why: The paper presents gpu-coloc, a GPU-accelerated, scalable method for colocalisation across millions of traits using large biobank and molQTL summary statistics (including UK Biobank and eQTL Catalogue). This directly aligns with your focus on large-scale GWAS/PheWAS, integration of molQTLs with colocalisation to link variants to regulatory elements and disease drivers, and the need to manage false positives in big colocalisation graphs (collider metric). It also demonstrates applicability to studies that lack fine mapping, which is valuable for broad, multi-trait analyses.
 
-- Connections to your work:
-  - GWAS/PheWAS-scale colocalisation: enables fast testing across thousands/millions of traits, aligning with your large-scale phenotypic analyses.
-  - Multi-omics QTL integration: uses molQTL data (eQTLs, etc.) and assesses shared causal variants, matching your aim to connect regulatory elements to diseases.
-  - Colocalisation methodology and robustness: introduces a colocalisation collider metric to assess spurious links, improving reliability of large-scale colocalization graphs—valuable for prioritizing targets in your pipeline.
-  - Data sources: demonstrates use with UK Biobank, FinnGen, and eQTL Catalogue, directly relevant to your data sources.
+- Which parts connect to your research:
+  - GWAS/MolQTL colocalisation at scale: Enables large-scale testing of shared causal variants between complex traits and molQTLs, essential for your multi-trait projects.
+  - Integration with regulatory elements: Colocalisation with eQTLs/molQTLs helps map variants to regulatory effects and potential disease drivers.
+  - Handling of large-scale graphs and false positives: The colocalisation collider metric is relevant for constructing robust regulatory networks and prioritizing targets.
+  - UKB and multi-cohort data usage: Demonstrates feasibility and performance on UK Biobank and other large biobanks, matching the data scale you work with.
 
-- Why you should read it (key takeaway if Highly Relevant): It offers a scalable, near-equivalence to established colocalisation methods but with orders-of-magnitude speed-ups and practical guidelines for handling large-scale colocalisation graphs. This could dramatically accelerate your GWAS/molQTL integration and help you robustly prioritize regulatory mechanisms and target genes across thousands of traits.</div>
+- If you should read it: Key reason is that this method dramatically lowers the computational barrier to performing comprehensive, cross-trait colocalisation analyses at the scale you require, enabling you to systematically link variants to regulatory elements and infer potential disease drivers across thousands of traits with greater speed and reliability.</div>
                             </div>
                             
                             <div class="link"><a href="https://www.biorxiv.org/content/10.1101/10.1101/2025.08.25.672103v1" target="_blank">View on bioRxiv</a></div>
