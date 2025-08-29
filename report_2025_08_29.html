@@ -132,12 +132,12 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">0</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">1</div>
                             <p class="text-gray-400">Relevant Papers Found</p>
                             <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-primary-400 mb-2">0</div>
+                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
                             <p class="text-gray-400">PubMed Papers</p>
                             <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
                         </div>
@@ -155,6 +155,94 @@
                     </div>
                 </div>
         
+                <!-- PubMed Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-database mr-4 text-primary-400"></i>
+                        <span class="gradient-text">PubMed Papers</span>
+                        <span class="ml-4 text-lg text-gray-400">(1)</span>
+                    </h2>
+                    <div class="grid gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
+                                        Unclear
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Natural allelic variation in SW14 determines seed weight and quality in soybean.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Chunyu Zhang, Weijun Li, Cuirong Tan, Mingkun Huang, Huan Wu, Shu Liu, Hongjie Liu, Xiaoming Li, Yansong Miao, Baohui Liu, Fanjiang Kong, Xingliang Hou</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40877292</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" onclick="toggleAbstract(this)" data-expanded="false"><i class="fas fa-chevron-down mr-1"></i>Show Full Abstract</button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">Seed weight and oil/protein content are critical agronomic traits that determine soybean yield and quality. However, the key genes controlling these traits and the underlying regulatory mechanisms rem...</p><p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">Seed weight and oil/protein content are critical agronomic traits that determine soybean yield and quality. However, the key genes controlling these traits and the underlying regulatory mechanisms remain poorly understood. Here, we performed a combination of genome-wide association study and quantitative trait loci (QTL) mapping with seed weight variations, and identified a Nuclear Factor-YA (NF-YA) gene on chromosome 14 that positively regulates seed weight and protein content while negatively regulating oil content without affecting other agronomic traits, designated as Seed Weight 14 (SW14). SW14 physically interacts with GmLEC1a/b, the soybean orthologs of the central regulator of plant seed development, Leafy Cotyledon1 (LEC1), to disrupt the formation of a non-canonical NF-Y complex comprising GmLEC1, GmNF-YC2, and GmbZIP67, thereby inhibiting the GmLEC1-mediated transcriptional activation involved in seed development process. Natural allelic variations in SW14 affect the stability of the SW14 protein, which in turn confers varied seed weight and oil/protein content in soybean. Further analysis demonstrates that the elite SW14</p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1. Not Relevant.
+
+2. Justification: The study investigates seed weight and quality in soybean using GWAS and QTL mapping, focusing on a plant gene (SW14/NF-YA) and its regulatory interactions. It does not address human diseases, UK Biobank-scale GWAS/PheWAS, human multi-omics QTLs, colocalization in human traits, 3D genome organization, or therapeutic target prioritization.
+
+3. Connections to your research:
+- Methodology: uses GWAS and QTL mapping (conceptually relevant to your large-scale trait mapping, though in a non-human species).
+- Regulatory biology: explores transcriptional regulation and protein interactions, which touch on regulatory networks, a topic you’re broadly interested in, but outside the human disease/therapeutic target context.
+- No elements of human colocalization analyses, multi-omics QTL integration, AI perturbation of the 3D genome, or drug target prioritization.
+
+4. If Highly Relevant: N/A. The paper is not directly relevant to human disease genomics or translational target discovery, though it may offer a distant methodological precedent for GWAS/QTL integration in a non-human system.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877292/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Direct Link Available
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            
             </div>
 
             <!-- Footer -->
@@ -171,7 +259,7 @@
                         Generated by Paper Parser Bot
                     </p>
                     <p class="text-sm text-gray-500">
-                        Report generated at 2025-08-29 12:48:02 UTC
+                        Report generated at 2025-08-29 12:50:13 UTC
                     </p>
                     <div class="mt-6">
                         <a href="index.html" 
