@@ -132,12 +132,12 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">1</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">3</div>
                             <p class="text-gray-400">Relevant Papers Found</p>
                             <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
+                            <div class="text-4xl font-bold text-primary-400 mb-2">3</div>
                             <p class="text-gray-400">PubMed Papers</p>
                             <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
                         </div>
@@ -160,7 +160,7 @@
                     <h2 class="text-3xl font-bold mb-8 flex items-center">
                         <i class="fas fa-database mr-4 text-primary-400"></i>
                         <span class="gradient-text">PubMed Papers</span>
-                        <span class="ml-4 text-lg text-gray-400">(1)</span>
+                        <span class="ml-4 text-lg text-gray-400">(3)</span>
                     </h2>
                     <div class="grid gap-8">
             
@@ -227,20 +227,192 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Brief justification: The study uses context-specific eQTL mapping in stimulated immune cells and applies colocalization to GWAS loci, uncovering disease-relevant regulatory effects beyond GTEx. It does not address PheWAS at scale, multi-omics QTLs (beyond eQTLs), AI/ML perturbations, or 3D genome organization.
+2) Justification: The paper analyzes context-specific gene expression QTLs (reQTLs) in stimulated iPSC-derived macrophages and uses colocalization with GWAS to nominate disease effector genes, which aligns with your interest in regulatory variant interpretation and GWAS-to-gene linking. However, it does not cover multi-omics QTLs (beyond eQTLs), 3D genome structure, large-scale UK Biobank–level analyses, PheWAS, or AI-based perturbation modeling, which are central to your focus.
 
-3) Connections to your work:
-- GWAS and colocalization: Directly involves linking regulatory variants to disease loci via colocalization.
-- Context-specific regulation: Demonstrates that stimulation context reveals disease-relevant regulatory effects (reQTLs) not captured in static datasets.
-- Disease gene prioritization: Identifies additional disease effector genes at GWAS loci, including those absent in GTEx.
-- Potential for integration: Provides a framework that could be extended with multi-omics QTLs and possibly spatial/3D genome perspectives to enhance target prioritization.
+3) Connecting elements to your research:
+- GWAS/colocalization: demonstrates disease association mapping via colocalization with eQTLs.
+- Regulatory interpretation: highlights context-specific regulatory effects that may explain disease risk.
+- GTEx complement: shows discovery of disease genes not present in GTEx, informing approaches to augment reference catalogs.
+- Context-specific regulation: supports incorporating condition/state-dependent QTL data into causal inference pipelines.
 
-4) If Highly Relevant: Key reason to read it
-- It underscores the value of context-specific QTL mapping (stimulated immune cells) for improving colocalization-based gene prioritization at GWAS loci, including discovery of disease genes not present in GTEx. This aligns with your emphasis on linking regulatory elements and disease drivers under relevant cellular contexts, and could inform how you design context-aware QTL integration and target prioritization strategies.</p>
+4) If Highly Relevant, key reason to read: It provides robust evidence that condition- and context-specific regulatory variants (reQTLs) can substantially improve identification of disease effector genes at GWAS loci, including discoveries missed by GTEx—a valuable insight for enriching your GWAS/PheWAS and regulatory-spotlighting strategies and for integrating regulatory networks with downstream therapeutic target prioritization.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Direct Link Available
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Molecular and genetic landscapes of retina and brain microglia in neurodegenerative diseases.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Khang Ma, Rinki Ratnapriya</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Genome research</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 26</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40858363</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Microglia-driven dysregulation has emerged as a significant underlying mechanism in many neurodegenerative diseases, such as Age-related Macular Degeneration (AMD) and Alzheimer's disease (AD). While ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Microglia-driven dysregulation has emerged as a significant underlying mechanism in many neurodegenerative diseases, such as Age-related Macular Degeneration (AMD) and Alzheimer's disease (AD). While both brain and retinal microglia originate from the yolk sac, it is uncertain whether they share molecular similarities or genetic and molecular foundations related to neurodegenerative diseases. In this study, we examine the transcriptomic and epigenetic profiles of retina and brain microglia through integrative analyses of single-nucleus RNA sequencing (snRNA-seq) and single-nucleus ATAC sequencing (snATAC-seq) from 97 independent human samples across eleven different studies. Our findings reveal that retina and brain microglia share similar expression and regulatory profiles when compared to other cell types in retina and brain. By integrating genome-wide association studies (GWAS) data with gene expression profiles, we demonstrate that genetic variants associated with AMD and AD are linked to microglia-specific gene signatures. Furthermore, integrating regulatory annotations with GWAS data shows that susceptibility loci for both AMD and AD are notably enriched in the open chromatin regions of microglia from brain and retina, emphasizing their relevance to these neurodegenerative conditions. Finally, a comparison with microglia annotations from other tissues highlights the specific enrichment of microglia in relation to neurodegenerative diseases. These findings contribute to the understanding of the role of microglia in AMD and AD pathogenesis and offer an opportunity to utilize resources from both retinal and brain microglia to deepen our understanding of their contributions to genetic variations in neurodegenerative diseases.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+
+2) Brief justification: The paper analyzes microglia in retina and brain and links AMD/AD GWAS signals to microglia-specific gene expression and regulatory chromatin, using multi-omics (snRNA-seq and snATAC-seq). However, it focuses on a narrow set of diseases (AMD and AD) rather than large-scale GWAS/PheWAS across thousands of traits, and it does not appear to involve 3D genome perturbation modeling or AI-driven in silico perturbations.
+
+3) Connecting to your research:
+- GWAS + regulatory context: Integrates GWAS with expression and regulatory annotations to prioritize microglia-relevant disease genes.
+- Multi-omics data integration: Uses single-nucleus RNA-seq and ATAC-seq to map gene expression and regulatory landscapes in microglia across retina and brain.
+- Cross-tissue/regulatory mapping: Compares microglial regulation between retinal and brain contexts, informing spatial/regulatory connectivity relevant to disease.
+- Target prioritization potential: Highlights microglia-centric regulatory elements linked to AMD/AD risk, which could inform downstream target prioritization in your colocalization and drug-target efforts.
+
+4) If highly relevant, key reason to read: N/A (not Highly Relevant).</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40858363/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Direct Link Available
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Response splicing quantitative trait loci in primary human chondrocytes identify putative osteoarthritis risk genes.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Seyoun Byun, Jacqueline Shine, Philip Coryell, Nicole E Kramer, Susan D'Costa, Eliza Thulson, Sylvie M Parkus, Susan Chubinskaya, Richard F Loeser, Brian O Diekman, Douglas H Phanstiel</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 26</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40858580</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Osteoarthritis affects millions worldwide, yet effective treatments remain elusive due to poorly understood molecular mechanisms. While genome-wide association studies (GWAS) have identified hundreds ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Osteoarthritis affects millions worldwide, yet effective treatments remain elusive due to poorly understood molecular mechanisms. While genome-wide association studies (GWAS) have identified hundreds of osteoarthritis-associated loci, identifying the genes impacted at each locus remains challenging. We investigate alternative splicing using RNA-sequencing data from 101 human chondrocyte samples treated with phosphate-buffered saline or fibronectin fragment, an osteoarthritis trigger. We identified 590 differentially spliced genes between conditions, with FN-f inducing splicing events similar to those in primary osteoarthritis tissue. CRISPR/Cas9 mimicking of an SNRNP70 splicing event observed in osteoarthritis induced an osteoarthritis-like expression pattern. Integration with genotyping data revealed 7188 splicing quantitative trait loci (sQTL) affecting 3056 genes, including 738 and 343 condition-specific sQTLs for resting and fibronectin fragment, respectively. Colocalization with osteoarthritis GWAS identified 6 putative risk genes. Our study highlights the significant impact of alternative splicing in osteoarthritis and provides potential therapeutic targets.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+
+2) Justification: The paper analyzes splicing QTLs (sQTLs) in OA-relevant chondrocytes and uses colocalization with OA GWAS to prioritize putative risk genes, including functional validation. While it demonstrates integration of QTLs with GWAS and highlights potential therapeutic targets, it is OA-specific, focuses on sQTLs rather than broader multi-omics (eQTLs, pQTLs, etc.), and does not address 3D genome structure or AI/ML-based perturbation analysis.
+
+3) Connections to your research:
+- QTL integration and colocalization: uses sQTLs to link genetic variants to splicing changes and disease risk, aligning with your aim to connect regulatory variants to phenotypes.
+- Gene prioritization and potential therapeutic targets: identifies putative OA risk genes that could be relevant for targeted interventions.
+- Functional validation of regulatory effects: CRISPR/Cas9 mimicry of a splicing event provides a framework for validating regulatory mechanisms.
+
+4) If Highly Relevant, key reason to read (not applicable here): N/A
+
+Note: To leverage this work for your program, consider how sQTL colocalization with disease GWAS could be extended to include eQTLs/pQTLs, integrative multi-omic layers, and principles you’re applying with 3D genome perturbations and explainable AI. The paper provides a useful example of QTL-GWAS colocalization and functional validation in a disease-relevant tissue.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40858580/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -270,7 +442,7 @@
                         Generated by Paper Parser Bot
                     </p>
                     <p class="text-sm text-gray-500">
-                        Report generated at 2025-08-29 12:58:52 UTC
+                        Report generated at 2025-08-29 13:01:04 UTC
                     </p>
                     <div class="mt-6">
                         <a href="index.html" 
