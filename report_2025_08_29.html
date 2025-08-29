@@ -157,25 +157,25 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">2</div>
-                            <p class="text-gray-400">Relevant Papers Found</p>
-                            <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">328</div>
+                            <p class="text-gray-400">Papers Published</p>
+                            <p class="text-sm text-gray-500 mt-1">Today</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
+                            <div class="text-4xl font-bold text-primary-400 mb-2">103</div>
                             <p class="text-gray-400">PubMed Papers</p>
                             <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">1</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">225</div>
                             <p class="text-gray-400">bioRxiv Preprints</p>
                             <p class="text-sm text-gray-500 mt-1">Latest Research</p>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
-                            <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            AI filtered out irrelevant papers, showing only research that matches your focus areas
+                            <i class="fas fa-calendar mr-2 text-accent-400"></i>
+                            All papers published today from selected journals and bioRxiv
                         </p>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-database mr-4 text-primary-400"></i>
                             <span class="gradient-text">PubMed Papers</span>
-                            <span class="ml-4 text-lg text-gray-400">(1)</span>
+                            <span class="ml-4 text-lg text-gray-400">(2)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('pubmed-section')" 
@@ -198,14 +198,14 @@
                     <div class="section-content" id="pubmed-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-primary-500/20 p-2 rounded-lg">
                                         <i class="fas fa-file-alt text-primary-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
-                                        Unclear
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
                                     </span>
                                 </div>
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
@@ -259,19 +259,100 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Somewhat Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Justification: The paper maps expression QTLs in stimulated immune cells (iPSC-derived macrophages) and uses colocalization with GWAS to nominate disease effector genes, including many not found in GTEx. This directly touches on linking regulatory variants to disease risk and identifying genes at GWAS loci, which aligns with your colocalization and regulatory target identification focus, though it does not cover large-scale UK Biobank-scale GWAS/PheWAS, multi-omics QTLs (beyond eQTLs), 3D genome architecture, or AI-driven perturbation modeling.
+2) Brief justification: The paper investigates context- and condition-specific eQTLs in stimulated immune cells and shows colocalization with GWAS loci to nominate disease effector genes, including findings not present in GTEx. It demonstrates how regulatory variation in specific contexts can illuminate disease biology, which dovetails with colocalization and regulatory-element linking in your research. However, it does not cover large-scale UK BioBank–level GWAS/PheWAS, multi-omics QTLs (beyond eQTLs), 3D genome analyses, or AI-driven perturbation modeling.
 
 3) Connections to your research:
-- Colocalization with GWAS to identify disease effector genes at loci (relevant to your aim of linking variants to regulatory elements and drivers).
-- Context-specific (stimulus-related) eQTLs, highlighting how regulatory effects can be condition-dependent, which informs how you might incorporate context into PheWAS analyses.
-- Demonstrates that many disease-associated regulatory signals may be missed in static catalogs (GTEx), underscoring the value of diverse cellular contexts.
-- Focus on regulatory variation and disease risk aligns with your goal of prioritizing regulatory elements and pathways, though the study stops short of multi-omics integration (eQTL-only) and 3D genome/AI-based approaches.</p>
+- Colocalization of QTLs with GWAS loci to link variants to regulatory elements and disease drivers.
+- Emphasis on context-specific regulation (stimulated vs. naive states), relevant for identifying condition-specific therapeutic targets.
+- Concept that many disease-relevant signals may be missed in standard catalogs (GTEx), underscoring the value of context-specific QTL mapping in multi-omics integration.
+
+4) If Highly Relevant: Not applicable. However, you should read it because:
+- It provides a concrete demonstration that context-specific (re)QTLs can disproportionately contribute to disease-colocalizing signals and reveal disease genes not captured by GTEx, informing strategies to capture regulatory variants in immune contexts within large-scale GWAS/PheWAS frameworks and multi-omics integration. It offers methodological and conceptual insights for prioritizing regulatory variants and disease drivers when exploring regulatory networks and therapeutic targets.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
+                                        Unclear
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Integrated phenomic and genomic analyses unveil modes of altered phenotypic plasticity during wheat improvement.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Linqian Han, Xiaoming Wang, Ryan Benke, Laura E Tibbs-Cortes, Peng Zhao, Karen A Sanguinet, Zhiwu Zhang, Shengbao Xu, Jianming Yu, Xianran Li</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Genome biology</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40877939</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Wheat has a critical role in global food security. During the improvement of wheat from landraces to cultivars, a suite of traits has been modified for higher yields. However, changing patterns of whe...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Wheat has a critical role in global food security. During the improvement of wheat from landraces to cultivars, a suite of traits has been modified for higher yields. However, changing patterns of wheat in response to different environmental conditions, or phenotypic plasticity, during this improvement remain to be elucidated.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1. Not Relevant
+
+2. Justification: The paper studies phenotypic plasticity during wheat improvement using integrated phenomic and genomic analyses in plants, with no focus on human diseases, UK Biobank-scale GWAS/PheWAS, multi-omics QTLs, colocalization, 3D genome structuring, or therapeutic target discovery.
+
+3. Connections to your work: Minimal; while the idea of integrated phenomic-genomic analyses is conceptually related to multi-omics integration, the study is not about human genetics, regulatory variant mapping, or drug-target prioritization.
+
+4. Highly Relevant? Not applicable. If you’re exploring cross-species methodological insights, it might offer high-level ideas on integrated analyses, but it does not directly advance your human-centric, AI-driven, 3D genome/therapeutic targeting pipeline.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877939/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -362,17 +443,19 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">- Relevance: Highly Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
 
-- Justification (1–3 sentences): The paper introduces gpu-coloc, a GPU-accelerated re-implementation of the coloc algorithm that enables ultra-fast, large-scale colocalisation analyses across millions of traits using UK Biobank, FinnGen, and molQTL data. This directly addresses the core step in your workflow—linking GWAS signals to regulatory/QTL signals via colocalisation at scale—and aligns with your multi-omics integration and large-scale trait analyses.
+2) Justification: The paper introduces gpu-coloc, a GPU-accelerated, scalable implementation of the colocalisation methodology, enabling large-scale testing across millions of traits using UK Biobank, FinnGen, and molQTL data. It also provides practical guidance and a collider metric to control false positives in big colocalisation graphs, which is directly applicable to multi-omics QTL integration and large-scale GWAS/PheWAS analyses.
 
-- Parts that connect to your research:
-  - Colocalisation methodology (gpu-coloc) for linking genetic signals to regulatory elements and disease drivers.
-  - Use of multi-omics QTL resources (eQTL Catalogue) alongside GWAS data (UK Biobank, FinnGen).
-  - Large-scale applicability and practical guidelines, including handling fine-mapped signals and a collider metric to reduce spurious colocalisations.
-  - Potential to scale PheWAS-like analyses across many traits with robust colocalisation results.
+3) Connections to your research:
+- Colocalisation: central method you use to link variants to regulatory elements and disease drivers.
+- Large-scale analysis: GPU acceleration and handling of many traits align with your ~2,500-trait scope.
+- Multi-omics QTL integration: explicitly uses molQTL data (eQTLs, etc.) for colocalisation.
+- UK Biobank usage: directly matches your data source.
+- Reliability metrics: the collider metric helps assess and control spurious colocalisations in large networks, important for prioritizing targets.
+- Practical applicability: ability to work with marginal GWAS data lacking fine mapping expands applicability to various datasets in your workflow.
 
-- If Highly Relevant, key reason to read: It provides a scalable, practically validated toolset and guidelines for performing colocalisation across vast trait spaces, which is central to your aim of integrating multi-omics QTLs with GWAS to prioritize regulatory elements and therapeutic targets, while also offering methods to mitigate false positives in huge colocalisation graphs.</p>
+4) If Highly Relevant, key reason to read: It provides a scalable, validated tool and framework for large-scale colocalisation that can be integrated into your GWAS/PheWAS and multi-omics colocalisation pipeline, with metrics to improve specificity in big networks and practical guidance for applying colocalisation across millions of trait signals. Reading it could directly enhance the scalability and reliability of your target prioritization workflow.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
