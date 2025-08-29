@@ -157,7 +157,7 @@
                     </h2>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">3,992</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">5,041</div>
                             <p class="text-gray-400">Papers Published</p>
                             <p class="text-sm text-gray-500 mt-1">Last 24 Hours</p>
                         </div>
@@ -167,12 +167,12 @@
                             <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">7</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">25</div>
                             <p class="text-gray-400">AI-Selected</p>
                             <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-red-400 mb-2">38</div>
+                            <div class="text-4xl font-bold text-red-400 mb-2">255</div>
                             <p class="text-gray-400">AI-Filtered</p>
                             <p class="text-sm text-gray-500 mt-1">Not Relevant</p>
                         </div>
@@ -180,7 +180,7 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
                             <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            PaperParserAI scanned 3,992 papers published in the last 24 hours, filtering out the noise to identify 7 relevant studies tailored to your research focus
+                            PaperParserAI scanned 5,041 papers published in the last 24 hours, filtering out the noise to identify 25 relevant studies tailored to your research focus
                         </p>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-database mr-4 text-primary-400"></i>
                             <span class="gradient-text">PubMed Papers</span>
-                            <span class="ml-4 text-lg text-gray-400">(2)</span>
+                            <span class="ml-4 text-lg text-gray-400">(6)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('pubmed-section')" 
@@ -216,38 +216,46 @@
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
                             </div>
                             
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The future of polygenic risk scores in direct-to-consumer genomics.</h3>
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Cytotoxicity of activator expression in CRISPR-based transcriptional activation systems.</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-users mr-2 text-blue-400"></i>
                                     <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">Yuhao Sun, John Vines, Albert Tenesa</span>
+                                    <span class="ml-2 truncate">Ziyan Liang, Aakaanksha Maddineni, Jesus A Ortega, Christine B Magdongon, Shreya Jambardi, Subrata Roy, Josh Tycko, Ajinkya Patil, Mark Manzano, Elizabeth T Bartom, Eva Gottwein</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-journal-whills mr-2 text-green-400"></i>
                                     <span class="font-medium">Journal:</span>
-                                    <span class="ml-2 text-green-300">Nature genetics</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-calendar mr-2 text-yellow-400"></i>
                                     <span class="font-medium">Published:</span>
-                                    <span class="ml-2">2025 Aug 28</span>
+                                    <span class="ml-2">2025 Aug 29</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-hashtag mr-2 text-purple-400"></i>
                                     <span class="font-medium">PMID:</span>
-                                    <span class="ml-2 font-mono text-xs">40877436</span>
+                                    <span class="ml-2 font-mono text-xs">40877321</span>
                                 </div>
                             </div>
                             
                             <div class="mb-6">
                                 <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
                                     <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
                                 </h4>
                                 <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify">
-                                        No abstract available
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        CRISPR-based transcriptional activation (CRISPRa) has extensive research and clinical potential. Here, we show that commonly used CRISPRa systems can exhibit pronounced cytotoxicity. We demonstrate th...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        CRISPR-based transcriptional activation (CRISPRa) has extensive research and clinical potential. Here, we show that commonly used CRISPRa systems can exhibit pronounced cytotoxicity. We demonstrate the toxicity of CRISPRa vectors expressing the activation domains (ADs) of the transcription factors p65 and HSF1, components of the synergistic activation mediator (SAM) CRISPRa system. Based on our findings for the SAM system, we extended our studies to additional ADs and acetyltransferase core domains. We show that the expression of potent transcriptional activators in lentiviral producer cells can lead to low lentiviral titers, while their expression in the transduced target cells leads to cell death. Using inducible lentiviral vectors, we could not identify an activator expression window for effective SAM-based CRISPRa without measurable toxicity. The toxicity of current SAM-based CRISPRa systems hinders their wide adoption in biomedical research and introduces selection pressures that may confound genetic screens. Our results suggest that the further development of CRISPRa technology should consider both the efficiency of gene activation and activator toxicity.
                                     </p>
                                 </div>
                             </div>
@@ -257,16 +265,17 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The title hints at polygenic risk scores and large-scale GWAS concepts, which intersect with my GWAS/PheWAS interests, but the abstract is unavailable and there is no indication of multi-omics integration, colocalization, 3D genome analyses, or therapeutic target modeling central to my work.
+2) Brief justification: The study examines cytotoxicity in CRISPRa systems, which is informative for experimental design and interpretation of functional follow-up studies of GWAS/colocalization hits, but it does not address GWAS/PheWAS analyses, multi-omics QTL integration, or 3D genome perturbations directly.
 3) Which parts connect to your research:
-- Conceptual overlap with GWAS-based risk scoring and large-scale trait mapping
-- Potential relevance to interpretation and communication of polygenic risk in population studies
-- No evidence from the title/absence of abstract for multi-omics QTLs, colocalization analyses, 3D genome perturbation modeling, or therapeutic target prioritization
+- Relevance to functional validation of regulatory elements and candidate genes at GWAS/colocalization loci using CRISPRa.
+- Implications for designing CRISPR-based perturbation screens in regulatory genomics, which can affect downstream interpretations in multi-omics QTL colocalization workflows.
+- Considerations of activator toxicity when exploring perturbations of regulatory networks and 3D genome interfaces for therapeutic target prioritization.
+- Cautionary insights for therapeutic strategies that rely on CRISPRa-like activation in disease contexts.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877436/" target="_blank" 
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877321/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -336,17 +345,330 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper discusses advanced graph computing hardware for biology-related graphs, including non-Euclidean graphs, which could conceptually accelerate graph-based analyses in genomics. However, it does not address GWAS/PheWAS, colocalization, 3D genome perturbations, or therapeutic target discovery directly.
-3) Which parts connect to your research:
-- Non-Euclidean graph computing (memristive crossbars) applicable to chromatin interaction graphs and 3D genome representations.
-- Quantum-inspired graph computing and probabilistic bits for solving large-scale optimization problems relevant to fine-mapping, colocalization, and multi-omics integration.
-- Potential acceleration of AI/ML pipelines for network-based analyses and in silico perturbation simulations of regulatory networks used in target prioritization.
-- The emphasis on biology applications suggests potential relevance to network-based approaches for identifying druggable genes and pathways, albeit at a conceptual level.
+2) Brief justification: The paper surveys hardware-accelerated graph computing approaches (electric current-based and quantum-inspired) with mentions of biology applications. It does not address genomics-specific methods (GWAS/PheWAS, colocalization, or 3D genome modeling), but the described graph technologies could potentially accelerate large biological networks and multi-omics analyses.
+3) Which parts connect to your research: 
+- Potential for hardware-accelerated processing of large-scale genomic and phenotypic networks used in GWAS/PheWAS and multi-omics integration.
+- Relevance to non-Euclidean graph representations (e.g., chromatin interaction networks, 3D genome graphs like loops and TADs) for regulatory network modeling.
+- Inspiration for AI/ML pipelines to model perturbations in regulatory networks and support scalable colocalization/target prioritization.
+- Alignment with network-based therapeutic target discovery by leveraging graph-based analyses of biological interactions.
+- Overview of biology applications suggests potential applicability to integrative genomics workflows, though genomics-specific methods are not provided.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40877278/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Machine learning-based penetrance of genetic variants.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Iain S Forrest, Ha My T Vy, Ghislain Rocheleau, Daniel M Jordan, Ben O Petrazzini, Girish N Nadkarni, Judy H Cho, Mythily Ganapathi, Kuan-Lin Huang, Wendy K Chung, Ron Do</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Science (New York, N.Y.)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40875860</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Accurate variant penetrance estimation is crucial for precision medicine. We constructed machine learning (ML) models for 10 diseases using 1,347,298 participants with electronic health records, then ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Accurate variant penetrance estimation is crucial for precision medicine. We constructed machine learning (ML) models for 10 diseases using 1,347,298 participants with electronic health records, then applied them to an independent cohort with linked exome data. Resulting probabilities were used to evaluate ML penetrance of 1648 rare variants in 31 autosomal dominant disease-predisposition genes. ML penetrance was variable across variant classes, but highest for pathogenic and loss-of-function variants, and was associated with clinical outcomes and functional data. Compared with conventional case-versus-control approaches, ML penetrance provided refined quantitative estimates and aided the interpretation of variants of uncertain significance and loss-of-function variants by delineating clinical trajectories over time. By leveraging ML and deep phenotyping, we present a scalable approach to accurately quantify disease risk of variants.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper develops ML-based penetrance estimates for rare variants using very large, phenotypically rich cohorts and provides refined risk interpretation for variants, which could inform variant prioritization in GWAS/PheWAS and downstream analyses. However, it does not address multi-omics QTLs, colocalization, 3D genome perturbations, or therapeutic target mapping at the regulatory/chromatin level.
+3) Which parts connect to your research: 
+- Large-scale ML modeling to quantify disease risk from genetic variants using deep/longitudinal phenotypes
+- Variant-level penetrance estimation and interpretation of variants of uncertain significance (VUS)
+- Demonstration of linking genotype to clinical trajectories over time in a population-scale dataset
+- Potential methodological relevance for integrating variant risk estimates into GWAS/PheWAS pipelines
+- Not directly addressing colocalization, multi-omics QTLs (eQTL/pQTL), chromatin architecture (loops, TADs), or 3D genome perturbation simulations
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40875860/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Panaln: Indexing pangenome for read alignment.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Lilu Guo, Zongtao He, Hongwei Huo</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Bioinformatics (Oxford, England)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40875526</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Pangenome indexing is a critical supporting technology in biological sequence analysis such as read alignment applications. The need to accurately identify billions of small sequencing fragments carry...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Pangenome indexing is a critical supporting technology in biological sequence analysis such as read alignment applications. The need to accurately identify billions of small sequencing fragments carrying sequencing errors and genomic variants drives the development of scalable and efficient pangenome indexing approach.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper addresses pangenome indexing for read alignment, a foundational method that can improve variant discovery across diverse genomes, which is beneficial for large-scale GWAS/PheWAS and downstream QTL analyses, though it does not discuss diseases, colocalization, or regulatory interpretation directly.
+3) Which parts connect to your research:
+- GWAS/PheWAS: improved read mapping across a pangenome can yield more accurate genotype calls in diverse cohorts, increasing power and reducing reference bias in large-scale association studies.
+- Multi-omics QTLs and colocalization: more accurate variant discovery supports QTL mapping (eQTL/pQTL) and downstream colocalization analyses across tissues.
+- 3D genome and regulatory targeting: capturing a broader spectrum of variants (including non-reference alleles) can improve linking regulatory elements to phenotypes and potential therapeutic targets, albeit not explicitly covered in the abstract.
+- AI/explainable AI: higher-quality variant data provide better inputs for downstream ML models aiming to prioritize targets or simulate perturbations.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40875526/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Penetrance and variant consequences-Two sides of the same coin?</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Harper Raiken, Amelie Stein</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Science (New York, N.Y.)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40875863</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify">
+                                        To get more out of genome sequences, the effects of variants need to be quantified.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The abstract addresses quantifying variant effects and penetrance, a fundamental concept for interpreting large-scale genetic associations, which is broadly aligned with GWAS/PheWAS and variant-to-function interpretation. However, the very brief abstract provides no specific methods, datasets, or connections to multi-omics, colocalization, AI, or 3D genome analysis.
+3) Which parts connect to your research: 
+- GWAS/PheWAS interpretation and effect-size estimation through penetrance concepts
+- Variant-to-function mapping and implications for colocalization with eQTL/pQTL signals
+- Potential relevance to in silico perturbation frameworks and 3D genome interpretation via penetrance of regulatory variants
+- Informing therapeutic target prioritization by considering variant consequences and penetrance in risk stratification
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40875863/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Telomere attrition becomes an instrument for clonal selection in aging hematopoiesis and leukemogenesis.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Matthew A McLoughlin, Sruthi Cheloor Kovilakam, William G Dunn, Muxin Gu, Jake Tobin, Yash Pershad, Nicholas Williams, Daniel Leongamornlert, Kevin Dawson, Laura Bond, Ludovica Marando, Sean Wen, Rachael Wilson, Giampiero Valenzano, Vasiliki Symeonidou, Justyna Rak, Aristi Damaskou, Malgorzata Gozdecka, Xiaoxuan Liu, Clea Barcena, Josep Nomdedeu, Paul Costeas, Ioannis D Dimitriou, Edoardo Fiorillo, Valeria Orrù, Jose Guilherme de Almeida, Thomas McKerrell, Matthew Cullen, Irina Mohorianu, Theodora Foukaneli, Alan J Warren, Chi Wong, George Follows, Anna L Godfrey, Emma Gudgin, Francesco Cucca, Eoin McKinney, E Joanna Baxter, Moritz Gerstung, Jonathan Mitchell, Daniel Wiseman, Alexander G Bick, Margarete Fabre, Pedro M Quiros, Jyoti Nangalia, Siddhartha Kar, George S Vassiliou</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40877435</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The mechanisms through which mutations in splicing factor genes drive clonal hematopoiesis (CH) and myeloid malignancies, and their close association with advanced age, remain poorly understood. Here ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The mechanisms through which mutations in splicing factor genes drive clonal hematopoiesis (CH) and myeloid malignancies, and their close association with advanced age, remain poorly understood. Here we show that telomere maintenance plays an important role in this phenomenon. First, by studying 454,098 UK Biobank participants, we find that, unlike most CH subtypes, splicing-factor-mutant CH is more common in those with shorter genetically predicted telomeres, as is CH with mutations in PPM1D and the TERT gene promoter. We go on to show that telomere attrition becomes an instrument for clonal selection in advanced age, with splicing factor mutations 'rescuing' HSCs from critical telomere shortening. Our findings expose the lifelong influence of telomere maintenance on hematopoiesis and identify a potential shared mechanism through which different splicing factor mutations drive leukemogenesis. Understanding the mechanistic basis of these observations can open new therapeutic avenues against splicing-factor-mutant CH and hematological or other cancers.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It uses UK Biobank-scale data to study clonal hematopoiesis and telomere biology, which aligns with large-scale human genetics; however, it does not address multi-omics QTL integration, colocalization, 3D genome perturbations, or AI-driven therapeutic target discovery that are central to my research.
+3) Which parts connect to your research: 
+- UK Biobank, large-scale genomic analysis (454,098 participants). 
+- Exploration of telomere maintenance as a driver of clonal hematopoiesis and leukemogenesis (aging-related biology relevant to disease drivers). 
+- Discussion of potential therapeutic avenues for splicing-factor-mutant CH and related cancers (targets relevant to therapeutic prioritization).
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877435/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -364,7 +686,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-flask mr-4 text-orange-400"></i>
                             <span class="gradient-text">bioRxiv Preprints</span>
-                            <span class="ml-4 text-lg text-gray-400">(5)</span>
+                            <span class="ml-4 text-lg text-gray-400">(19)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-orange-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('biorxiv-section')" 
@@ -376,6 +698,169 @@
                     <div class="section-content" id="biorxiv-section">
                         <div class="grid grid-cols-1 gap-8">
             
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">A Human Single-cell Atlas Identifies OLR1+ Scar-associated Macrophages as a Therapeutic Target for Chronic Liver Disease</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">E. Papachristoforou, K. Kong, F. Colella, J. Tam, J. Luft, E. F. Sutherland, S. Veizades, M. Grzelka, P. K. Qui, A. Asif, I. Battle, M. A. Hammer, J. R. Wilson-Kanamori, G. Finney, G. Pistocchi, A. Kasarinaite, G.-R. Jones, C. C. Bain, L. J. Pallett, C. A. Vallejos, N. C. Henderson, D. C. Hay, T. J. Kendall, J. A. Fallowfield, P. Ramachandran</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.27.671899</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Chronic liver disease (CLD) is a major global healthcare problem. Irrespective of cause, chronic damage to the liver results in fibrosis, which is associated with adverse clinical outcomes. Immune cel...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Chronic liver disease (CLD) is a major global healthcare problem. Irrespective of cause, chronic damage to the liver results in fibrosis, which is associated with adverse clinical outcomes. Immune cells, in particular monocyte-derived macrophages (MDMs), are key regulators of fibrosis and represent an attractive therapeutic target for CLD. However, it has remained unclear which specific subpopulation of MDMs drives pro-inflammatory and pro-fibrotic functions in human CLD and how they might be selectively modulated. Here, we generate an annotated human liver single cell atlas from 42 healthy and 35 CLD patients, identifying 125 transcriptionally distinct cellular states. Leveraging large patient and cell numbers, our atlas resolves rare liver cell states and distinguishes two types of disease-expanded scar-associated macrophages (SAMac), including a specific subpopulation with a pro-inflammatory pro-fibrotic phenotype. The scavenger receptor OLR1 was enriched in pro-inflammatory SAMacs and high hepatic OLR1 expression was associated with increased mortality in CLD patients. A corresponding monocyte-derived OLR1+ SAMac subpopulation expanded in a mouse model of CLD and exhibited a pro-inflammatory phenotype based on single-cell RNA-seq, single-cell ATAC-seq, and flow cytometry analyses. Primary human OLR1+ MDMs promoted fibrogenic signalling in multilineage liver spheroid cultures, whilst specific targeting of OLR1 reduced IL-1{beta} production by human macrophages and attenuated myofibroblast activation. Overall, our annotated human liver single-cell atlas provides a valuable reference to study disease-associated cell states in CLD. We utilise this resource to identify a distinct pro-inflammatory subpopulation of SAMacs and highlight OLR1 as a potential therapeutic target to specifically modulate SAMac function and attenuate liver fibrosis.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study provides a single-cell multi-omics (RNA+ATAC) dissection of a disease-relevant macrophage subset and identifies a druggable target (OLR1) in chronic liver disease, which is conceptually aligned with therapeutic target prioritization. However, it does not address large-scale GWAS/PheWAS, QTL colocalization, or 3D genome modeling or AI-driven perturbation analyses that are central to your research focus.
+3) Which parts connect to your research:
+- Multi-omics single-cell data (scRNA-seq, scATAC-seq) informing regulatory states in disease-relevant cell types.
+- Identification of a macrophage subpopulation (OLR1+ SAMac) as a therapeutic target for liver fibrosis.
+- Functional validation showing that targeting OLR1 modulates inflammatory signaling and fibrogenic responses, relevant to translational target discovery.
+- Potential for incorporating regulatory element mapping and colocalization with disease signals as a future extension (not performed here) that could link to GWAS/PheWAS or QTL analyses.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.27.671899" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">PRECOG update: An augmented resource of clinical outcome associations with gene expression for pediatric and immunotherapy cohorts</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">B. A. Benard, C. K. Lalgudi, I. Ilerten, R. Wang, A. J. Gentles</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.22.671849</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Gene expression can be used to define prognostic and predictive biomarkers across cancers and treatment modalities. PRECOG (https://precog.stanford.edu) is a compendium of datasets with gene expressio...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Gene expression can be used to define prognostic and predictive biomarkers across cancers and treatment modalities. PRECOG (https://precog.stanford.edu) is a compendium of datasets with gene expression and clinical outcomes that facilitates visualization of associations between genomic profiles and patient survival. Here, we augment the existing PRECOG with new datasets in previously poorly represented adult cancer types, as well as adding annotated pediatric and immunotherapy treated cohorts. Pediatric PRECOG comprises ~4,000 patients across 12 cancers; while the immunotherapy cohort (ICI PRECOG) contains ~4,500 patients across 20 cancer subtypes from 80 distinct datasets across 52 studies. We compute and visualize associations of gene expression with survival outcomes using Cox regression for time-to-event, or logistic regression for responder vs non-responder, across all datasets. We also estimate cell type fractions in samples via computational deconvolution using CIBERSORTx, to identify survival associations at the level of cell types. All expression data, clinical annotations, and gene and cell type survival z-scores and meta z-scores for adult, pediatric, and ICI PRECOG, are available for interactive analysis and download, along with Kaplan-Meier and boxplot visualizations. This updated resource will provide new insights into biomarkers for specific therapies, populations, and cancer types.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+
+2) Brief justification: The paper provides large-scale, outcome-associated gene expression data across pediatric and immunotherapy cancer cohorts, which is valuable for biomarker and target identification. However, it does not address GWAS/PheWAS, multi-omics QTL colocalization, or 3D genome perturbations, which are central to your research focus.
+
+3) Which parts connect to your research: 
+- Gene expression prognostic/predictive biomarkers across cancer cohorts (relevance to linking molecular profiles with phenotypes). 
+- Immunotherapy cohorts and response-associated analyses (inform therapeutic target prioritization and AI-driven biomarker discovery). 
+- Cell type deconvolution to dissect survival associations by cellular context (conceptually aligns with disentangling regulatory elements across cell types). 
+- Resource enabling integrative interpretation of transcriptomic data that could complement future multi-omics and QTL-colocalization efforts.
+
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.22.671849" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
                         <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
@@ -438,16 +923,13 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-
-2) Brief justification: The paper presents a foundation model for DNA methylation (CpGPT) trained on large-scale methylation data, which could inform epigenetic context in regulatory interpretation. It does not directly address GWAS/PheWAS, colocalization, 3D genome perturbations, or therapeutic target prioritization, but the methylation context it provides could augment multi-omics regulatory analyses when integrated with variant-to-disease mapping.
-
-3) Which parts connect to your research:
-- Foundation-model approach and training on large, diverse methylation datasets align with your interest in scalable ML across omics.
-- Potential to inform methylation QTL (meQTL) analyses and regulatory element annotation that feed into colocalization with GWAS/PheWAS signals.
-- Cross-tissue, cross-platform methylation imputation could enhance regulatory context across tissues relevant to complex diseases.
-- Epigenetic regulation context could be integrated with regulatory networks and 3D genome analyses to prioritize drug targets, even though not explicitly addressed in the abstract.
-- AI-based modeling of methylation landscapes parallels your broader goals of using ML/AI to infer regulatory mechanisms underlying disease.
-
+2) Brief justification: It presents CpGPT, a foundation model for DNA methylation that enables cross-tissue and cross-platform imputation of methylation profiles, which could be integrated into meQTL/colocalization workflows with GWAS/PheWAS and supports AI-driven epigenomic analyses. It does not directly address GWAS/PheWAS, colocalization, 3D genome perturbations, or therapeutic targeting as framed in your research.
+3) Which parts connect to your research: 
+- Potential integration with meQTL/methylation QTL discovery and colocalization with GWAS/PheWAS signals using imputed methylation data
+- Foundation-model AI approach applicable to multi-omics integration and explainable AI in regulatory genomics
+- Cross-tissue and cross-platform methylation imputation to fill data gaps for broader GWAS/PheWAS analyses
+- Epigenetic regulatory context as a basis for identifying potential therapeutic targets, though not explicitly discussed
+- Indirect relevance to regulatory architecture and chromatin state, with no explicit 3D genome analysis in the abstract
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
@@ -473,13 +955,13 @@
                                 <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
                             </div>
                             
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Joint single-cell profiling of Cas9 edits and transcriptomes reveals widespread off-target events and effects on gene expression</h3>
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Autism Mutations Preferentially Target Distributed Brain Circuits and Cell Types Associated with Sensory Integration and Decision Making</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-users mr-2 text-blue-400"></i>
                                     <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">M. H. Lorenzini, B. Balderson, K. Sajeev, A. J. Ho, G. McVicker</span>
+                                    <span class="ml-2 truncate">J. Wang, J. Chang, A. Chiang, D. Vitkup</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-flask mr-2 text-orange-400"></i>
@@ -494,7 +976,7 @@
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
                                     <span class="font-medium">DOI:</span>
-                                    <span class="ml-2 font-mono text-xs">10.1101/2025.02.07.636966</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.13.670113</span>
                                 </div>
                             </div>
                             
@@ -509,10 +991,10 @@
                                 </h4>
                                 <div class="abstract-content">
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        A longstanding barrier in genome engineering with CRISPR-Cas9 has been the inability to measure Cas9 edit outcomes and their functional effects at single-cell resolution. Here we present Superb-seq, a...
+                                        Autism spectrum disorder (ASD) is a highly heritable psychiatric condition characterized by difficulties in social communication and stereotypic, repetitive behaviors. Genetics studies have discovered...
                                     </p>
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        A longstanding barrier in genome engineering with CRISPR-Cas9 has been the inability to measure Cas9 edit outcomes and their functional effects at single-cell resolution. Here we present Superb-seq, a new technology that leverages T7 in situ transcription and single-cell RNA sequencing to jointly measure on- and off-target Cas9 edits and their effects on gene expression. We performed Superb-seq on 10,000 K562 cells, targeting four chromatin remodeler genes with seven guide RNAs. Superb-seq identified 11,891 edit events in 6,230 edited cells at all seven on-target sites and at an additional 36 off-target sites. Although the seven guides were selected for high specificity, six of them caused off-target edits, ranging in frequency from 0.03% to 18.6% of cells. A notable off-target edit within the first intron of USP9X disrupted the expression of this gene and over 150 downstream genes. In summary, Cas9 off-targeting is pervasive due to a combination of rare and common edit events, occurs primarily within introns of off-target genes, and can exert widespread effects on gene expression. Superb-seq uses off-the-shelf kits, standard equipment, and requires no virus, which will enable genome-wide CRISPR screens in diverse cell types as well as functional characterization of clinically-relevant guides.
+                                        Autism spectrum disorder (ASD) is a highly heritable psychiatric condition characterized by difficulties in social communication and stereotypic, repetitive behaviors. Genetics studies have discovered many dozens of genes with causal roles in autism, and functional analyses have demonstrated that ASD-associated mutations affect a diverse range of brain regions and cell types. However, the precise mechanisms by which these genetic alterations lead to autism-related phenotypes remain unclear. Psychiatric cognitive and behavioral traits are believed to arise from dysfunction of specific brain circuits formed by anatomically and functionally connected brain areas. To identify the circuits and cell types primarily affected by ASD mutations, we developed an unbiased approach, GENCIC, which computationally integrates genome-wide genetic data with a brain-wide spatial mouse transcriptome and an anatomical mesoscale connectome. Applying this approach to ASD reveals a convergence of mutations on cohesive brain circuits that are enriched in long-distance connections and span both cortical and subcortical brain structures. Furthermore, our analysis of brain-wide single-cell spatial transcriptomics shows that the heterogeneity of circuit structures affected in ASD is matched by the substantial diversity of strongly impacted circuit cell types. Notably, the implicated circuits and cell types play a central role in the integration of multimodal sensory and emotional information and in decision-making based on this information. We also find that different circuit structures exhibit distinct vulnerability patterns that correlate with cognitive phenotypes in ASD. Overall, our study demonstrates how ASD-related genetic mutations impact multiple levels of brain organization, ultimately disrupting functional circuits that drive core autism-related behaviors.
                                     </p>
                                 </div>
                             </div>
@@ -522,17 +1004,19 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper introduces Superb-seq, a single-cell method to measure Cas9 edits and transcriptomes simultaneously and reports pervasive off-target effects that alter gene expression. While it does not address GWAS/PheWAS, colocalization, multi-omics QTL integration, or 3D genome–phenotype links, its insights into CRISPR perturbation accuracy and cell-level transcriptional consequences are relevant for validating functional effects of regulatory perturbations and informing AI-based perturbation modeling.
-3) Which parts connect to your research:
-- Off-target profiling and single-cell readouts inform interpretation and design of CRISPR-based functional assays used to validate regulatory variants implicated by GWAS/PheWAS and QTL analyses.
-- Demonstrated cell-level linkage between edits (on- and off-target) and broad transcriptional changes provides a data-rich model for training or validating AI/ML approaches that simulate perturbations of regulatory elements and 3D genome interactions.
-- Findings that intronic/off-target edits can cascade to many downstream genes underscore the complexity of regulatory networks (relevant to prioritizing therapeutic targets and understanding causal pathways).
-- Not directly about 3D genome topology or disease colocalization, but the methodological framework could be informative for in silico perturbation experiments aimed at drug target discovery.
+2) Brief justification: The study links genome-wide genetic data to ASD by identifying brain circuits and cell types affected by mutations using transcriptomic and connectome data, which resonates with mapping genetic variation to phenotypes. However, it is mouse-based, and does not address human UK Biobank-scale GWAS/PheWAS, QTL colocalization, 3D genome perturbations, or explicit therapeutic target prioritization in humans.
+3) Which parts connect to your research: 
+- GWAS: uses genome-wide genetic data to associate risk with specific brain circuits and cell types
+- PheWAS: not addressed
+- Colocalization: not described
+- AI: not described
+- 3D genome: focuses on three-dimensional brain circuitry/connectivity (mesoscale connectome) rather than chromatin looping/TADs
+- Therapeutic targeting: identifies circuits/cell types implicated in ASD, which could inform target prioritization at a circuit/cell-type level
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
-                                <a href="https://www.biorxiv.org/content/10.1101/2025.02.07.636966" target="_blank" 
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.13.670113" target="_blank" 
                                    class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on bioRxiv
@@ -602,8 +1086,14 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The study integrates GWAS with developmental gene expression to identify age-specific risk windows for neuropsychiatric disorders, informing temporal mechanisms and gene prioritization, which echoes the temporal and gene-prioritization aspects of your work. However, it does not address multi-omics QTLs with colocalization, 3D genome perturbations, or AI-based regulatory network modeling that are central to your research aims.
-3) Which parts connect to your research: - GWAS integration with developmental gene expression to map age-specific risk windows; - Prioritization of disease/risk genes; - Implications for age-appropriate therapeutic strategies; - Concept of temporal convergence between expression dynamics and disease risk.
+2) Brief justification: The paper integrates developmental gene expression with GWAS to define age-specific risk windows for neuropsychiatric disorders, which touches GWAS interpretation and temporal disease mechanisms. However, it does not address large-scale UK Biobank–level phenotyping, multi-omics QTL integration or colocalization, 3D genome analyses, or explicit therapeutic target prioritization as in your aims.
+3) Which parts connect to your research: 
+- GWAS: uses GWAS signals linked to developmental expression to define age-specific risk windows. 
+- PheWAS: not addressed in the abstract. 
+- Colocalization: not described; unclear if performed. 
+- AI/ML: no explicit AI/ML methods mentioned. 
+- 3D genome: no discussion of chromatin architecture or spatial genome organization. 
+- Therapeutic targeting: highlights timing windows for risk genes, which could inform age-appropriate intervention strategies, though not a direct target-prioritization framework.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
@@ -629,13 +1119,13 @@
                                 <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
                             </div>
                             
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Exploratory Assessment of Preconception Phthalate Exposure on Fertility and Offspring Health in Mice</h3>
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Leaping over the blood-brain barrier: DNA methylation as a link between peripheral and central immune systems</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-users mr-2 text-blue-400"></i>
                                     <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">M. Afghah, A. C. Elkins, P. C. Powell, M. E. Mulligan, M. C. Boland, A. P. Suggs, M. A. Walker, Z. J. Padgett, K. D. Rock</span>
+                                    <span class="ml-2 truncate">M. Meijer, M. P. Fu, E. I. Navarro-Delgado, H.-R. Engelbrecht, G. Turecki, M. H.-m. Chan, M. S. Kobor</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-flask mr-2 text-orange-400"></i>
@@ -645,12 +1135,12 @@
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-calendar mr-2 text-yellow-400"></i>
                                     <span class="font-medium">Posted:</span>
-                                    <span class="ml-2">2025-08-28</span>
+                                    <span class="ml-2">2025-08-29</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
                                     <span class="font-medium">DOI:</span>
-                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.671855</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.672204</span>
                                 </div>
                             </div>
                             
@@ -665,10 +1155,10 @@
                                 </h4>
                                 <div class="abstract-content">
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        Infertility affects 10 to 15% of couples worldwide and is increasingly attributed to environmental exposures, particularly endocrine-disrupting chemicals (EDCs) such as phthalates. While gestational e...
+                                        The majority of existing DNA methylation (DNAm) studies have used peripheral surrogate tissues to research molecular mechanisms underlying brain-related traits. Epigenetic processes in the brain have ...
                                     </p>
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        Infertility affects 10 to 15% of couples worldwide and is increasingly attributed to environmental exposures, particularly endocrine-disrupting chemicals (EDCs) such as phthalates. While gestational exposures are well studied, little is known about how preconception exposures influence fertility and offspring health. Phthalate exposure altered estrous cyclicity, with dams spending more time in proestrus and less in metestrus but did not significantly impact implantation or litter size. At E14.5, exposed fetuses exhibited increased bodyweights, accompanied by an expansion of the placental junctional zone in males. Altered bodyweight persisted into adulthood, however adulthood offspring displayed a reduction in bodyweight. RNA-sequencing revealed widespread transcriptional reprogramming in female placentas (518 DEGs) affecting immune regulation, steroid metabolism, and extracellular matrix remodeling, while male placentas exhibited only 9 DEGs but showed structural alterations. In offspring livers, transcriptomic shifts were sex-specific: females displayed downregulation of metabolic and immune genes (e.g., Cyp7a1, Mthfr, H2-DMB1), while males showed upregulation of immune and signaling genes (e.g., Elf4, Adm2, Ly6a). Collectively, these findings demonstrate that preconception phthalate exposure induces subtle but biologically meaningful maternal endocrine disruption, alters placental structure and function, and reprograms offspring growth and liver transcriptomes in a sex-specific manner. This work identifies the preconception window as a critical period of vulnerability for EDC impacts on reproductive success and intergenerational health.
+                                        The majority of existing DNA methylation (DNAm) studies have used peripheral surrogate tissues to research molecular mechanisms underlying brain-related traits. Epigenetic processes in the brain have yet to be fully elucidated by DNAm findings from peripheral tissues, as these processes are complex to disentangle from DNAm tissue- and cell type-specificity. Furthermore, distinct brain cell types play important roles in brain health and disease. Building on previous findings of high blood-brain correlations at some DNAm sites, we specifically aimed to 1) identify single DNAm sites associated with DNAm-estimated brain cell type proportions in both the frontal brain and peripheral blood, 2) to combine blood DNAm sites to predict brain cell type proportions through multivariate models, and 3) to examine the role of biological factors associated with blood DNAm, age and epigenetic age acceleration (EAA) on brain cell type proportions. Epigenome-wide association studies for seven distinct estimated brain cell type proportions in matched frontal brain and peripheral blood samples (n=104) revealed that ~7% of brain cell type-associated DNAm sites had correlating DNAm levels in peripheral blood (p<0.05). Six DNAm sites in peripheral blood were associated with endothelial and stromal brain cell type proportions (False Discovery Rate<0.05). Brain cell type proportion predictions trained with machine learning approaches using peripheral blood DNAm showed a correlation (p<0.05) with microglia and astrocyte proportions estimated through cell deconvolution using brain DNAm. Estimated blood immune cell type proportions were significantly associated with estimated brain cell type proportions. Lastly, brain EAA was associated with different brain and blood cell types proportions (p<0.05). These results show that DNAm levels in peripheral blood can inform brain cell type proportions, even though DNAm patterns are tissue-specific. The correlations between DNAm profiles specific to immune cell types in blood and brain highlights the link between the peripheral immune system and immune functions in the central nervous system.
                                     </p>
                                 </div>
                             </div>
@@ -678,17 +1168,17 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The study investigates environmental exposure effects on gene regulation and development in a mouse model, offering insights into how regulatory programs can shape phenotypes. It is not directly about human GWAS, multi-omics QTLs, colocalization, or 3D genome-targeted therapeutic discovery, but it provides context on environment–gene interactions and regulatory networks.
-3) Which parts connect to your research:
-- RNA-seq–based DEGs in placenta and liver reveal sex-specific regulatory effects that can inform understanding of tissue- and sex-dependent gene regulation relevant to human traits.
-- Focus on regulatory pathways (immune regulation, steroid metabolism, ECM remodeling) that could overlap with human regulatory networks and be explored via eQTL/pQTL colocalization in future studies.
-- Placental structure/function alterations as mediators of offspring phenotype align with DOHaD concepts, potentially informing GWAS/PheWAS analyses of fertility, birth, and metabolic traits.
-- Although 3D genome structure is not addressed, the work underscores the importance of regulatory contexts, which could be integrated with chromatin interaction data in human multi-omics analyses.
+2) Brief justification: It addresses cross-tissue epigenetic signals and uses machine learning to link peripheral DNA methylation to brain cell-type composition, which resonates with AI and multi-omics integration concepts. However, it does not involve large-scale GWAS/PheWAS, colocalization with QTLs, 3D genome analyses, or direct therapeutic target prioritization, limiting direct applicability to your core aims.
+3) Which parts connect to your research: 
+- Cross-t tissue link between peripheral methylation and brain cell-type proportions (informing cross-tissue regulatory signals)
+- Use of machine learning to predict brain cell-type composition from blood methylation (AI/interpretability angle)
+- Immune-brain interaction context that could inform immune-related disease mechanisms and potential targets
+- Not directly addressing GWAS/PheWAS, colocalization, causal 3D genome features, or drug-target prioritization
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
-                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.671855" target="_blank" 
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672204" target="_blank" 
                                    class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on bioRxiv
@@ -758,13 +1248,979 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper addresses ontology-driven annotation and validation, which can aid data harmonization and standardized term usage in large-scale genomic datasets, though it does not address GWAS/PheWAS or multi-omics analyses directly. This could support downstream integration and interpretation workflows in your work.
-3) Which parts connect to your research: - Ontology-based annotation and validation can standardize phenotype/gene annotations used in GWAS/PheWAS and QTL colocalization; - Tools for simplifying and validating expert-curated term hierarchies support harmonization of ontology-driven annotations across datasets; - Potential to enhance ML/AI pipelines by providing structured, interpretable ontology-derived features; - May assist interpretation of regulatory contexts and 3D genome interactions via standardized terms linking cell types, anatomy, and regulatory elements; - Facilitates integrating pathways and gene annotations for downstream target prioritization.
+2) Brief justification: The paper addresses ontology curation and validation to simplify and harmonize annotations, which supports data interoperability and FAIR principles. While not focused on GWAS/PheWAS or 3D genome analyses, it could inform annotation pipelines and cross-dataset integration critical for large-scale genomic studies and multi-omics data interpretation.
+3) Which parts connect to your research:
+- Improves annotation consistency for phenotypes and anatomical terms across GWAS/PheWAS datasets, aiding meta-analyses.
+- Provides tools to validate expert-curated term hierarchies against ontology structures, supporting harmonization in multi-omics QTL integration and colocalization workflows.
+- Emphasizes standardized terms and ontology-driven grouping, aiding ML/Explainable AI workflows by providing clearer, interoperable labels for phenotypes, tissues, and regulatory contexts.
+- Demonstrates use with cell-type/anatomy ontologies (HuBMAP HRA, developmental atlas), relevant for mapping regulatory elements and 3D genome features to specific cell types and tissues in disease contexts.
+- Facilitates curation of mappings between genes, phenotypes, and tissues, potentially aiding target prioritization and therapeutic insights via more consistent ontological frameworks.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://www.biorxiv.org/content/10.1101/2024.12.13.628309" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Transcriptome Universal Single-isoform COntrol: A Framework for Evaluating Transcriptome reconstruction Quality</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">T. Liu, A. Paniagua, F. Jetzinger, L. Ferrandez-Peral, A. Frankish, A. Conesa</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.23.671926</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Long-read sequencing (LRS) platforms, such as Oxford Nanopore and Pacific Biosciences, enable comprehensive transcriptome analysis but face challenges such as sequencing errors, sample quality variabi...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Long-read sequencing (LRS) platforms, such as Oxford Nanopore and Pacific Biosciences, enable comprehensive transcriptome analysis but face challenges such as sequencing errors, sample quality variability, and library preparation biases. Current benchmarking approaches address these issues insufficiently: BUSCO assesses transcriptome completeness using conserved single-copy orthologs but can misinterpret alternative splicing as gene duplications, while spike-ins (SIRVs, ERCCs) oversimplify real-sample complexity, neglecting RNA degradation and RNA extraction artifacts, thus inflating performance metrics. Simulation algorithms are limited to recapitulate this complexity. To overcome these limitations, we introduce the Transcriptome Universal Single-isoform Control (TUSCO), a curated internal reference set of genes lacking alternative isoforms. TUSCO evaluates precision by identifying transcripts deviating from reference annotations and assesses sensitivity by verifying detection completeness in human and mouse samples. Masking TUSCO transcripts, and optionally inserting decoy splice variants, creates a novel-isoform challenge that assesses recovery of the true, now-unannotated isoforms. Our validation demonstrates that TUSCO provides accurate and reliable benchmarking without external controls, significantly improving quality control standards for transcriptome reconstruction using LRS.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper focuses on benchmarking and quality control for long-read transcriptome reconstruction, which can impact isoform- and splicing-aware analyses used in QTL mapping and colocalization. It does not address disease contexts or GWAS/PheWAS directly, but improved transcript models can influence downstream multi-omics integration.
+3) Which parts connect to your research:
+- Potential impact on eQTL/sQTL analyses and colocalization through more accurate isoform-level transcript models derived from long-read data.
+- Framework (TUSCO) conceptually applicable to QC pipelines in multi-omics integration used for GWAS/PheWAS interpretation.
+- Could inform AI-driven perturbation or simulation workflows that rely on high-quality transcript annotations and isoform resolution to link regulatory variants to phenotypes.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.23.671926" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">End-to-end proteogenomics for discovery of cryptic and non-canonical cancer proteoforms using long-read transcriptomics and multi-dimensional proteomics</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">K. Kulej, A. Preska Steinberg, J. Zhang, G. Casalena, E. Havasov, S. P. Shah, A. McPherson, A. Kentsis</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.23.671943</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Modern mass spectrometry now permits genome-scale quantitative measurements of biological proteomes. However, current approaches remain hindered by incomplete representation of biological variability ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Modern mass spectrometry now permits genome-scale quantitative measurements of biological proteomes. However, current approaches remain hindered by incomplete representation of biological variability of protein sequences in canonical reference proteomes, limiting studies to already annotated proteoforms. This, combined with reliance on tryptic peptides and limited sample complexity reduction techniques render detection of variant proteoforms missing from current reference annotations virtually impossible. Here, we report a method for end-to-end proteogenomics which integrates (i) sample-specific transcriptome assembly using long-read sequencing with (ii) multi-protease, multi-dimensional (MPMD) trapped ion mobility spectrometry (TIMS) parallel accumulation-serial fragmentation (PASEF) mass spectrometry. Termed ProteomeGenerator3, we benchmark its sensitivity and specificity for unbiased human cancer proteome discovery. Using long-read transcriptome sequencing of human Ewing sarcoma cancer cells, we detected over 40,000 full-length transcript isoforms, including aberrantly expressed neogenes, splice isoforms, and gene fusions. Combined with MPMD-TIMS-PASEF mass spectrometry, our proteogenomics workflow enabled the detection of 12,189 unique proteoforms with an average sequence coverage exceeding 50%, including 3,216 putative, non-canonical proteoforms, constituting one of the most complete human proteomes to date. Likewise, we report the proteogenomic performance metrics for current state-of-the-art implementations of DIA-NN, Spectronaut and diaTracer-MSFragger algorithms for data-independent acquisition (DIA) and PASEF mass spectral data, including optimal Double Rainbow-diaPASEF parameters for non-tryptic proteomes. In all, end-to-end integrative ProteomeGenerator3 provides a versatile platform for deep sample-specific proteogenomic discovery, suitable for the identification of disease biomarkers and therapeutic targets, and is available open-source from https://github.com/kentsislab/proteomegenerator3.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper presents an advanced proteogenomics workflow to discover proteoforms and identify therapeutic targets in cancer, emphasizing long-read transcriptomics and proteomics. It does not address population-scale GWAS/PheWAS, QTL colocalization, or 3D genome perturbations, but its proteoform-centric approach could complement target discovery and isoform-aware annotation in multi-omics studies.
+3) Which parts connect to your research:
+- Therapeutic targets: potential discovery of druggable proteoforms in cancer.
+- Long-read transcriptomics: improved isoform resolution that could enhance transcript-level interpretation in genetic studies and QTL analyses.
+- Proteoform discovery (including non-canonical proteoforms): enriches proteome annotations relevant for linking genetic variation to protein-level phenotypes.
+- Multi-dimensional proteomics and open-source pipeline: could be integrated into broader multi-omics workflows to extend proteome characterization.
+- Provides a framework that could inform pan-omics target prioritization, albeit not directly addressing GWAS/PheWAS or 3D genome modeling.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.23.671943" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">DNA O-MAP uncovers the molecular neighborhoods associated with specific genomic loci</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Y. Liu, C. D. McGann, C. P. Herlihy, M. Krebs, T. A. Perkins, R. Fields, C. K. Camplisson, D. Z. Nwizugbo, C. Hsu, S. Avanessian, A. F. Tsue, E. E. Kania, D. M. Shechner, B. J. Beliveau, D. K. Schweppe</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2024.07.24.604987</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The accuracy of crucial nuclear processes such as transcription, replication, and repair, depends on the local composition of chromatin and the regulatory proteins that reside there. Understanding the...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The accuracy of crucial nuclear processes such as transcription, replication, and repair, depends on the local composition of chromatin and the regulatory proteins that reside there. Understanding these DNA-protein interactions at the level of specific genomic loci has remained challenging due to technical limitations. Here, we introduce a method termed "DNA O-MAP", which uses programmable peroxidase-conjugated oligonucleotide probes to biotinylate nearby proteins. We show that DNA O-MAP can be coupled with sample multiplexed quantitative proteomics, targeted chemical perturbations, and next-generation sequencing to quantify DNA-protein and DNA-DNA interactions at specific genomic loci. Furthermore, we establish that DNA O-MAP is applicable to both repetitive and unique genomic loci of varying sizes (kilobases to megabases), and that DNA O-MAP can measure proximal molecular effectors in a homolog-specific manner.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study introduces DNA O-MAP to profile locus-specific DNA-protein and DNA-DNA interactions with proteomics and perturbations, enabling characterization of regulatory neighborhoods around specific genomic loci, which can inform interpretation of GWAS loci, 3D genome organization, and potential therapeutic targets, though it is not a GWAS-scale study.
+3) Which parts connect to your research:
+- Locus-specific mapping of regulatory neighborhoods around disease-associated variants, aiding interpretation of regulatory mechanisms behind GWAS signals.
+- Measurement of proximal molecular effectors and DNA-DNA interactions related to 3D genome organization (loops/TADs) affecting gene regulation.
+- Integration with targeted perturbations and proteomics dovetails with multi-omics QTL integration and perturbation-based target discovery.
+- Potential use as a tool to prioritize causal genes and regulatory elements within loci for colocalization analyses and downstream therapeutic targeting.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2024.07.24.604987" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Developmental Dynamics of Human Cardiogenesis: A multi-omic reference and its disruption in Trisomy 21</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">J. Cranley, K. Kanemaru, S. Bayraktar, V. Knight-Schrijver, J. P. Pett, K. Polanski, M. Dabrowska, R. Hulbert, E. Lana-Elola, R. Aoidi, I. Mulas, L. Richardson, C. Semprich, R. Kapuge, S. Perera, X. He, S. Y. Ho, N. Yayon, L. Tuck, K. Roberts, J. Palmer, H. Davaapil, L. Gambardella, M. Patel, R. Tyser, V. Tybulewicz, S. Sinha, S. Teichmann</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2024.04.29.591736</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Developmental dynamics involve the specification of diverse cell types and their spatial organization into multicellular niches. Here, we combine single-cell and spatial multiomics to define 19 distin...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Developmental dynamics involve the specification of diverse cell types and their spatial organization into multicellular niches. Here, we combine single-cell and spatial multiomics to define 19 distinct tissue niches in the developing heart, leading to the development of a context-aware, resolution-agnostic niche classification tool (TissueTypist). Applying high-resolution spatial profiling to the developing sinoatrial node, we resolve three pacemaker cell subtypes arrayed along a linear axis. First trimester subpopulations, such as the pacemaker cells in the sinus horn and sinoatrial node head region, display neuro-attractant programmes and interact with parasympathetic neurons via interactions including Semaphorin-Plexin signalling. Temporal trajectories map maturation of atrial and ventricular cardiomyocytes, uncovering a lipid-metabolic switch and potential key regulators of cell type identity. In the ventricle, we identify cellular and transcriptional gradients along both pseudotime and transmural axes, offering new molecular insights into myocardial compaction and maturation. Comparative profiling of euploid and trisomy 21 hearts shows a depletion of compact cardiomyocytes and heightened apoptosis, validated in isogenic-matched trisomy 21 and euploid iPSC-derived cardiomyocytes. This implicates disrupted myocardial growth may be a mechanism for Down's syndrome-associated congenital heart disease. Overall, we deliver a spatially resolved framework of human cardiac development, enabling systematic exploration of developmental niches in health and disease.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper delivers a comprehensive multi-omic, spatial atlas of human heart development and insights into trisomy 21–related cardiac pathology, which can inform cardiac regulatory networks. However, it does not perform large-scale GWAS/PheWAS, nor does it implement colocalization analyses, QTL integration, or in silico 3D genome perturbation modeling at scale.
+3) Which parts connect to your research:
+- Provides cardiac cell-type– and region-specific regulatory landscapes that could contextualize heart-related GWAS/PheWAS hits and aid interpretation of regulatory variants.
+- Demonstrates multi-omic and spatial integration (analogous to integrating eQTL/pQTL data with spatial context) to define developmental niches and gene networks.
+- Identifies regulatory pathways (e.g., Semaphorin-Plexin signaling) and transcriptional trajectories that could be explored as candidate targets in congenital heart disease contexts.
+- The TissueTypist concept (context-aware, resolution-agnostic niche classification) could inspire ML approaches for annotating tissue/cell contexts in multi-omics integration and colocalization workflows.
+- The trisomy 21 vs euploid comparison highlights dosage effects on cardiac development, offering a model for interpreting CNV- or dosage-related variant effects in phenotypes.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2024.04.29.591736" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The transglutaminase 2 interactome in HUVECs suggests its participation in an RNA-binding protein network</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">B. Csaholczi, Z. Csoban-Szabo, K. Jambrovics, I. R. Korponay-Szabo, L. Fesus, R. Kiraly</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.26.672361</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Human transglutaminase 2 (TG2) is a multifunctional protein that exhibits various protein-modifying catalytic and protein-protein interaction properties. HUVECs express high levels of TG2, and identif...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Human transglutaminase 2 (TG2) is a multifunctional protein that exhibits various protein-modifying catalytic and protein-protein interaction properties. HUVECs express high levels of TG2, and identification of its interacting partners may provide mechanistic insight into its role in endothelial functions such as adhesion, migration, angiogenesis, and NO homeostasis. For this purpose, two approaches were employed. Firstly, bacterially expressed, site-specifically biotinylated recombinant TG2 was mixed with HUVEC extract to isolate interacting partners by affinity chromatography. Secondly, endogenous TG2 was silenced, and to ensure high antibody affinity, a triple Flag-tagged transgenic TG2-expressing HUVEC line was created, allowing stable binding to anti-Flag antibody-coated agarose for isolating TG2-associated protein complexes. Altogether, 170 and 356 TG2-associated proteins were identified, respectively, with 86 proteins overlapping between the two approaches. The most enriched GO Molecular Functions of cellularly assembled TG2-interacting proteins confirm TG2's involvement in cell-cell and cell-extracellular matrix communication, adhesion, cytoskeleton organisation, and exosome secretion. Stabilising the catalytically inactive closed TG2 conformation reduced the number of TG2 interactors, whereas stabilising its open form increased the number of associated membrane transporters. Significant enrichment of RNA-binding proteins associated with TG2 was observed in all experiments, and a 42% overlap between the TG2 interactome and previously identified RNA-binding proteins in HUVEC was noted. Considering the recently recognised RNA-binding ability of TG2, our results suggest that TG2 participates in post-transcriptional regulations as a central hub within the network of RNA-binding proteins.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study maps the TG2 protein interactome and RNA-binding protein networks in endothelial cells, providing insight into regulatory networks, but it does not address GWAS/PheWAS, multi-omics QTLs, colocalization, 3D genome organization, or therapeutic target prioritization at scale.
+3) Which parts connect to your research: 
+- Demonstrates a network-based view of regulatory interactions (protein–protein and RNA-binding proteins) that could inform multi-omics integration and network reasoning in GWAS/QTL analyses.
+- Highlights RNA-binding proteins as central nodes, relevant to post-transcriptional regulation and potential effects on gene expression QTL signals (eQTL/pQTL).
+- Provides methodological ideas for mapping interactomes that could complement large-scale integrative approaches and aid in identifying regulatory hubs linked to diseases.
+- Not directly addressing 3D genome, colocalization, or large-scale disease association analyses, but the concept of network hubs may inform therapeutic target prioritization within endothelial-related pathways.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.26.672361" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Interspecies Organoids Reveal Human-Specific Molecular Features of Dopaminergic Neuron Development and Vulnerability</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">S. Nolbrant, J. L. Wallace, J. Ding, T. Zhu, J. L. Sevetson, J. Kajtez, I. A. Baldacci, E. K. Corrigan, K. Hoglin, R. McMullen, M. S. Ostrowski, M. T. Schmitz, A. Breevoort, D. Swope, F. Wu, B. J. Pavlovic, S. R. Salama, A. Kirkeby, H. Huang, N. K. Schaefer, A. A. Pollen</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2024.11.14.623592</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The disproportionate expansion of telencephalic structures during human evolution involved tradeoffs that imposed greater connectivity and metabolic demands on midbrain dopaminergic neurons. Despite t...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The disproportionate expansion of telencephalic structures during human evolution involved tradeoffs that imposed greater connectivity and metabolic demands on midbrain dopaminergic neurons. Despite the central role of dopaminergic neurons in human-enriched disorders, molecular specializations associated with human-specific features and vulnerabilities of the dopaminergic system remain unexplored. Here, we establish a phylogeny-in-a-dish approach to examine gene regulatory evolution by differentiating pools of human, chimpanzee, orangutan, and macaque pluripotent stem cells into ventral midbrain organoids capable of forming long-range projections, spontaneous activity, and dopamine release. We identify human-specific gene expression changes related to axonal transport of mitochondria and reactive oxygen species buffering and candidate cis- and trans-regulatory mechanisms underlying gene expression divergence. Our findings are consistent with a model of evolved neuroprotection in response to tradeoffs related to brain expansion and could contribute to the discovery of therapeutic targets and strategies for treating disorders involving the dopaminergic system.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study provides human-specific regulatory insights in dopaminergic neurons that could inform therapeutic targeting and regulatory interpretation, but it does not perform GWAS/PheWAS, colocalization analyses, multi-omics QTL integration, AI/ML modeling, or explicit 3D genome perturbation studies.
+3) Which parts connect to your research:
+- Therapeutic targeting: identifies human-specific regulatory features and potential targets within dopaminergic pathways.
+- Colocalization/QTL integration: offers cis/trans regulatory mechanisms that could enhance functional annotation of regulatory elements for colocalization with disease-associated variants.
+- 3D genome/AI relevance: discusses long-range regulatory relationships (conceptual bridge to 3D genome interactions) and provides a regulatory framework that could seed ML approaches to predict variant impact on dopaminergic gene expression.
+- GWAS/PheWAS context: not directly analyzed, but findings could inform interpretation of dopaminergic trait/disease loci in future studies.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2024.11.14.623592" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Revealing a coherent cell state landscape across single cell datasets with CONCORD</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Q. Zhu, Z. Jiang, B. Zuckerman, L. Weinberger, M. Thomson, Z. J. Gartner</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.03.13.643146</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Revealing the underlying cell-state landscape from single-cell data requires overcoming the critical obstacles of batch integration, denoising, and dimensionality reduction. Here, we present CONCORD, ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Revealing the underlying cell-state landscape from single-cell data requires overcoming the critical obstacles of batch integration, denoising, and dimensionality reduction. Here, we present CONCORD, a unified framework that simultaneously addresses these challenges within a single self-supervised model. At its core, CONCORD implements a unified probabilistic sampling strategy that corrects batch effects via dataset-aware sampling and enhances biological resolution through hard-negative sampling. Remarkably, using only a minimalist neural network with a single hidden layer and contrastive learning, CONCORD surpasses state-of-the-art performance without relying on deep architectures, auxiliary losses, or external supervision. It seamlessly integrates data across batches, technologies, and even species to generate high-resolution cell atlases. The resulting latent representations are denoised and biologically meaningful-capturing gene co-expression programs, revealing detailed lineage trajectories, and preserving both local geometric relationships and global topological structures. We demonstrate CONCORD's broad applicability across diverse datasets, establishing it as a general-purpose framework for learning unified, high-fidelity representations of cellular identity and dynamics.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper focuses on batch integration and denoising of single-cell data using a self-supervised framework, which could underpin harmonized scRNA datasets for downstream GWAS/PheWAS and regulatory analyses, but it does not address genetics, QTL colocalization, or 3D genome directly.
+3) Which parts connect to your research: 
+- Data harmonization across scRNA datasets could improve cell-type resolution for cell-type-specific QTL colocalization with GWAS/PheWAS.
+- Latent representations and identified gene co-expression programs may inform regulatory network modeling and prioritization of therapeutic targets.
+- Dataset- and species-agnostic integration supports cross-study and multi-omics alignment, facilitating downstream causal inference and colocalization workflows.
+- The approach could serve as a preprocessing step to better integrate regulatory elements with 3D genome data in future analyses.
+- Direct links to 3D genome or causal perturbation predictions are not present, but improved cell atlases can enhance downstream integration with 3D regulatory maps.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.03.13.643146" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Impact of tissue staining and scanner variation on the performance of pathology foundation models: a study of sarcomas and their mimics</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">B. Chai, J. Chen, P. Cool, F. Oumlil, A. Tollitt, D. F. Steiner, T. Chakraborti, A. M. Flanagan</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.18.670932</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Histopathological analysis is considered the gold standard for the diagnosis and prognostication of cancer. Recent advances in AI, driven by large-scale digitisation and pan-cancer foundation models, ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Histopathological analysis is considered the gold standard for the diagnosis and prognostication of cancer. Recent advances in AI, driven by large-scale digitisation and pan-cancer foundation models, are opening new opportunities for clinical integration. However, it remains unclear how robust these foundation models are to real-world sources of variability, particularly in H&E staining and scanning protocols. In this study, we use soft tissue tumours, a rare and morphologically diverse tumour type, as a challenging test case to systematically investigate the colour-related robustness and generalisability of seven AI models. Controlled staining and scanning experiments were utilised to assess model performance across diverse real-world data sources. Foundation models, particularly UNI-v2, Virchow and TITAN, demonstrated encouraging robustness to staining and scanning variation, particularly when a small number of stain-varied slides were included in the training loop, highlighting their potential as adaptable and data-efficient tools for real-world digital pathology workflows.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper investigates robustness of pathology foundation models to staining and scanning variation, which is broadly relevant to AI methods in biomedical data. It does not address GWAS/PheWAS, colocalization, or 3D genome directly, but its insights on data variability and data-efficient training can inform workflows that generate imaging-derived phenotypes for integration with genomic and multi-omics analyses.
+3) Which parts connect to your research: 
+- AI foundation models and robustness to data heterogeneity, informing reliable imaging-derived phenotypes for GWAS/PheWAS. 
+- Data-efficient training and generalization across real-world data sources, relevant to harmonization across cohorts in large-scale genetic studies. 
+- Potential extension of imaging-based biomarkers to multi-omics integration (eQTL/pQTL) and downstream therapeutic target discovery, with future linkages to colocalization and 3D genome contexts.
+- Conceptual relevance to explainable AI and in silico perturbation frameworks that could be adapted to assess regulatory and spatial genome influences on imaging phenotypes.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.18.670932" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Sex-dependent interferon signaling drives female-biased vulnerability in Alzheimer's disease</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">J. P. Lopez-Atalaya, V. Lopez-Lopez, G. Iniesta, M. Galan-Ganga, A. Exposito-Coca, A. Bhojwani-Cabrera, M. Guillot-Fernandez, A. GIRALT</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.22.671724</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Despite extensive efforts to understand Alzheimer's disease (AD), the biological basis for its greater burden in women remains unclear. We identified a sex-dependent activation of type I interferon (I...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Despite extensive efforts to understand Alzheimer's disease (AD), the biological basis for its greater burden in women remains unclear. We identified a sex-dependent activation of type I interferon (IFN-I) signaling as a contributor to this disparity. Transcriptomic profiling of brain from AD patients revealed selective enrichment of IFN-I pathway in females. This immune signature was mirrored in the APP/PS1 mouse model of AD, where females exhibited more pronounced amyloid accumulation, neuroinflammation, and neurodegeneration. Acute IFN-I activation reproduced pathological features of AD, whereas chronic IFN-I elevation in APP/PS1 mice aggravated disease progression. In contrast, pharmacological targeting of IFN-I response by inhibiting the cGAS-STING pathway in APP/PS1 female mice reduced neuropathological burden, and preserved cognitive performance. Together, these findings identify interferon signaling as a modifiable and sex-linked driver of AD pathology. Our study uncovers a critical neuroimmune mechanism contributing to female-biased vulnerability and highlights interferon modulation as a promising therapeutic strategy in AD.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study identifies sex-specific interferon signaling as a modifiable driver of AD pathology and demonstrates therapeutic targeting of this pathway in a mouse model, which aligns with therapeutic target prioritization. However, it does not involve large-scale human genetics (GWAS/PheWAS), multi-omics QTL integration with colocalization, machine learning/AI for 3D genome perturbations, or analyses linking spatial chromatin organization to human phenotypes as in your framework.
+3) Which parts connect to your research:
+- Therapeutic targeting: highlights IFN-I/cGAS-STING pathway as a druggable target in AD.
+- Sex-specific biology: demonstrates sex-dependent disease mechanisms that could inform stratified genetic analyses or sex-interaction studies.
+- Possible future integration: foundational for linking innate immune signaling to regulatory variants or QTLs in human brains, though not performed in this study.
+- Direct connections to GWAS/PheWAS, colocalization analyses, AI-driven 3D genome perturbations, or spatial chromatin organization are not present in this work.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.22.671724" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Estimating changes in RNA Polymerase II elongation and intron splicing speeds from total RNA-seq data</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">J. Koubele, A. Beyer</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.24.672013</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        We present a computational method to jointly estimate changes in the elongation speed of RNA Polymerase II, and the speed of intron splicing, using total RNA-seq. An implementation of our method is av...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        We present a computational method to jointly estimate changes in the elongation speed of RNA Polymerase II, and the speed of intron splicing, using total RNA-seq. An implementation of our method is available at https://github.com/jkoubele/pol-ii-speed.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The method estimates RNA Pol II elongation and intron splicing speeds from total RNA-seq, touching on transcriptional kinetics and splicing regulation that can influence regulatory variant interpretation. It does not address GWAS/PheWAS-scale analyses, colocalization, 3D genome structure, or therapeutic target discovery directly.
+3) Which parts connect to your research:
+- Potential to inform interpretation of eQTLs and sQTLs used in colocalization analyses for GWAS/PheWAS.
+- Could enhance multi-omics integration by adding kinetic dimensions of transcription and splicing to regulatory models.
+- May support AI/ML frameworks that simulate regulatory perturbations by incorporating transcriptional kinetics, indirectly relating to target prioritization.
+- Provides a usable implementation that could be adapted for kinetic analyses in regulatory variant studies.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.24.672013" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Leveraging Large Language Models for Redundancy-Aware Pathway Analysis and Deep Biological Interpretation</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Y. Ge, F. Zhang, Y. Liu, C. Jiang, P. Gao, N. S. Tan, S. Zhang, Y. Shen, Q. Zhou, X. Zhou, C. Wang, X. Shen</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.23.671949</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Extracting coherent, biologically meaningful insights from vast, complex multi-omics data remains challenging. Currently, pathway enrichment analysis serves as a cornerstone for the functional interpr...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Extracting coherent, biologically meaningful insights from vast, complex multi-omics data remains challenging. Currently, pathway enrichment analysis serves as a cornerstone for the functional interpretation of such data. However, conventional approaches often suffer from extensive functional redundancy caused by shared molecular components and overlapping pathway definitions across databases. This redundancy can obscure key biological signals and compromise the interpretability of pathway enrichment results. Here, we present MAPA (Functional Module Identification and Annotation for Pathway Analysis Results Using Large Language Models [LLM]), an open-source computational framework that resolves redundancy and enhances pathway analysis result interpretation. MAPA computes functional similarity between pathways using LLM-based text embeddings, enabling comparison across different databases. It constructs pathway similarity networks and identifies functional modules via community detection algorithms. Crucially, MAPA employs LLMs for automated functional annotation, integrating Retrieval-Augmented Generation (RAG) to generate comprehensive and real-time biological summaries and reduce hallucinations. Benchmarking demonstrated MAPA's superior performance: the biotext embedding similarity showed a large effect size (Cliff's {delta} = 0.96) compared with the Jaccard index ({delta} = 0.73), and module identification achieved high accuracy (Adjusted Rand Index [ARI] = 0.95) versus existing methods (ARI = 0.23-0.33). Human expert evaluation confirmed that MAPA's annotations match expert-quality interpretations. Finally, a multi-omics aging case study illustrates that MAPA uncovers coherent functional modules and generates insights extending beyond conventional pathway analyses. Collectively, MAPA represents a significant advance in redundancy-aware pathway analysis, transforming pathway enrichment results from fragmented lists into biologically coherent narratives. By leveraging the capabilities of LLMs, MAPA offers researchers a robust, scalable tool for deriving deep mechanistic insights from complex and vast multi-omics datasets, marking a new direction for AI-driven bioinformatics.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper introduces an LLM-based, redundancy-aware pathway analysis framework that could aid interpretation of multi-omics results, but it does not address large-scale GWAS/PheWAS, QTL colocalization, 3D genome perturbation, or spatial chromatin integration in disease contexts directly.
+3) Which parts connect to your research: 
+- Enhances functional interpretation of multi-omics results via advanced pathway analysis and cross-database comparisons.
+- LLM-based functional annotation and RAG-driven summaries could help generate narrative links between regulatory elements, pathways, and disease drivers.
+- Functional module identification may aid grouping of genes/variants into coherent biological pathways relevant to GWAS/PheWAS signals.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.23.671949" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">MNase stratification reveals heterogeneous 5hmC in naive B cells</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">M. Hsu, H.-Y. Chen, F.-Y. Lay, Q. Ma, B. Delatte, C.-W. J. Lio</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.24.672045</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        DNA demethylation is essential for gene activation and is primarily mediated by the Ten-Eleven-Translocation (TET) dioxygenase family. TET initiates the demethylation by oxidizing 5-methylcytosine (5m...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        DNA demethylation is essential for gene activation and is primarily mediated by the Ten-Eleven-Translocation (TET) dioxygenase family. TET initiates the demethylation by oxidizing 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC), a chemically stable derivative that is not only an intermediate in demethylation but also an epigenetic mark. 5hmC is enriched at active gene bodies, promoters, and enhancers that exist at accessible chromatin. Yet, 75-90% of genomic DNA is physically packaged in nucleosomes, raising the question about where 5hmC resides relative to nucleosomes. To address this question, we used micrococcal nuclease (MNase) to biochemically stratify 5hmC according to nucleosome protection in naive mouse B cells. Using multiple approaches, we showed that ~95% of 5hmC peaks are retained after MNase digest, suggesting that 5hmC is nucleosome-associated. Despite the majority of 5hmC being similar in nucleosomal DNA compared to total DNA, we identified minor subsets that were MNase-sensitive (accessible 5hmC, ~3%) or further MNase-resistant (protected 5hmC, ~1-2%). Integrative analyses revealed that the accessible 5hmC is preferentially located at promoters and enhancers, and the presence of promoter-proximal accessible 5hmC showed a stronger correlation with gene expression than total 5hmC. In contrast, protected 5hmC is enriched in chromatin states with mixed active and repressive features. These results shed new light on the relationship between 5hmC and accessible chromatin, suggesting 5hmC is predominantly associated with nucleosomes and revealing heterogeneous 5hmC subsets with potential distinct regulatory roles.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study provides insights into 5hmC distribution and its relation to nucleosome positioning in B cells, which could inform regulatory element annotation in immune contexts, but it is in mouse and lacks direct ties to GWAS/PheWAS, colocalization, multi-omics integration, 3D genome, AI analyses, or therapeutic targeting.
+3) Which parts connect to your research: 
+- Regulatory element annotation: 5hmC enrichment at promoters and enhancers could refine regulatory maps used in GWAS/PheWAS interpretation and colocalization analyses in immune traits.
+- Gene expression link: The association between promoter-proximal accessible 5hmC and gene expression informs potential mechanisms by variants affecting expression in B cells.
+- Chromatin context insights: Findings on nucleosome-associated vs accessible 5hmC could inspire models integrating chromatin state and accessibility in multi-omics colocalization frameworks.
+- Direct applications not present: No direct human GWAS/PheWAS data, no QTL/colocalization analyses, no 3D genome modeling, no AI perturbation simulations, and no therapeutic targeting implications.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.24.672045" target="_blank" 
                                    class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on bioRxiv
