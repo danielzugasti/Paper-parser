@@ -164,6 +164,92 @@
                     </h2>
                     <div class="grid gap-8">
             
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
+                                        Highly Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Gene expression QTL mapping in stimulated iPSC-derived macrophages provides insights into common complex diseases.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Nikolaos I Panousis, Omar El Garwany, Andrew Knights, Jesse Cheruiyot Rop, Natsuhiko Kumasaka, Maria Imaz, Lorena Boquete Vilarino, Anthi Tsingene, Alex Tokolyi, Alice Barnett, Celine Gomez, Carl A Anderson, Daniel J Gaffney</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 27</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40866338</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate e...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Many disease-associated variants are thought to be regulatory but are not present in existing catalogues of expression quantitative trait loci (eQTL). We hypothesise that these variants may regulate expression in specific biological contexts, such as stimulated immune cells. Here, we used human iPSC-derived macrophages to map eQTLs across 24 cellular conditions. We found that 76% of eQTLs detected in at least one stimulated condition were also found in naive cells. The percentage of response eQTLs (reQTLs) varied widely across conditions (3.7% - 28.4%), with reQTLs specific to a single condition being rare (1.11%). Despite their relative rarity, reQTLs were overrepresented among disease-colocalizing eQTLs. We nominated an additional 21.7% of disease effector genes at GWAS loci via colocalization of reQTLs, with 38.6% of these not found in the Genotype-Tissue Expression (GTEx) catalogue. Our study highlights the diversity of genetic effects on expression and demonstrates how condition-specific regulatory variation can enhance our understanding of common disease risk alleles.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+
+2) Brief justification: The study maps context-specific eQTLs in stimulated iPSC-derived macrophages and shows that these condition-specific regulatory variants colocalize with disease GWAS loci, uncovering disease effector genes (including many not found in GTEx). This directly informs approaches for linking regulatory variation to disease risk, which aligns with your focus on context-aware QTL integration and disease driver prioritization.
+
+3) Connections to your research:
+- eQTL mapping and GWAS colocalization: central to linking variants to regulatory effects and disease drivers.
+- Context-specific regulation (stimulus/conditions): aligns with your interest in multi-omics QTLs across contexts to refine causal mechanisms.
+- Identification of disease effector genes at GWAS loci beyond GTEx: supports expanding target discovery beyond existing catalogs.
+- Implications for prioritizing drug targets: context-specific regulatory insights can inform which genes/pathways are plausible therapeutic targets.
+
+4) If highly relevant, key reason to read: It provides a concrete, context-aware framework showing how condition-specific eQTLs can reveal disease-associated regulatory genes missed by bulk tissue analyses, offering actionable strategies to enhance colocalization-based target prioritization in large-scale GWAS/PheWAS pipelines.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40866338/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-link mr-1"></i>Direct Link Available
+                                </div>
+                            </div>
+                        </div>
+                
                         <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
@@ -227,91 +313,15 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Not Relevant
 
-2) Justification: The paper focuses on wheat phenotypic plasticity and genome-to-phenotype changes during crop improvement in plants, with no indication of human GWAS/PheWAS, multi-omics QTL colocalization, 3D genome organization, AI-driven perturbations for therapeutic targeting, or human disease contexts.
+2) Justification: The study focuses on wheat (a non-human species) and investigates phenotypic plasticity during breeding using integrated phenomic and genomic analyses. It does not involve human GWAS/PheWAS, UK Biobank data, multi-omics QTL colocalization, AI-driven causal inference for human diseases, 3D genome analyses in humans, or therapeutic target prioritization.
 
-3) Connection to your work: The only potential indirect link is the idea of integrated phenomic and genomic analyses, which is conceptually related to integrating phenotypes with genomic data. However, there is no mention of human disease, UK Biobank-scale analyses, colocalization in regulatory elements, or therapeutic target prioritization, and no plant-to-human translational context.
+3) Connection to your research: It touches on integrated phenomics and genomics (a methodological parallel), but lacks human disease context, disease-focused QTL colocalization, 3D genome organization in humans, and drug target discovery mechanisms. Limited direct applicability to your goals.
 
-4) If you were hoping for a highly relevant read: Not applicable. If you’re exploring cross-domain methodological ideas, you might skim for how they integrate phenomic and genomic data, but it won’t directly advance your human-focused research.</p>
+4) If you were exploring cross-species methodological frameworks for integrating phenomics with genomics, you might skim for approaches, but it does not provide content directly relevant to your human-centric research aims.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40877939/" target="_blank" 
-                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on PubMed
-                                </a>
-                                <div class="text-xs text-gray-500">
-                                    <i class="fas fa-link mr-1"></i>Direct Link Available
-                                </div>
-                            </div>
-                        </div>
-                
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-primary-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-file-alt text-primary-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
-                                        Somewhat Relevant
-                                    </span>
-                                </div>
-                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The future of polygenic risk scores in direct-to-consumer genomics.</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">Yuhao Sun, John Vines, Albert Tenesa</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
-                                    <span class="font-medium">Journal:</span>
-                                    <span class="ml-2 text-green-300">Nature genetics</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Published:</span>
-                                    <span class="ml-2">2025 Aug 28</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
-                                    <span class="font-medium">PMID:</span>
-                                    <span class="ml-2 font-mono text-xs">40877436</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify">
-                                        No abstract available
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">- Relevance: Somewhat Relevant
-
-- Justification: The title centers on polygenic risk scores (PRS) in direct-to-consumer genomics, which overlaps with GWAS-derived risk assessment and interpretation. However, the abstract is unavailable, and the topic appears to focus on PRS deployment/communication rather than multi-omics integration (eQTL/pQTL/colocalization), 3D genome interpretation, or therapeutic target discovery that are central to your work.
-
-- Parts that connect to your research:
-  - GWAS-based risk scoring concepts (relevant to large-scale association studies).
-  - Direct-to-consumer/how results are communicated (context for translating GWAS findings to phenotypes).
-
-- If Highly Relevant: Not applicable, since the paper’s scope (as inferred from the title) seems peripheral to multi-omics integration, 3D genome analysis, and targeted therapeutic prioritization that are central to your research. Reading it may be informative for PRS methodology and clinical translation, but it likely won’t cover the regulatory-variant linking, colocalization, or AI-driven 3D genome perturbation aspects you focus on.</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877436/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -341,7 +351,7 @@
                         Generated by Paper Parser Bot
                     </p>
                     <p class="text-sm text-gray-500">
-                        Report generated at 2025-08-29 12:54:39 UTC
+                        Report generated at 2025-08-29 12:56:44 UTC
                     </p>
                     <div class="mt-6">
                         <a href="index.html" 
