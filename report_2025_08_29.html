@@ -157,12 +157,12 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">7</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">6</div>
                             <p class="text-gray-400">Relevant Papers Found</p>
                             <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-primary-400 mb-2">2</div>
+                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
                             <p class="text-gray-400">PubMed Papers</p>
                             <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
                         </div>
@@ -186,7 +186,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-database mr-4 text-primary-400"></i>
                             <span class="gradient-text">PubMed Papers</span>
-                            <span class="ml-4 text-lg text-gray-400">(2)</span>
+                            <span class="ml-4 text-lg text-gray-400">(1)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('pubmed-section')" 
@@ -198,95 +198,14 @@
                     <div class="section-content" id="pubmed-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-primary-500/20 p-2 rounded-lg">
                                         <i class="fas fa-file-alt text-primary-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
-                                        Unclear
-                                    </span>
-                                </div>
-                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Integrated phenomic and genomic analyses unveil modes of altered phenotypic plasticity during wheat improvement.</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">Linqian Han, Xiaoming Wang, Ryan Benke, Laura E Tibbs-Cortes, Peng Zhao, Karen A Sanguinet, Zhiwu Zhang, Shengbao Xu, Jianming Yu, Xianran Li</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
-                                    <span class="font-medium">Journal:</span>
-                                    <span class="ml-2 text-green-300">Genome biology</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Published:</span>
-                                    <span class="ml-2">2025 Aug 28</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
-                                    <span class="font-medium">PMID:</span>
-                                    <span class="ml-2 font-mono text-xs">40877939</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
-                                            onclick="toggleAbstract(this)" 
-                                            data-expanded="false">
-                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
-                                    </button>
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        Wheat has a critical role in global food security. During the improvement of wheat from landraces to cultivars, a suite of traits has been modified for higher yields. However, changing patterns of whe...
-                                    </p>
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        Wheat has a critical role in global food security. During the improvement of wheat from landraces to cultivars, a suite of traits has been modified for higher yields. However, changing patterns of wheat in response to different environmental conditions, or phenotypic plasticity, during this improvement remain to be elucidated.
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Not Relevant.
-
-2) Justification: The paper investigates phenomic and genomic analyses of phenotypic plasticity during wheat improvement (a plant system). There is no indication of human large-scale GWAS/PheWAS, multi-omics QTL colocalization, 3D genome perturbations, or therapeutic target identification, which are central to your research focus.
-
-3) Which parts connect to your research: 
-- The study’s integrated phenomics–genomics framework and its focus on regulatory mechanisms and trait plasticity are conceptually relevant, but the application is limited to wheat. 
-- There is no explicit alignment with human disease genetics, colocalization with regulatory elements in humans, or drug-target prioritization in a 3D genome context.
-
-4) If Highly Relevant: N/A. However, if you’re exploring cross-species methodological ideas, note that the integrated analysis approach might inspire analogous workflows for human multi-omics integration, but you would need substantial adaptation to human disease data.</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877939/" target="_blank" 
-                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on PubMed
-                                </a>
-                            </div>
-                        </div>
-                
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-primary-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-file-alt text-primary-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
-                                        Unclear
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
                                     </span>
                                 </div>
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
@@ -340,17 +259,17 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Not Relevant, Somewhat Relevant, or Highly Relevant: Somewhat Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Brief justification: The paper focuses on context-specific eQTLs (reQTLs) in stimulated iPSC-derived macrophages and their colocalization with GWAS signals, highlighting disease-associated regulatory variation beyond bulk-tissue resources like GTEx. While this aligns with your interest in QTLs, colocalization, and integrating regulatory biology with disease, it does not address large-scale UK Biobank GWAS/PheWAS, multi-omics QTLs (beyond eQTLs), 3D genome organization, or AI-driven perturbation modeling.
+2) Why: The paper investigates context-specific regulatory effects by mapping eQTLs in stimulated iPSC-derived macrophages and uses colocalization to connect these eQTLs to disease GWAS loci, identifying disease effector genes not always captured in GTEx. This aligns with your interests in context-specific regulatory variation and colocalization, but it doesn’t address large-scale UK Biobank GWAS/PheWAS, multi-omics QTL integration (beyond eQTLs), 3D genome architecture, or AI-driven perturbation analyses.
 
-3) Which parts connect to your research:
-- eQTL mapping and context-specific regulation (reQTLs) across multiple conditions.
-- Colocalization of eQTLs with GWAS signals to nominate disease effector genes, including discoveries not present in GTEx.
-- Use of iPSC-derived immune cells as a model to study regulatory variation relevant to common diseases.
-- Demonstrates how context-dependent regulatory variation can inform disease biology, which is conceptually relevant to linking regulatory elements with phenotypes.
+3) Connecting aspects to your research:
+- eQTL mapping in a stimulated, context-specific setting (macrophages) → informs how regulatory effects differ by condition, relevant to your context-aware QTL integration.
+- Condition-specific reQTLs and their enrichment at disease-colocalizing loci → supports the idea that regulatory variation under specific contexts drives disease risk.
+- Colocalization to identify disease effector genes at GWAS loci, including genes not captured in GTEx → directly relevant to prioritizing causal genes and potential targets.
+- Highlights that many regulatory signals may be missed in standard tissue catalogs, reinforcing the value of context-rich datasets in interpreting GWAS.
 
-4) If Highly Relevant, key reason to read: N/A (not Highly Relevant per your criteria). However, you might still find it valuable for its demonstration of context-specific regulatory effects and colocalization strategies that could inform your approaches to immune-cell–focused QTL mapping and identification of disease drivers in a context-dependent framework.</p>
+4) If you should read it (key reason): It provides concrete evidence that context-specific regulatory variants (reQTLs) can significantly contribute to disease associations and can reveal disease effector genes missed by broader catalogs like GTEx. This reinforces the importance of context-aware QTL analysis and colocalization in your pipeline for prioritizing targets and understanding regulatory mechanisms behind complex diseases.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -447,15 +366,15 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
 
-2) Why: The paper directly examines how RNA-seq quantification choices impact eQTL detection, gene expression prediction, and downstream colocalization and TWAS results. These components are central to your workflow for linking genetic variants to regulatory elements and disease drivers in large-scale GWAS/PheWAS studies, and to multi-omics QTL integration with colocalization.
+2) Why: The paper directly addresses how RNA-seq quantification choices impact eQTL detection, gene expression prediction, and downstream colocalization and TWAS results. Since your work hinges on integrating QTLs (including eQTLs) with colocalization to link variants to regulatory elements and disease drivers in large-scale GWAS/PheWAS, this study tackles a core methodological factor that can affect your downstream inferences and reproducibility.
 
 3) Connections to your research:
-- eQTL mapping and TWAS: core methods you use to contextualize GWAS signals.
-- Colocalization: essential for linking variants to regulatory elements and identifying causal genes.
-- Quantification method and transcriptomic references: affects reproducibility and accuracy of QTL detection and expression-based predictors, with downstream impact on target prioritization.
-- Emphasis on standardization/reproducibility: directly relevant to maintaining consistency across large-scale analyses and multi-omics integration.
+- eQTL mapping and TWAS: central components of your pipeline for interpreting GWAS signals.
+- Colocalization: key method you use to link regulatory variants to diseases; the paper examines how quantification choices influence colocalization results.
+- Reproducibility/standardization: aligns with your interest in robust, scalable pipelines across large populations (e.g., UK Biobank) and multi-omics integration.
+- Implications for multi-omics integration: informs how RNA-seq processing decisions might bias regulatory element–disease associations.
 
-4) If Highly Relevant, key reason to read: It provides critical guidance on methodological choices that can bias eQTL, colocalization, and TWAS results, helping you design more robust, reproducible pipelines for integrating multi-omics QTLs with GWAS/PheWAS and for downstream therapeutic target prioritization.</p>
+4) If highly relevant, key reason to read: To understand the potential biases introduced by RNA-seq quantification and transcript references in eQTL and TWAS analyses, and to adopt standardized practices that improve the reliability and comparability of colocalization results in large-scale GWAS/PheWAS endeavours. This can directly strengthen the validity of your targets and pathways prioritized from multi-omics data.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -528,22 +447,107 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1. Relevance: Highly Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
 
-2. Justification: The paper presents gpu-coloc, a GPU-accelerated, scalable re-implementation of the coloc colocalisation method designed for millions of association signals across large resources (UK Biobank, FinnGen, eQTL Catalogue). This directly addresses the colocalisation step you rely on to link GWAS/molQTL signals to regulatory elements and potential disease drivers at scale.
+2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated implementation of the colocalisation method that enables ultra-fast testing across millions of traits using large datasets (UK Biobank, FinnGen, eQTL Catalogue). This directly addresses the scalability and integration of colocalization with molQTL data that your research relies on.
 
-3. Connection to your research:
-- GWAS/PheWAS: Enables rapid colocalisation across vast trait sets, aiding large-scale analyses.
-- Integration of multi-omics QTLs: Uses molQTL data (eQTL Catalogue) for colocalisation with GWAS signals.
-- Colocalization methodology: Central to your pipeline for linking variants to regulatory function and targets.
-- AI/3D genome: Not addressed in this work.
-- Therapeutic targeting/3D genome perturbations: Not directly covered; the paper focuses on statistical colocalisation rather than 3D genome modeling or perturbation simulations.
+3) Connecting to your research:
+- GWAS/PheWAS at scale: enables rapid colocalisation across thousands/millions of trait signals, matching your large-scale analysis goals.
+- Integration with molQTLs: uses eQTL data and other QTLs to inform colocalisation, aligning with your aim to link variants to regulatory elements and disease drivers.
+- Colocalisation methodology: introduces the colocalisation collider metric to assess spurious signals, aiding robust interpretation in large-scale graphs.
+- Data sources: demonstrates use with UK Biobank data, relevant to your pipeline’s data resources.
+- Practical tool for downstream analyses: provides a scalable step before downstream ML/AI analyses or 3D-genome perturbation modeling by identifying credible colocalised targets.
 
-4. Key reason to read it if Highly Relevant: It provides a practical, scalable toolset and guidelines for large-scale colocalisation analyses, reducing computational bottlenecks when integrating GWAS with molQTL data (and potentially with future 3D-genome–aware interpretations), which could substantially accelerate your target discovery workflow. It also introduces the colocalisation collider metric to help guard against spurious results, a useful addition for robust interpretation in large-scale studies.</p>
+4) If Highly Relevant, key reason to read:
+- Read this to adopt a scalable, high-throughput colocalisation framework (gpu-coloc) that can dramatically speed up your cross-trait colocalization analyses and improve the reliability of linking genetic signals to regulatory elements and potential therapeutic targets across your ~2,500 traits. It’s a practical enabler for your multi-omics colocalization and mapping to disease drivers at scale.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672103" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Dynamic neuro-immune regulation of psychiatric risk loci in human neurons</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">K. G. Retallick-Townsley, S. Lee, S. E. Williams, S. Cartwright, S. Cohen, A. Sen, M. Jia, H. Young, L. Dobbyn, M. Deans, M. Fernandez-Garcia, L. M. Huckins, K. J. Brennand</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-25</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2024.07.09.602755</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The prenatal environment influences neurodevelopment and subsequent clinical trajectories for psychiatric outcomes in childhood and adolescence. Yet it remains unclear if the impact of maternal and fe...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The prenatal environment influences neurodevelopment and subsequent clinical trajectories for psychiatric outcomes in childhood and adolescence. Yet it remains unclear if the impact of maternal and fetal immune activation varies with distinct polygenic risk profiles. Therefore, here we catalogue genotype and environment (GxE) interactions, contrasting allele-specific regulatory activity between inflammatory contexts. We report a cue-specific neuronal massively parallel reporter assay (MPRA) of 220 loci from genome-wide association study (GWAS) linked to ten brain traits/disorders, empirically dissecting the impact of interleukin-6 (IL-6) and interferon-alpha (IFN) on transcriptional activity. Of 1,469 active candidate regulatory risk elements (MPRA-active CRSs) across three conditions, we identify 316 with dynamic variant-specific effects (MPRA-QTLs) in human induced pluripotent stem cell (hiPSC)-derived glutamatergic neurons. Broadly, across hundreds of variants, neuronal immune-mediated regulatory activity is driven by differences in transcription factor binding and chromatin accessibility, the gene targets of which show pleiotropic enrichments for brain, metabolic, and immune disorders. Dynamic genetic regulation mediates immune effects, informing our understanding of mechanisms governing pleiotropy and variable penetrance. Understanding neurodevelopmental GxE interactions will inform mental health trajectories and resolve mechanisms mediating prenatal risk.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+
+2) Brief justification: The paper examines GWAS-linked psychiatric risk loci by assessing how immune context (IL-6 and IFN-α) modulates regulatory activity in human neurons using MPRA, identifying dynamic MPRA-QTLs in hiPSC-derived neurons. This touches on regulatory mechanisms and GxE effects for brain traits, which aligns with your focus on linking variants to regulatory elements and disease drivers. However, it does not involve UK Biobank-scale GWAS/PheWAS, multi-omics QTL integration with colocalization, 3D genome analyses, or AI-driven in silico perturbations.
+
+3) Which parts connect to your research:
+- GWAS-identified psychiatric risk loci and regulatory activity in neurons (relevant to mapping variants to regulatory elements).
+- Genotype-by-environment interactions in a neuronal context (parallels GxE frameworks you study).
+- MPRA-based QTLs (dynamic regulatory effects) and pleiotropy signals (informative for linking variants to multiple traits).
+- Use of hiPSC-derived neurons provides a human tissue context that could complement multi-omics and colocalization efforts.
+
+4) If Highly Relevant, key reason to read:
+- It offers a concrete, context-dependent regulatory mechanism for psychiatric risk variants and demonstrates a robust MPRA-QTL framework in neurons under immune signaling. This could inform how you design multi-omics colocalization studies and model regulatory networks, particularly regarding environmental modulation of genetic risk, and may inspire integration with 3D genome and AI-based perturbation approaches in future work.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2024.07.09.602755" target="_blank" 
                                    class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on bioRxiv
@@ -614,15 +618,15 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Brief justification: The paper introduces STARNet, a spatial multi-omics, ML-based approach to infer tissue-domain-specific gene regulatory networks and shows GWAS variants perturbing hippocampus-specific GRNs. While it advances linking genotypes to regulatory networks in spatial context, it is not a large-scale UK Biobank/2,500-disease PheWAS study nor does it explicitly perform colocalization or UKB-scale GWAS/PheWAS analyses.
+2) Justification: The paper introduces STARNet, a spatial multi-omics, graph-based framework to infer tissue-domain-specific gene regulatory networks and links GWAS variants to perturbations in hippocampus-specific GRNs. While it focuses on spatial regulation and regional brain contexts rather than large-scale UKB GWAS/PheWAS or global QTL colocalization, it directly addresses connecting genetic variation to regulatory networks in a spatial context and explores regulatory targets and perturbations, which aligns with your interests in spatial genome organization and mechanistic targeting.
 
-3) Connected aspects to your research:
-- GWAS-genotype to regulatory mechanism linkages via spatial GRNs (relevant to interpreting GWAS results in a tissue-specific context).
-- Spatial multi-omics integration and ML/graph neural networks for GRN reconstruction (methodological overlap with your multi-omics and AI goals).
-- Concept of perturbing regulatory networks to understand disease mechanisms and potential targets (aligns with in silico perturbations and target prioritization).
-- Tissue/domain specificity and disease mechanisms, which can inform prioritization of druggable genes within spatial regulatory architecture.
+3) Connecting to your research themes:
+- Spatial regulatory networks: Aligns with your goal of tying spatial chromatin organization and regulatory interactions to phenotypes.
+- GWAS-variant to regulatory mechanism linkage: Demonstrates mechanistic interpretation of genetic risk via perturbations to domain-specific GRNs.
+- ML/AI approach for regulatory inference: Uses graph neural networks and self-supervised learning to reconstruct regulatory networks, relevant to applying ML/AI to regulatory target discovery.
+- Therapeutic targeting angle: Discusses drug-induced disruptions and mechanistic links to disease risk, offering a framework that could inspire in silico perturbation analyses of regulatory networks.
 
-4) If Highly Relevant, key reason to read: N/A (not highly relevant, but the key value lies in its approach to map GWAS variant effects onto spatial GRNs and to use ML-driven, tissue-specific regulatory modeling—insights you could potentially adapt or extend to UK Biobank-scale analyses and colocalization-driven interpretation).</p>
+4) If Highly Relevant, key reason to read it: It provides a concrete, spatially-aware framework to move from genetic variation to domain-specific regulatory networks and potential therapeutic targets, illustrating how variants perturb tissue-specific GRNs in a way that could complement multi-omics QTL integration and 3D genome perturbation studies in your research.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -697,105 +701,20 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Justification: The paper provides a comprehensive multi-tissue epigenomic atlas with regulatory element annotation, 3D genome features, and sequence-to-function deep learning for GWAS fine-mapping in cattle, plus cross-species insights. However, it is focused on bovine data rather than human (UK Biobank) GWAS/PheWAS and does not involve human QTL colocalization or therapeutic target prioritization directly.
+2) Justification: The paper presents a comprehensive bovine multi-tissue epigenomic atlas and uses sequence-to-function deep learning to annotate regulatory variants and fine-map GWAS loci in cattle, plus includes chromatin conformation data. While it showcases relevant methods (epigenomic annotations, 3D genome data, AI-based variant impact prediction and GWAS fine-mapping), it is bovine-focused and does not address human UK Biobank-scale GWAS/PheWAS, human QTL colocalization, or therapeutically targeted perturbations.
 
 3) Connections to your research:
-- Multi-tissue regulatory annotation and epigenomic landscapes (relevant to linking variants to regulatory elements).
-- 3D genome/chromatin conformation data (connects to spatial genome organization).
-- Sequence-to-function deep learning and in silico mutagenesis (methodology that could inform AI/interpretability approaches).
-- Fine-mapping of GWAS loci (conceptually aligned with prioritizing causal variants).
-- Cross-species analysis informing conserved regulatory architecture (potentially useful for translational insights to human traits).
+- GWAS and GWAS fine-mapping: Provides an example of fine-mapping GWAS loci using regulatory annotations and deep learning, which could inform analogous approaches in human datasets.
+- Multi-omics QTL integration / colocalization: Direct QTL integration and human colocalization are not covered; the work emphasizes epigenomic landscapes and regulatory annotation rather than human QTL colocalization, so only partial relevance.
+- AI / explainable ML / in silico perturbations: Uses sequence-to-function deep learning and in silico mutagenesis to predict variant function—methodologically relevant for building interpretable models of regulatory variants.
+- 3D genome / chromatin conformation: Includes chromatin conformation data (CTCF binding, 3D genome aspects), aligning with your interest in spatial genome organization.
+- Therapeutic targeting: Not directly addressed; no drug-target prioritization framework is described.
 
-4) If Highly Relevant, key reason to read: Not Highly Relevant for your direct human-focused aims, but it’s worth reading for methodological inspiration on multi-tissue regulatory annotation, 3D genome integration, and DL-based fine-mapping that could be adapted to human data and cross-species translational analyses.</p>
+4) If Highly Relevant, key reason to read: N/A (not highly relevant). If you consider cross-species regulatory annotation and methodology for integrating epigenomic landscapes with GWAS as a source of methodological inspiration, this paper could be worth reading to glean approaches for annotating non-coding variants and for ideas on leveraging 3D genome information in fine-mapping, with a note on species differences.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://www.biorxiv.org/content/10.1101/2025.08.21.671512" target="_blank" 
-                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on bioRxiv
-                                </a>
-                            </div>
-                        </div>
-                
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-orange-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-flask text-orange-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
-                                        Unclear
-                                    </span>
-                                </div>
-                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Dynamic neuro-immune regulation of psychiatric risk loci in human neurons</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">K. G. Retallick-Townsley, S. Lee, S. E. Williams, S. Cartwright, S. Cohen, A. Sen, M. Jia, H. Young, L. Dobbyn, M. Deans, M. Fernandez-Garcia, L. M. Huckins, K. J. Brennand</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
-                                    <span class="font-medium">Source:</span>
-                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Posted:</span>
-                                    <span class="ml-2">2025-08-25</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
-                                    <span class="font-medium">DOI:</span>
-                                    <span class="ml-2 font-mono text-xs">10.1101/2024.07.09.602755</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
-                                            onclick="toggleAbstract(this)" 
-                                            data-expanded="false">
-                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
-                                    </button>
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        The prenatal environment influences neurodevelopment and subsequent clinical trajectories for psychiatric outcomes in childhood and adolescence. Yet it remains unclear if the impact of maternal and fe...
-                                    </p>
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        The prenatal environment influences neurodevelopment and subsequent clinical trajectories for psychiatric outcomes in childhood and adolescence. Yet it remains unclear if the impact of maternal and fetal immune activation varies with distinct polygenic risk profiles. Therefore, here we catalogue genotype and environment (GxE) interactions, contrasting allele-specific regulatory activity between inflammatory contexts. We report a cue-specific neuronal massively parallel reporter assay (MPRA) of 220 loci from genome-wide association study (GWAS) linked to ten brain traits/disorders, empirically dissecting the impact of interleukin-6 (IL-6) and interferon-alpha (IFN) on transcriptional activity. Of 1,469 active candidate regulatory risk elements (MPRA-active CRSs) across three conditions, we identify 316 with dynamic variant-specific effects (MPRA-QTLs) in human induced pluripotent stem cell (hiPSC)-derived glutamatergic neurons. Broadly, across hundreds of variants, neuronal immune-mediated regulatory activity is driven by differences in transcription factor binding and chromatin accessibility, the gene targets of which show pleiotropic enrichments for brain, metabolic, and immune disorders. Dynamic genetic regulation mediates immune effects, informing our understanding of mechanisms governing pleiotropy and variable penetrance. Understanding neurodevelopmental GxE interactions will inform mental health trajectories and resolve mechanisms mediating prenatal risk.
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance classification: Somewhat Relevant
-
-2) Brief justification: The study examines how immune context modulates regulatory activity of psychiatric-risk loci in human neurons using GWAS-linked elements and neuronal MPRA-QTLs, highlighting genotype-by-environment effects and pleiotropy. However, it does not involve large-scale UK Biobank GWAS/PheWAS, explicit multi-omics QTL colocalization, 3D genome perturbation modeling, or targeted drug discovery, which are central to your focus.
-
-3) Connections to your research:
-- GWAS/psychiatric risk loci: Directly analyzes GWAS-linked regulatory elements in brain-relevant contexts.
-- GxE and regulatory QTLs: Provides allele-specific regulatory effects under inflammatory conditions, relevant to environment-informed regulatory mapping.
-- Regulatory networks and pleiotropy: Demonstrates how regulatory variants can have pleiotropic influences across brain, metabolic, and immune-domain traits.
-- 3D genome/therapeutic targeting: Indirectly related; the work centers on regulatory activity and chromatin accessibility but not 3D genome structure or drug target prioritization.
-
-4) If Highly Relevant, key reason to read: N/A (not Highly Relevant per your criteria)
-
-If you’d like, I can suggest ways to leverage insights from this paper to augment your own analyses, for example by integrating immune-context regulatory effects with your UK Biobank GWAS/PheWAS and colocalization workflows or by informing 3D-genome–aware target prioritization with neuronal regulatory maps.</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://www.biorxiv.org/content/10.1101/2024.07.09.602755" target="_blank" 
                                    class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on bioRxiv
@@ -818,15 +737,8 @@ If you’d like, I can suggest ways to leverage insights from this paper to augm
                         </div>
                         <span class="text-xl font-bold gradient-text">PaperParser AI</span>
                     </div>
-                    <p class="text-gray-400 mb-4">
-                        <i class="fas fa-robot mr-2 text-accent-400"></i>
-                        Generated by Paper Parser Bot
-                    </p>
-                    <p class="text-sm text-gray-500">
-                        Report generated at 2025-08-29 14:14:53 UTC
-                    </p>
                     <div class="mt-6">
-                        <a href="index.html" 
+                        <a href="../" 
                            class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
                             <i class="fas fa-home mr-2"></i>
                             Return to Home
