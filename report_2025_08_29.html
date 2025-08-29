@@ -157,7 +157,7 @@
                     </h2>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">3,988</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">3,989</div>
                             <p class="text-gray-400">Papers Published</p>
                             <p class="text-sm text-gray-500 mt-1">Last 24 Hours</p>
                         </div>
@@ -167,7 +167,7 @@
                             <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">0</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">1</div>
                             <p class="text-gray-400">AI-Selected</p>
                             <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
                         </div>
@@ -180,11 +180,120 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
                             <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            PaperParserAI scanned 3,988 papers published in the last 24 hours, filtering out the noise to identify 0 relevant studies tailored to your research focus
+                            PaperParserAI scanned 3,989 papers published in the last 24 hours, filtering out the noise to identify 1 relevant studies tailored to your research focus
                         </p>
                     </div>
                 </div>
         
+                <!-- PubMed Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-database mr-4 text-primary-400"></i>
+                            <span class="gradient-text">PubMed Papers</span>
+                            <span class="ml-4 text-lg text-gray-400">(1)</span>
+                        </div>
+                        <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
+                                onclick="toggleSection('pubmed-section')" 
+                                id="pubmed-toggle"
+                                data-expanded="true">
+                            <i class="fas fa-chevron-up mr-2"></i>Minimize Section
+                        </button>
+                    </h2>
+                    <div class="section-content" id="pubmed-section">
+                        <div class="grid grid-cols-1 gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Telomere attrition becomes an instrument for clonal selection in aging hematopoiesis and leukemogenesis.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Matthew A McLoughlin, Sruthi Cheloor Kovilakam, William G Dunn, Muxin Gu, Jake Tobin, Yash Pershad, Nicholas Williams, Daniel Leongamornlert, Kevin Dawson, Laura Bond, Ludovica Marando, Sean Wen, Rachael Wilson, Giampiero Valenzano, Vasiliki Symeonidou, Justyna Rak, Aristi Damaskou, Malgorzata Gozdecka, Xiaoxuan Liu, Clea Barcena, Josep Nomdedeu, Paul Costeas, Ioannis D Dimitriou, Edoardo Fiorillo, Valeria Orrù, Jose Guilherme de Almeida, Thomas McKerrell, Matthew Cullen, Irina Mohorianu, Theodora Foukaneli, Alan J Warren, Chi Wong, George Follows, Anna L Godfrey, Emma Gudgin, Francesco Cucca, Eoin McKinney, E Joanna Baxter, Moritz Gerstung, Jonathan Mitchell, Daniel Wiseman, Alexander G Bick, Margarete Fabre, Pedro M Quiros, Jyoti Nangalia, Siddhartha Kar, George S Vassiliou</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 28</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40877435</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The mechanisms through which mutations in splicing factor genes drive clonal hematopoiesis (CH) and myeloid malignancies, and their close association with advanced age, remain poorly understood. Here ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The mechanisms through which mutations in splicing factor genes drive clonal hematopoiesis (CH) and myeloid malignancies, and their close association with advanced age, remain poorly understood. Here we show that telomere maintenance plays an important role in this phenomenon. First, by studying 454,098 UK Biobank participants, we find that, unlike most CH subtypes, splicing-factor-mutant CH is more common in those with shorter genetically predicted telomeres, as is CH with mutations in PPM1D and the TERT gene promoter. We go on to show that telomere attrition becomes an instrument for clonal selection in advanced age, with splicing factor mutations 'rescuing' HSCs from critical telomere shortening. Our findings expose the lifelong influence of telomere maintenance on hematopoiesis and identify a potential shared mechanism through which different splicing factor mutations drive leukemogenesis. Understanding the mechanistic basis of these observations can open new therapeutic avenues against splicing-factor-mutant CH and hematological or other cancers.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+
+2) Brief justification: The paper analyzes large-scale UK Biobank data to link telomere maintenance with clonal hematopoiesis and leukemogenesis, illustrating a GWAS-scale approach to aging-related hematopoietic phenotypes. However, it does not cover multi-omics QTL integration, colocalization, 3D genome structure, or AI-driven perturbation analyses that are central to your research program.
+
+3) Parts that connect to your research:
+- Use of UK Biobank with a large sample size ( GWAS-scale design ). 
+- Focus on aging, hematopoiesis, and leukemogenesis, which could inform regulatory and evolutionary aspects of clonal selection.
+- Potential for therapeutic implications in splicing-factor-mutant CH, relevant to disease targeting.
+
+Parts not aligned with your focus:
+- No explicit multi-omics QTLs (eQTL/pQTL), colocalization analyses, or integration with 3D genome organization.
+- No machine learning/Explainable AI approaches or in silico genome perturbation modeling.
+- No direct mapping to spatial chromatin structure or druggable gene prioritization.
+
+4) If Highly Relevant: N/A. It’s not highly relevant to your core objectives, but it may be worth reading for context on large-scale genotype–phenotype analyses in aging hematopoiesis and for concepts on telomere biology as a driver of clonal evolution.</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40877435/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                </div>
+            
             </div>
 
             <!-- Footer -->
