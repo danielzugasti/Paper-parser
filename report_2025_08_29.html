@@ -157,7 +157,7 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">3,982</div>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">709</div>
                             <p class="text-gray-400">Papers Published</p>
                             <p class="text-sm text-gray-500 mt-1">Today</p>
                         </div>
@@ -175,7 +175,7 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
                             <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            From 3,982 papers published today, AI identified 3 as relevant to your research focus
+                            From 709 papers published today, AI identified 3 as relevant to your research focus
                         </p>
                     </div>
                 </div>
@@ -261,16 +261,14 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Justification: The paper investigates context-specific regulatory variants by mapping eQTLs in stimulated iPSC-derived macrophages and shows that stimulation-related eQTLs (reQTLs) are enriched among disease-colocalizing signals, identifying additional disease effector genes at GWAS loci (including many not in GTEx). While this aligns with linking regulatory variants to disease via colocalization, it does not cover large-scale GWAS/PheWAS across thousands of traits, multi-omics QTLs beyond eQTLs, 3D genome organization, or AI-driven perturbation modeling.
+2) Justification: The paper investigates context-specific eQTLs in stimulated iPSC-derived macrophages and uses colocalization with disease GWAS to nominate disease effector genes, including many not present in GTEx. This directly touches on regulatory variant interpretation and disease gene prioritization, which aligns with your emphasis on linking variants to regulatory elements and disease drivers, though it does not cover UK Biobank-scale GWAS, multi-omics QTL integration, 3D genome analysis, or AI-based perturbation modeling.
 
 3) Connections to your research:
-- GWAS-colocalization approach to map regulatory variants to disease drivers.
-- Identification of disease effector genes at GWAS loci, including genes not captured by GTEx.
-- Demonstrates the value of context-specific regulatory QTLs (condition/stimulus-dependent) for interpreting disease risk.
-- Could inform methodological enhancements for integrating regulatory QTLs with disease phenotypes beyond static tissues.
-- Limited direct coverage of 3D genome architecture, multi-omics QTLs (beyond gene expression), or ML-based in silico perturbations.
+- eQTL mapping in a context-rich/condition-specific setting (stimulated macrophages) informs how regulatory effects vary by condition, relevant to identifying regulatory drivers across phenotypes.
+- Colocalization with GWAS to nominate disease effector genes and discovery of genes not in GTEx aligns with your goal of linking variants to regulatory elements and disease drivers beyond existing catalogs.
+- Highlights that regulatory variation under specific cellular states can illuminate disease risk alleles, supporting ideas for integrating condition-specific QTL data into large-scale mapping and fine-mapping workflows.
 
-4) If Highly Relevant: Not applicable. However, key take-away to consider reading it for your work is the demonstration that condition-specific regulatory variation can reveal disease-associated effector genes missed in standard catalogs, which could motivate incorporating context-dependent QTL analyses into your GWAS/PheWAS and colocalization pipelines.</p>
+4) If you were to read it for a key takeaway: The study provides a compelling example of how context-specific regulatory variants (reQTLs) can reveal disease associations and genes not captured in GTEx, which could inform your approach to integrating QTL data with colocalization and prioritizing targets in a multi-condition, multi-omics framework.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -345,11 +343,13 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Not Relevant
 
-2) Justification: The study focuses on wheat phenomics and genomic analyses of phenotypic plasticity during crop improvement. It involves plant genetics, not human disease, and there is no indication of human GWAS/PheWAS, multi-omics QTL colocalization, 3D genome analyses, or therapeutic target identification.
+2) Justification: The paper is about wheat (a plant) and investigates phenotypic plasticity during crop improvement. There is no mention of human or UK Biobank-scale GWAS/PheWAS, multi-omics QTLs, colocalization, AI-based explainability, 3D genome topology, or therapeutic target prioritization in humans. Thus it does not directly address your human-focused research program.
 
-3) Connections to your work: The abstract mentions integrated phenomic and genomic analyses, which is conceptually related to data integration across omics, but there are no human datasets, regulatory network mapping, disease associations, or drug-target prioritization. The content is plant-focused.
+3) Connections to your work:
+- Conceptual: It discusses integrated phenomic and genomic analyses, which aligns with your interest in combining phenotypes with genomic data.
+- Lacking direct alignment: It does not cover GWAS/PheWAS in humans, multi-omics QTL colocalization, regulatory element mapping, 3D genome organization, or in silico perturbation/target prioritization for human therapeutics.
 
-4) Highly Relevant? No. If you are exploring cross-domain methodological ideas for integrating phenomics and genomics, you might find high-level conceptual inspiration, but it’s not directly applicable to your human-focused GWAS, QTL colocalization, 3D genome, or therapeutic target aims.</p>
+4) If you were to read it, the key reason would be to glean general methodological ideas for integrating large-scale phenotypic data with genomics and to understand approaches for studying phenotypic plasticity—but note that it is not directly applicable to human disease genetics or therapeutics.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -446,16 +446,15 @@
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
 
-2) Justification: The paper presents gpu-coloc, a GPU-accelerated implementation of colocalisation that enables scalable tests across millions of traits using UK Biobank, FinnGen, and molQTL (eQTL) data. This directly supports large-scale GWAS/molQTL colocalisation workflows central to your research aims.
+2) Justification: The paper presents gpu-coloc, a GPU-accelerated implementation of the coloc colocalisation method designed for ultra-large-scale analyses across millions of traits, using UK Biobank, FinnGen, and eQTL data. This directly enables scalable colocalisation between GWAS/molQTL signals and regulatory elements, aligning with your goals of integrating multi-omics QTLs and linking variants to disease drivers.
 
-3) Connections to your research:
-- GWAS/PheWAS scale: Demonstrates ultra-fast colocalisation across large trait sets, aligning with your goal of large-scale analyses.
-- Multi-omics QTL integration: Uses molQTL data (eQTL Catalogue) for colocalisation, matching your integrative approach.
-- Colocalization methodology: Provides practical guidelines and a new collider metric to manage false positives in large-scale colocalisation graphs.
-- UK Biobank data: Uses major biobank resources relevant to your pipeline.
-- Data-informed target prioritization: While it focuses on colocalisation, the results help link variants to regulatory signals, a key step toward identifying disease drivers.
+3) Connects to your research (which parts): 
+- GWAS / PheWAS scale analyses: Provides a scalable tool to perform colocalisation across many traits, essential for high-throughput mapping in large biobanks. 
+- Multi-omics QTL integration and colocalization: Demonstrates application to molQTLs (eQTLs) and cross-dataset colocalisation, supporting your aim to connect regulatory variants to phenotypes. 
+- Colocalization workflow: Introduces a collider metric to assess spurious colocalisations, aiding robust interpretation in large-scale graphs. 
+- Data sources and practical guidelines: Uses UK Biobank data, which is central to your resource base, and discusses performance with and without fine mapping.
 
-4) If highly relevant, key reason to read: It offers a fast, scalable colocalisation tool tailored for very large datasets like UK Biobank, with demonstrated accuracy and guidance (collider metric) for trustworthy large-scale colocalisation analyses. Reading it will equip you with a practical backbone for integrating molQTLs with GWAS in your PheWAS/2,500-trait framework and will streamline downstream identification of regulatory drivers to target prioritization. Note: it does not address 3D genome modeling or AI-driven perturbation simulations directly, but its colocalisation framework would complement those downstream analyses.</p>
+4) If highly relevant, key reason to read: It provides a ready-to-use, scalable colocalisation framework that dramatically accelerates large-scale cross-trait analyses, enabling you to efficiently map regulatory variants to diseases/traits across ~2,500+ domains and integrate molQTL signals with GWAS data at genome-wide scale. This could substantially enhance your colocalization pipelines and throughput for target discovery.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
