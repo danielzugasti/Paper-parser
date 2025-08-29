@@ -157,25 +157,25 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent-400 mb-2">15</div>
-                            <p class="text-gray-400">Papers Published</p>
-                            <p class="text-sm text-gray-500 mt-1">Today</p>
+                            <div class="text-4xl font-bold text-accent-400 mb-2">2</div>
+                            <p class="text-gray-400">Relevant Papers Found</p>
+                            <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-primary-400 mb-2">2</div>
+                            <div class="text-4xl font-bold text-primary-400 mb-2">1</div>
                             <p class="text-gray-400">PubMed Papers</p>
                             <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">13</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">1</div>
                             <p class="text-gray-400">bioRxiv Preprints</p>
                             <p class="text-sm text-gray-500 mt-1">Latest Research</p>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
-                            <i class="fas fa-calendar mr-2 text-accent-400"></i>
-                            All papers published today from selected journals and bioRxiv
+                            <i class="fas fa-filter mr-2 text-accent-400"></i>
+                            AI filtered out irrelevant papers, showing only research that matches your focus areas
                         </p>
                     </div>
                 </div>
@@ -198,14 +198,14 @@
                     <div class="section-content" id="pubmed-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-primary-500/20 p-2 rounded-lg">
                                         <i class="fas fa-file-alt text-primary-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
-                                        Unclear
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
                                     </span>
                                 </div>
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
@@ -259,17 +259,17 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Somewhat Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
 
-2) Justification: The paper investigates context-specific expression QTLs in stimulated iPSC-derived macrophages and uses colocalization with GWAS signals to nominate disease effector genes, including many not found in GTEx. This directly aligns with your interest in linking regulatory variants to disease via colocalization, though it does not address multi-omics QTLs, 3D genome structure, large-scale UK Biobank/PheWAS, or AI-driven perturbation analyses.
+2) Brief justification: The paper investigates context-specific regulatory variation by mapping eQTLs in stimulated iPSC-derived macrophages and uses colocalization to link these eQTLs to disease GWAS signals, uncovering disease effector genes not present in GTEx. While it advances regulatory variant interpretation, it does not address large-scale GWAS/PheWAS across 2,500 traits, multi-omics QTL integration (beyond eQTLs), 3D genome perturbations, or AI-driven analyses.
 
-3) Connections to your research:
-- Colocalization of QTLs with disease GWAS signals to identify disease effector genes (relevant to linking variants to regulatory elements and disease drivers).
-- Context-specific (stimulus-dependent) regulatory effects, highlighting how regulatory variants may only be active under certain cellular conditions—informing design of context-aware analyses in complex traits.
-- Discovery of disease-associated genes not present in GTEx, underscoring the value of tissue/state-specific QTL mapping for uncovering novel targets.
-- Demonstrates a framework for integrating functional QTL data with disease genetics, which could complement your multi-omics QTL and colocalization workflows.
+3) Connecting elements to your research:
+- Context-specific regulatory variants (reQTLs) and their contribution to disease colocalization, relevant to understanding regulatory mechanisms in disease.
+- Colocalization of QTLs with GWAS signals to nominate disease effector genes, aligning with your aim to link variants to regulatory elements and drivers.
+- Identification of disease-associated genes at GWAS loci that are not captured in GTEx, highlighting tissue/context specificity important for targeting.
+- Provides methodological insight into context-driven QTL mapping and colocalization approaches that could inform your strategies.
 
-If you pursue reading it, expect to gain practical insights into context-specific QTL mapping and colocalization strategies that may inform your approach to identifying regulatory drivers and potential drug targets, even though the work does not cover UK Biobank-scale data, PheWAS, 3D genome analysis, or AI-driven perturbation.</p>
+4) If it were Highly Relevant: key reason to read (not applicable here, since it’s not rated Highly Relevant). Instead, you might read it for practical lessons on context-specific colocalization and for ideas to extend such analyses toward immune-related traits and novel disease genes beyond GTEx.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -303,14 +303,14 @@ If you pursue reading it, expect to gain practical insights into context-specifi
                     <div class="section-content" id="biorxiv-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-orange-500/20 p-2 rounded-lg">
                                         <i class="fas fa-flask text-orange-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
-                                        Highly Relevant
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
+                                        Unclear
                                     </span>
                                 </div>
                                 <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
@@ -364,20 +364,17 @@ If you pursue reading it, expect to gain practical insights into context-specifi
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Highly Relevant
 
-2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated Coloc implementation that enables fast, large-scale colocalisation analyses across millions of traits using UK Biobank, FinnGen, and molQTL data. This directly supports your aim of integrating multi-omics QTLs with GWAS/PheWAS at scale to link variants to regulatory elements and disease drivers.
+2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated, scalable implementation of colocalisation using UK Biobank, FinnGen, and eQTL Catalogue data. This directly enables large-scale colocalisation analyses across millions of signals, which is central to integrating molQTLs with GWAS to map regulatory variants to disease drivers—exactly aligning with your focus on multi-omics colocalization and large-scale trait linking.
 
-3) Connections to your work:
-- GWAS and PheWAS at scale: GPU-accelerated colocalisation across thousands/millions of signals fits your large-scale analytic needs.
-- Integration of molQTLs (eQTLs, pQTLs, etc.) with colocalisation: The method is designed to assess shared causal variants between GWAS and molQTL signals.
-- Regulatory element/disease driver linking: Colocalisation results can help map variants to regulatory mechanisms and downstream disease biology.
-- Large datasets (UK Biobank, summary statistics): Demonstrated with UKB and other large resources, aligning with your data scale.
-- Handling of fine-mapped vs marginal signals: Useful for analyses where fine mapping is available or not, broadening applicability.
-Note: The paper does not explicitly address 3D genome structure or AI-driven perturbation analyses, but provides a scalable backbone for colocalisation that can feed into downstream 3D-genome or ML-based interpretation.
+3) Connections to your research:
+- Colocalisation of GWAS and molQTL signals (eQTLs, pQTLs) at scale.
+- Use of UK Biobank and eQTL Catalogue data, matching your data sources.
+- Handling of large-scale trait analyses and fine-mapping considerations (e.g., collider metric to reduce false positives).
+- Practical workflow and guidance for scalable colocalisation, which can underpin downstream multi-omics integration and network-level target prioritization.
 
-4) If Highly Relevant, key reason to read:
-- To adopt a scalable, validated tool for large-scale colocalisation that can rapidly integrate GWAS with molQTL data across thousands of traits, enabling robust identification of regulatory variants and potential disease drivers—a core step in your multi-omics, target-discovery pipeline. The colocalisation collider metric and performance benchmarks against fine-mapped data are particularly useful for ensuring reliable connections in very large datasets.</p>
+4) Key reason to read if highly relevant: It provides a crucial, scalable methodological backbone for your pipeline to link regulatory variants to phenotypes across thousands to millions of traits, enabling robust inference for regulatory mechanism discovery and downstream target prioritization in your 3D-genome–informed framework.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
