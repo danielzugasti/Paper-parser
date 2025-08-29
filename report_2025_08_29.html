@@ -1,0 +1,225 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Daily PubMed & bioRxiv Paper Report</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+            <script>
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                'primary': {
+                                    50: '#f0f9ff',
+                                    500: '#3b82f6',
+                                    600: '#2563eb',
+                                    700: '#1d4ed8',
+                                    900: '#1e3a8a'
+                                },
+                                'accent': {
+                                    400: '#34d399',
+                                    500: '#10b981',
+                                    600: '#059669'
+                                }
+                            },
+                            animation: {
+                                'fade-in': 'fadeIn 0.8s ease-in-out',
+                                'slide-up': 'slideUp 0.6s ease-out'
+                            }
+                        }
+                    }
+                }
+            </script>
+            <style>
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .glass-effect {
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .cyber-grid {
+                    background-image: 
+                        linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+                    background-size: 50px 50px;
+                }
+                .paper-card {
+                    transition: all 0.3s ease;
+                }
+                .paper-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+                }
+                .relevance-glow-high {
+                    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+                }
+                .relevance-glow-med {
+                    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+                }
+            </style>
+        </head>
+        <body class="bg-gray-900 text-white min-h-screen">
+            <!-- Background Effects -->
+            <div class="fixed inset-0 cyber-grid opacity-10"></div>
+            <div class="fixed top-20 left-20 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+            <div class="fixed bottom-20 right-20 w-72 h-72 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+
+            <!-- Navigation -->
+            <nav class="relative z-50 bg-gray-900/80 glass-effect border-b border-gray-700 sticky top-0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-primary-500 p-2 rounded-lg">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">
+                                <i class="fas fa-home mr-2"></i>Home
+                            </a>
+                            <span class="text-gray-500">|</span>
+                            <span class="text-sm text-gray-400">Daily Report</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+                <!-- Header -->
+                <div class="text-center mb-12 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="gradient-text">Daily Research Report</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-6">Friday, August 29, 2025</p>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800/50 glass-effect rounded-full px-6 py-3">
+                        <i class="fas fa-robot text-accent-400"></i>
+                        <span class="text-gray-300">AI-Powered Research Discovery</span>
+                    </div>
+                </div>
+        
+                <!-- Summary Stats -->
+                <div class="bg-gray-800/50 glass-effect rounded-3xl p-8 mb-12 border border-gray-700 animate-slide-up">
+                    <h2 class="text-2xl font-bold text-center mb-8 text-white">
+                        <i class="fas fa-chart-bar mr-3 text-accent-400"></i>Analysis Summary
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent-400 mb-2">0</div>
+                            <p class="text-gray-400">Relevant Papers Found</p>
+                            <p class="text-sm text-gray-500 mt-1">AI Filtered & Prioritized</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary-400 mb-2">0</div>
+                            <p class="text-gray-400">PubMed Papers</p>
+                            <p class="text-sm text-gray-500 mt-1">Peer-Reviewed Research</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">0</div>
+                            <p class="text-gray-400">bioRxiv Preprints</p>
+                            <p class="text-sm text-gray-500 mt-1">Latest Research</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <p class="text-gray-400">
+                            <i class="fas fa-filter mr-2 text-accent-400"></i>
+                            AI filtered out irrelevant papers, showing only research that matches your focus areas
+                        </p>
+                    </div>
+                </div>
+        
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900/80 border-t border-gray-800 py-12 mt-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="flex justify-center items-center space-x-3 mb-6">
+                        <div class="bg-primary-500 p-2 rounded-lg">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        <i class="fas fa-robot mr-2 text-accent-400"></i>
+                        Generated by Paper Parser Bot
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        Report generated at 2025-08-29 11:07:03 UTC
+                    </p>
+                    <div class="mt-6">
+                        <a href="index.html" 
+                           class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
+                            <i class="fas fa-home mr-2"></i>
+                            Return to Home
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTop" 
+                    class="fixed bottom-8 right-8 bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <script>
+                // Scroll to top functionality
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.add('opacity-100', 'visible');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                
+                // Add smooth reveal animations for papers
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.paper-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            </script>
+        </body>
+        </html>
+        
