@@ -162,7 +162,7 @@
                             <p class="text-sm text-gray-500 mt-1">Today</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-green-400 mb-2">1</div>
+                            <div class="text-4xl font-bold text-green-400 mb-2">0</div>
                             <p class="text-gray-400">AI-selected</p>
                             <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
                         </div>
@@ -180,7 +180,7 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
                             <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            From 711 papers published today, AI identified 1 as highly relevant and 0 as somewhat relevant to your research
+                            PaperParserAI scanned 711 papers published today, filtering out the noise to surface 0 highly relevant and 0 somewhat relevant studies tailored to your research focus
                         </p>
                     </div>
                 </div>
@@ -264,17 +264,19 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Somewhat Relevant
+                                <p class="text-gray-300 leading-relaxed">1) Relevance classification: Somewhat Relevant
 
-2) The abstract shows context-specific eQTL mapping (reQTLs) in stimulated iPSC-derived macrophages and demonstrates that these condition-specific regulatory variants colocalize with GWAS loci, uncovering disease effector genes not captured in GTEx. This aligns with your interest in colocalization to link variants to regulatory elements and disease drivers, though it lacks multi-omics QTLs, 3D genome analyses, large-scale UKB-like GWAS/PheWAS, and AI-driven perturbation modeling.
+2) Brief justification: The paper investigates context-specific gene expression QTLs (reQTLs) in stimulated iPSC-derived macrophages and demonstrates that these context-specific signals colocalize with GWAS loci, identifying disease effector genes not always seen in GTEx. This aligns with the idea of context-aware regulatory variants contributing to disease, but it does not deliver large-scale GWAS/PheWAS, multi-omics QTL integration (beyond eQTLs), 3D genome analysis, or AI-driven perturbation approaches that are central to your research.
 
-3) Connections to your research:
-- GWAS and colocalization: strong relevance via disease locus colocalization and identification of effector genes.
-- Context-specific regulation: relevant due to the focus on stimulus-responsive regulatory effects (reQTLs).
-- Disease targeting/priority: informs prioritization of disease genes at GWAS loci, including genes absent from GTEx.
-- Not directly addressed in abstract: multi-omics QTLs (eQTL, pQTL, etc. together), 3D genome organization (loops/TADs), machine learning/AI perturbation models, PheWAS, large-scale UK Biobank-scale analyses.
+3) Connects to your research (which parts):
+- GWAS and colocalization: Yes — shows colocalization of reQTLs with disease loci and identification of additional effector genes at GWAS signals.
+- PheWAS: No — not addressed.
+- Multi-omics QTLs (eQTL, pQTL, etc.): Partially — focuses on eQTLs; no pQTLs or other QTL types discussed.
+- AI / explainable ML / in silico perturbations: No — not covered.
+- 3D genome / chromatin organization: No — not addressed.
+- Therapeutic targeting / druggable genes: Indirectly relevant — nominates disease effector genes at GWAS loci, which could be starting points for target discovery, but no explicit therapeutic targeting framework.
 
-4) If Highly Relevant, key reason to read: N/A (it's not Highly Relevant). A key takeaway for you would be the demonstrated value of including context-specific regulatory variation (reQTLs) to enhance colocalization-powered discovery of disease genes, which could inform your multi-omics colocalization and context-aware target prioritization pipelines.</p>
+4) If Highly Relevant, key reason to read: Not Highly Relevant. However, a key takeaway worth reading for your work is the demonstration that context-specific regulatory variation (reQTLs) can uncover disease-colocalizing signals and identify additional disease effector genes beyond those captured in GTEx. This could inform your strategy to integrate context- or condition-specific QTL data into large-scale GWAS analyses and to prioritize genes at GWAS loci, especially when comparing to GTEx baselines.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -308,14 +310,14 @@
                     <div class="section-content" id="biorxiv-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-gray-600 bg-gray-800/50 ">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-orange-500/20 p-2 rounded-lg">
                                         <i class="fas fa-flask text-orange-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
-                                        Highly Relevant
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white">
+                                        Unclear
                                     </span>
                                 </div>
                                 <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
@@ -369,18 +371,17 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+                                <p class="text-gray-300 leading-relaxed">1. Highly Relevant
 
-2) Brief justification: The paper presents gpu-coloc, a GPU-accelerated colocalisation framework that enables ultra-fast testing of colocalisation across millions of traits using UK Biobank, FinnGen, and eQTL Catalogue data. This directly addresses the computational bottleneck in large-scale GWAS/molQTL colocalisation, and includes controls for false positives (colocalisation collider) and applicability to loci without fine mapping—aligning closely with your large-scale GWAS/PheWAS and multi-omics colocalisation goals.
+2. Justification: The paper introduces gpu-coloc, a GPU-accelerated implementation of the coloc colocalisation method that enables large-scale testing across millions of traits using UK Biobank, FinnGen, and eQTL Catalogue data. This directly supports your core goal of linking GWAS/molQTL signals to regulatory elements and disease drivers at scale, with a novel collider metric to assess spurious colocalisations.
 
-3) Connections to your research:
-- GWAS and molQTL colocalisation at scale: directly enables large-scale cross-trait colocalisation analyses.
-- Integration of multi-omics QTLs: uses eQTL Catalogue data, supporting linking regulatory variants to genes.
-- Computational efficiency: GPU acceleration supports your aim to scale analyses across thousands of traits and datasets.
-- Quality control in large networks: colocalisation collider metric helps quantify/spin down false positives in colocalisation graphs, useful for robust target mapping.
-- Applicability to incomplete fine-mapping: can recover molQTL colocalisations even when fine mapping is lacking, aiding broader locus coverage.
+3. Connections to your research:
+- GWAS/MolQTL integration: scalable colocalisation between GWAS signals and molQTLs (eQTLs) is central to your pipeline.
+- Multi-omics colocalisation: aligns with your aim to map regulatory variants to phenotypes across omics layers.
+- Large-scale analysis: designed for millions of traits, matching your scale (UKB-based studies).
+- Robustness tools: the colocalisation collider metric aids in reducing false positives in dense, large graphs.
 
-4) If you should read it: Key reason to read is that it provides a scalable, validated tool and practical guidance for performing large-scale colocalisation between GWAS and molQTL signals, a core step in linking variants to regulatory elements and disease drivers in your pipeline. It could substantially streamline and improve the robustness of your colocalisation-based target discovery across UK Biobank–scale datasets.</p>
+4. If highly relevant, key reason to read: It provides a practical, scalable solution to perform colocalisation at UKB-scale across many traits, with guidance on thresholds via the collider metric, enabling you to build more comprehensive and reliable multi-omics colocalisation frameworks for target discovery.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
