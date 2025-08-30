@@ -159,7 +159,7 @@
                         <div class="text-center">
                             <div class="text-4xl font-bold text-accent-400 mb-2">3,453</div>
                             <p class="text-gray-400">Papers Published</p>
-                            <p class="text-sm text-gray-500 mt-1">Current Monitoring Cycle</p>
+                            <p class="text-sm text-gray-500 mt-1">Just Out</p>
                         </div>
                         <div class="text-center">
                             <div class="text-4xl font-bold text-green-400 mb-2">0</div>
@@ -167,12 +167,12 @@
                             <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">6</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">5</div>
                             <p class="text-gray-400">AI-Selected</p>
                             <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-red-400 mb-2">25</div>
+                            <div class="text-4xl font-bold text-red-400 mb-2">26</div>
                             <p class="text-gray-400">AI-Filtered</p>
                             <p class="text-sm text-gray-500 mt-1">Not Relevant</p>
                         </div>
@@ -180,7 +180,7 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 text-center">
                         <p class="text-gray-400">
                             <i class="fas fa-filter mr-2 text-accent-400"></i>
-                            PaperParserAI scanned 3,453 papers from the current publication cycle, filtering out the noise to identify 6 relevant studies tailored to your research focus
+                            PaperParserAI scanned 3,453 papers from the current publication cycle, filtering out the noise to identify 5 relevant studies tailored to your research focus
                         </p>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-database mr-4 text-primary-400"></i>
                             <span class="gradient-text">PubMed Papers</span>
-                            <span class="ml-4 text-lg text-gray-400">(3)</span>
+                            <span class="ml-4 text-lg text-gray-400">(4)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('pubmed-section')" 
@@ -265,94 +265,19 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper provides mechanistic insight into how 3D genome architecture and CTCF-bound boundaries regulate tissue-specific enhancer activity, which can inform interpretation of regulatory variants in complex traits. It is a mouse-focused, mechanistic study with no direct GWAS/PheWAS or human multi-omics integration, limiting direct applicability to large-scale human analyses.
+2) Brief justification: The paper analyzes 3D genome architecture and enhancer insulation at the Igf2/H19 locus in mice, illustrating how architectural elements govern tissue- and development-specific gene regulation. Although not human GWAS/PheWAS-focused, it provides insights into how chromatin structure and enhancer activity can alter gene expression, informing interpretation of regulatory variants in complex diseases.
 3) Which parts connect to your research:
-- Demonstrates how architectural features (CTCF boundaries, chromatin domains) influence enhancer-promoter interactions
-- Highlights tissue- and development-specific regulatory control of gene expression (context for multi-omics colocalization interpretation)
-- Provides a framework for integrating chromatin architecture data with gene regulation, relevant to prioritizing regulatory elements in GWAS/PheWAS
-- Illustrates how disruption of regulatory architecture can lead to aberrant gene activation, a potential mechanism under study in human disease
-- Serves as a model for multi-modal chromatin analyses that could be analogous to integrating 3D genome data with QTLs and expression
+- 3D genome organization: CTCF boundary deletion alters enhancer-promoter interactions and domain insulation.
+- Tissue- and development-specific regulation: Neonatal vs adult muscle–specific regulatory effects on Igf2.
+- Identification and behavior of a distal enhancer (PaSME) insulated by chromatin domains, illustrating context-dependent enhancer activity.
+- Implications for interpreting noncoding regulatory variants in GWAS/PheWAS and for colocalization analyses that must account for chromatin architecture.
+- Conceptual link to in silico perturbations and AI-driven modeling of 3D genome effects on gene expression and therapeutic targeting strategies.
+- Relevance to imprinting and regulatory element dynamics in disease contexts involving growth or muscle biology.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40880432/" target="_blank" 
-                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on PubMed
-                                </a>
-                            </div>
-                        </div>
-                
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-primary-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-file-alt text-primary-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
-                                        Somewhat Relevant
-                                    </span>
-                                </div>
-                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">reDA: differential abundance testing on scATAC-seq data using random walk with restart.</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">Zirui Chen, Jiao Hua, Lu Ba, Tianyun He, Boran Yang, Jing Qi, Shuilin Jin</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
-                                    <span class="font-medium">Journal:</span>
-                                    <span class="ml-2 text-green-300">Bioinformatics (Oxford, England)</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Published:</span>
-                                    <span class="ml-2">2025 Aug 29</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
-                                    <span class="font-medium">PMID:</span>
-                                    <span class="ml-2 font-mono text-xs">40880280</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
-                                            onclick="toggleAbstract(this)" 
-                                            data-expanded="false">
-                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
-                                    </button>
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for...
-                                    </p>
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for unraveling disease pathogenesis. However, the high dimensionality, extreme sparsity, and nearly binary nature of scATAC-seq data pose significant challenges. Here, we present reDA, a cluster-free computational framework that performs differential abundance testing based on the random walk with restart. Through comprehensive experiments on simulated and real datasets, reDA outperforms six baseline methods, demonstrating superior accuracy, computational efficiency, and the ability to capture disease-specific molecular signatures.
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It presents a single-cell chromatin accessibility analysis method for identifying disease-associated cell states, which could inform regulatory interpretation of disease variants, but it does not directly address population-scale GWAS/PheWAS, multi-omics QTL colocalization, 3D genome perturbations, or therapeutic target prioritization.
-3) Which parts connect to your research: AI: uses a random walk with restart (graph-based AI approach); GWAS/PheWAS: could help interpret cell-type–specific regulatory contexts of disease variants; Colocalization: not addressed but could be integrated in future; 3D genome: not addressed but potential synergy; Therapeutic targeting: not addressed.
-4) If Highly Relevant, key reason to read: N/A</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/40880280/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -422,18 +347,178 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It presents AI-driven causal inference to link noncoding regulatory variants to target genes using single-cell multi-omics, aligning with regulatory interpretation and target prioritization. However, it focuses on schizophrenia and single-cell data rather than large-scale UK Biobank GWAS/PheWAS or explicit 3D genome perturbation modeling and colocalization across thousands of traits.
+
+2) Brief justification: The paper presents GrID-Net, a graph-based approach to map causal regulatory links between noncoding variants and genes using single-cell multi-omics data, aligning with your interests in linking regulatory elements to disease drivers and applying AI to causal inference. However, it focuses on a single disorder (schizophrenia) and does not directly address large-scale GWAS/PheWAS, UK Biobank-scale analyses, or explicit 3D genome modeling across thousands of traits.
+
 3) Which parts connect to your research:
-- Multi-omics integration (scATAC-seq and scRNA-seq) for variant-to-gene mapping
-- Graph neural network-based causal inference and the cell-state parallax concept (temporal causality from static single-cell data)
-- Tissue- and cell-type-specific regulatory mechanisms informing disease biology
-- Potential for identifying regulatory targets and pathways, contributing to AI-driven target prioritization
-- Variant-level precision and expanded regulatory coverage, relevant to refining GWAS/PheWAS interpretations
+- Connects noncoding GWAS variants to target genes via single-cell chromatin accessibility and transcription data, informing variant-to-gene mapping and colocalization concepts.
+- Uses graph neural networks and causal inference (Granger-like) to infer causal locus-gene associations, relevant to AI-driven discovery of regulatory drivers.
+- Introduces a time-lag or "cell-state parallax" framework to infer causality from static single-cell snapshots, akin to simulating perturbations in regulatory networks.
+- Reports increased variant coverage and discovery of regulatory mechanisms at specific genes, illustrating how higher-resolution, tissue-specific links can refine target prioritization.
+- Demonstrates identifying potential therapeutic targets (e.g., neural TF disruptions and transporter genes) through regulatory mechanism elucidation.
+
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
                                 <a href="https://pubmed.ncbi.nlm.nih.gov/40883263/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">GE-IA-NAM: Gene-environment Interaction Analysis via Imaging-assisted Neural Additive Model.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Jingmao Li, Yaqing Xu, Shuangge Ma, Kuangnan Fang</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Bioinformatics (Oxford, England)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40880282</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Gene-environment (G-E) interaction analysis is crucial in cancer research, offering insights into how genetic and environmental factors jointly influence cancer outcomes. Most existing G-E interaction...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Gene-environment (G-E) interaction analysis is crucial in cancer research, offering insights into how genetic and environmental factors jointly influence cancer outcomes. Most existing G-E interaction methods are regression-based, which may lack flexibility to capture complex data patterns. Recent advances have investigated deep neural network-based G-E models. However, these methods may be more vulnerable to information deficiency due to challenges such as limited sample size and high dimensionality. Apart from genetic and environmental data, pathological images have emerged as a widely accessible and informative resource for cancer modeling, presenting its potential to enhance G-E modeling.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study uses an AI framework to model gene-environment interactions in cancer with imaging data, aligning with your interest in ML/AI and multi-modal data; however, it does not address large-scale GWAS/PheWAS, multi-omics QTL colocalization, 3D genome perturbations, or explicit therapeutic target prioritization.
+3) Which parts connect to your research: AI/Explainable AI (imaging-assisted neural additive model for interpretable G-E modeling); Multi-modal data integration (genetic/environmental data with pathology imaging); Potential to inform regulatory/pathway-targeting insights (conceptual, not explicit in abstract); No direct connections to GWAS/PheWAS, colocalization, 3D genome, or explicit drug target prioritization.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40880282/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">reDA: differential abundance testing on scATAC-seq data using random walk with restart.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Zirui Chen, Jiao Hua, Lu Ba, Tianyun He, Boran Yang, Jing Qi, Shuilin Jin</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Bioinformatics (Oxford, England)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40880280</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for unraveling disease pathogenesis. However, the high dimensionality, extreme sparsity, and nearly binary nature of scATAC-seq data pose significant challenges. Here, we present reDA, a cluster-free computational framework that performs differential abundance testing based on the random walk with restart. Through comprehensive experiments on simulated and real datasets, reDA outperforms six baseline methods, demonstrating superior accuracy, computational efficiency, and the ability to capture disease-specific molecular signatures.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper offers a novel graph-based method to identify differential abundance of cell states from scATAC-seq data, which can inform regulatory element discovery in disease contexts. It does not directly address GWAS/PheWAS analyses, colocalization, multi-omics integration, 3D genome perturbations, or therapeutic targeting, limiting direct applicability to your core aims, though the approach could complement regulatory landscape analyses.
+3) Which parts connect to your research:
+- Disease-associated regulatory element discovery at single-cell resolution (scATAC-seq differential abundance)
+- Graph-based differential testing approach (random walk with restart) aligns with ML/AI methods for prioritizing regulatory nodes
+- Potential to be integrated with multi-omics QTL and colocalization workflows by providing cell-type- and state-specific regulatory landscapes
+- Could inform 3D genome analyses by identifying regulatory regions and cell states that may map to chromatin interactions (loops/TADs)
+- Generated disease-associated molecular signatures that could contribute to therapeutic target prioritization when combined with GWAS hits
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40880280/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -451,7 +536,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-flask mr-4 text-orange-400"></i>
                             <span class="gradient-text">bioRxiv Preprints</span>
-                            <span class="ml-4 text-lg text-gray-400">(3)</span>
+                            <span class="ml-4 text-lg text-gray-400">(1)</span>
                         </div>
                         <button class="section-toggle text-gray-400 hover:text-orange-400 text-sm font-medium flex items-center"
                                 onclick="toggleSection('biorxiv-section')" 
@@ -463,167 +548,6 @@
                     <div class="section-content" id="biorxiv-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-orange-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-flask text-orange-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
-                                        Somewhat Relevant
-                                    </span>
-                                </div>
-                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The multiscale distribution of radiation-induced DNA damage and its impact on local genome structure</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">H. Li, T. Xue, R. P. McCord</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
-                                    <span class="font-medium">Source:</span>
-                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Posted:</span>
-                                    <span class="ml-2">2025-08-29</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
-                                    <span class="font-medium">DOI:</span>
-                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.672161</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
-                                            onclick="toggleAbstract(this)" 
-                                            data-expanded="false">
-                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
-                                    </button>
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        The three-dimensional genome structure is critical for the regulation of gene expression and repair of DNA damage. While previous work has characterized genome-wide sites of DNA damage caused by etopo...
-                                    </p>
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        The three-dimensional genome structure is critical for the regulation of gene expression and repair of DNA damage. While previous work has characterized genome-wide sites of DNA damage caused by etoposide or nucleases, the distribution of double-strand breaks (DSBs) caused by external radiation and how these interact with the 3D genome organization is less well understood. Here, we measure the genomic landscape of radiation-induced DNA damage using END-seq in fibroblasts and lymphoblasts after exposure to 5 Gy X-rays. We identify frequently broken regions and investigate the 3D genome properties around these breaks with Hi-C data. We observe that the distribution of robust breaks correlates with transcriptional and chromatin features of the genome. Transcriptionally active and decondensed regions, such as chromosome 19, the A compartment, and topologically associating domain (TAD) boundaries, show pronounced break probability. We also find evidence of DSB-induced loop formation in the vicinity of frequent radiation-induced breaks. Our data reveal that pre-existing 3D genome architecture influences the distribution of radiation-induced DSBs and that these breaks reshape local chromatin landscapes.
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It investigates how 3D genome architecture influences the distribution and consequences of DNA damage, highlighting TAD boundaries, A/B compartments, and loop dynamics. While foundational for understanding regulatory architecture, it does not address GWAS/PheWAS, multi-omics QTLs, or therapeutic target discovery in disease contexts.
-3) Which parts connect to your research:
-- Emphasis on 3D genome features (Hi-C, TAD boundaries, loops, A compartment) relevant to interpreting regulatory interactions in GWAS/PheWAS and colocalization.
-- Concept that pre-existing chromatin structure shapes functional outcomes, informing how variant effects might be mediated through spatial genome organization.
-- Demonstration of dynamic loop formation in response to perturbation, inspiring ideas for in silico perturbation modeling within AI frameworks for target discovery.
-- Overall methodological alignment with integrating spatial chromatin data to prioritize regulatory elements and potential targets, which could be extended to disease contexts.
-4) If Highly Relevant, key reason to read: N/A</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672161" target="_blank" 
-                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on bioRxiv
-                                </a>
-                            </div>
-                        </div>
-                
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
-                            <div class="flex items-start justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="bg-orange-500/20 p-2 rounded-lg">
-                                        <i class="fas fa-flask text-orange-400"></i>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
-                                        Somewhat Relevant
-                                    </span>
-                                </div>
-                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">A comparative GWAS of eye colour in light and dark eye genetic backgrounds defined by HERC2 rs12913832 polymorphism</h3>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-users mr-2 text-blue-400"></i>
-                                    <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">C. Abbatangelo, F. Lona Durazo, M. Edwards, E. J. Parra</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
-                                    <span class="font-medium">Source:</span>
-                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
-                                    <span class="font-medium">Posted:</span>
-                                    <span class="ml-2">2025-08-29</span>
-                                </div>
-                                <div class="flex items-center text-gray-400">
-                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
-                                    <span class="font-medium">DOI:</span>
-                                    <span class="ml-2 font-mono text-xs">10.1101/2025.07.20.665796</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
-                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
-                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
-                                            onclick="toggleAbstract(this)" 
-                                            data-expanded="false">
-                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
-                                    </button>
-                                </h4>
-                                <div class="abstract-content">
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        rs12913832, a polymorphism located in an enhancer within the HERC2 gene, which is known to regulate OCA2 transcription, is heavily relied upon as a predictor of light versus dark eyes. Individuals wit...
-                                    </p>
-                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        rs12913832, a polymorphism located in an enhancer within the HERC2 gene, which is known to regulate OCA2 transcription, is heavily relied upon as a predictor of light versus dark eyes. Individuals with the GG genotype are projected to have blue eyes, while individuals with the AA or AG genotypes are projected to have darker eye colours (primarily brown). However, eye colour is a polygenic trait, and previous studies have revealed that a significant proportion of individuals self-report an eye colour that is not concordant with their genotype at rs12913832. Herein, we address the question: What common markers are influencing eye colour in individuals whose self-reported phenotype does not correspond to the expected phenotype based on their rs12913832 genotype. Building upon our prior investigation of iris pigmentation genetics in individuals with an expected "blue eye" background (rs12913832:GG genotype) in a sample of the Canadian Partnership for Tomorrows Health (CanPath) cohort, this study extends the analysis to include individuals with an expected "brown eye" background (rs12913832:AA+AG). We identified variants in SLC45A2, TYRP1, TYR, SLC24A4 and TSPAN10, which may influence eye colour presentation in individuals with the rs12913832:GG genotype and variants in IRF4, TYRP1 and OCA2, which may influence eye colour presentation in individuals with the rs12913832:AA+AG genotype. These markers include well-known pigmentation-associated single nucleotide polymorphisms, such as rs16891982 (SLC45A2), rs1126809 (TYR), rs12203592 (IRF4), rs1800407 (OCA2) and rs6420484 (TSPAN10). Several of these loci were replicated using independent quantitative eye colour measures, including heterochromia and CIELAB colour dimensions. This research highlights the importance of gene-gene interactions and the polygenic nature of pigmentation traits, emphasizing modifying effects that can sometimes counteract the dominant influence of rs12913832, contributing to advancements in pigmentation genetics and forensic applications.
-                                    </p>
-                                </div>
-                            </div>
-                
-                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
-                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
-                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
-                                </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It presents a GWAS-based investigation of a polygenic trait (eye color) and discusses gene-gene interactions and regulatory variation, which aligns with GWAS and polygenic architecture concepts. However, it does not address UK Biobank-scale data, PheWAS, multi-omics QTLs with colocalization, AI/3D genome analyses, or therapeutic target prioritization.
-3) Which parts connect to your research: 
-- GWAS framework for a complex trait and identification of multiple pigmentation loci (e.g., SLC45A2, TYRP1, TYR, SLC24A4, TSPAN10, IRF4, OCA2)
-- Insights into gene-gene interactions and modifying effects on phenotype (epistasis)
-- Analysis of a regulatory element (HERC2 enhancer) influencing OCA2 transcription, illustrating regulatory genomics concepts
-- Replication with quantitative phenotypes (e.g., CIELAB measures), relevant to rigorous phenotype definition
-- Note: no explicit colocalization, multi-omics QTL integration, 3D genome analyses, ML/AI perturbation modeling, or therapeutic target prioritization are reported
-4) If Highly Relevant, key reason to read: N/A</p>
-                            </div>
-                    
-                            <div class="flex justify-between items-center">
-                                <a href="https://www.biorxiv.org/content/10.1101/2025.07.20.665796" target="_blank" 
-                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    View on bioRxiv
-                                </a>
-                            </div>
-                        </div>
-                
                         <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
@@ -686,8 +610,12 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper presents a user-friendly, automated GWAS pipeline (SAGA) that consolidates PLINK, GMMAT, and SAIGE for scalable association testing, which aligns with the GWAS component of your research but does not address PheWAS, colocalization, multi-omics integration, AI-based target discovery, or 3D genome modeling.
-3) Which parts connect to your research: - Enables scalable GWAS analyses on large cohorts (relevant to UK Biobank-scale studies) using robust mixed-model approaches (SAIGE); - Produces summary statistics and visuals that can seed downstream analyses; - Serves as a reproducible, accessible backbone for GWAS before integrating with eQTL/pQTL colocalization and multi-omics data; - Lacks explicit PheWAS support, colocalization methods, 3D genome interpretation, and AI-driven perturbation analyses.
+2) Brief justification: It provides a user-friendly, automated GWAS pipeline (PLINK, GMMAT, SAIGE) that can facilitate large-scale GWAS workflows; however, it doesn't cover PheWAS, colocalization, multi-omics integration, or 3D genome analyses central to your research.
+3) Which parts connect to your research: 
+- GWAS workflow automation and robustness; suitable for generating GWAS summary statistics in large cohorts like UK Biobank.
+- Produces outputs (summary statistics, Manhattan plots, QQ plots) that can be used downstream for colocalization with eQTL/pQTL data and regulatory annotation.
+- Could serve as a starting point to scale up GWAS analyses before adding multi-omics and colocalization steps; not a complete solution for your pipeline.
+- Lacks PheWAS, multi-omics integration, colocalization algorithms, and 3D genome perturbation modeling, so you would need to pair with additional tools.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
@@ -719,9 +647,8 @@
                         © 2025 Daniel Zugasti. All rights reserved.
                     </p>
                     <div class="mt-6">
-                        <a href="https://danielzugasti.github.io/Paper-parser" 
+                        <a href="index.html" 
                            class="inline-flex items-center text-gray-300 hover:text-white transition-colors relative z-10"
-                           target="_blank"
                            style="pointer-events: auto; cursor: pointer;">
                             <i class="fas fa-home mr-2"></i>
                             Home
