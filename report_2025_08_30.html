@@ -1,0 +1,824 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Daily PubMed & bioRxiv Paper Report</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+            <script>
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                'primary': {
+                                    50: '#f0f9ff',
+                                    500: '#3b82f6',
+                                    600: '#2563eb',
+                                    700: '#1d4ed8',
+                                    900: '#1e3a8a'
+                                },
+                                'accent': {
+                                    400: '#34d399',
+                                    500: '#10b981',
+                                    600: '#059669'
+                                }
+                            },
+                            animation: {
+                                'fade-in': 'fadeIn 0.8s ease-in-out',
+                                'slide-up': 'slideUp 0.6s ease-out'
+                            }
+                        }
+                    }
+                }
+            </script>
+            <style>
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .glass-effect {
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .cyber-grid {
+                    background-image: 
+                        linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+                    background-size: 50px 50px;
+                }
+                .papers-section .grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                .paper-card {
+                    transition: all 0.3s ease;
+                    max-width: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                .paper-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+                }
+                .relevance-glow-high {
+                    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+                }
+                .relevance-glow-med {
+                    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+                }
+                .abstract-toggle {
+                    transition: all 0.2s ease;
+                }
+                .abstract-toggle:hover {
+                    transform: scale(1.05);
+                }
+                .abstract-content {
+                    transition: all 0.3s ease;
+                }
+                .section-toggle {
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+                }
+                .section-toggle:hover {
+                    transform: scale(1.05);
+                    color: rgb(99, 102, 241) !important;
+                }
+                .section-content {
+                    transition: all 0.4s ease;
+                    overflow: hidden;
+                }
+                .section-content.hidden {
+                    max-height: 0;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+            </style>
+        </head>
+        <body class="bg-gray-900 text-white min-h-screen">
+            <!-- Background Effects -->
+            <div class="fixed inset-0 cyber-grid opacity-10"></div>
+            <div class="fixed top-20 left-20 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+            <div class="fixed bottom-20 right-20 w-72 h-72 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+
+            <!-- Navigation -->
+            <nav class="relative z-50 bg-gray-900/80 glass-effect border-b border-gray-700 sticky top-0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-primary-500 p-2 rounded-lg">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">
+                                <i class="fas fa-home mr-2"></i>Home
+                            </a>
+                            <span class="text-gray-500">|</span>
+                            <span class="text-sm text-gray-400">Daily Report</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+                <!-- Header -->
+                <div class="text-center mb-12 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="gradient-text">Daily Research Report</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-6">Saturday, August 30, 2025</p>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800/50 glass-effect rounded-full px-6 py-3">
+                        <i class="fas fa-robot text-accent-400"></i>
+                        <span class="text-gray-300">AI-Powered Research Discovery</span>
+                    </div>
+                </div>
+        
+                <!-- Summary Stats -->
+                <div class="bg-gray-800/50 glass-effect rounded-3xl p-8 mb-12 border border-gray-700 animate-slide-up">
+                    <h2 class="text-2xl font-bold text-center mb-8 text-white">
+                        <i class="fas fa-chart-bar mr-3 text-accent-400"></i>Analysis Summary
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent-400 mb-2">3,453</div>
+                            <p class="text-gray-400">Papers Published</p>
+                            <p class="text-sm text-gray-500 mt-1">Current Monitoring Cycle</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-400 mb-2">0</div>
+                            <p class="text-gray-400">AI-selected</p>
+                            <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">6</div>
+                            <p class="text-gray-400">AI-Selected</p>
+                            <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-400 mb-2">25</div>
+                            <p class="text-gray-400">AI-Filtered</p>
+                            <p class="text-sm text-gray-500 mt-1">Not Relevant</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <p class="text-gray-400">
+                            <i class="fas fa-filter mr-2 text-accent-400"></i>
+                            PaperParserAI scanned 3,453 papers from the current publication cycle, filtering out the noise to identify 6 relevant studies tailored to your research focus
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- PubMed Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-database mr-4 text-primary-400"></i>
+                            <span class="gradient-text">PubMed Papers</span>
+                            <span class="ml-4 text-lg text-gray-400">(3)</span>
+                        </div>
+                        <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
+                                onclick="toggleSection('pubmed-section')" 
+                                id="pubmed-toggle"
+                                data-expanded="true">
+                            <i class="fas fa-chevron-up mr-2"></i>Minimize Section
+                        </button>
+                    </h2>
+                    <div class="section-content" id="pubmed-section">
+                        <div class="grid grid-cols-1 gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Igf2 adult-specific skeletal muscle enhancer activity revealed in mice with intergenic CTCF boundary deletion.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Joanne L Thorvaldsen, Aimee M Juan, Yemin Lan, Christopher Krapp, Marisa S Bartolomei</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">PLoS genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40880432</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Precise, monoallelic expression of imprinted genes is governed by cis regulatory elements called imprinting control regions (ICRs) and enhancer-promoter (E-P) interactions shaped by local chromatin ar...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Precise, monoallelic expression of imprinted genes is governed by cis regulatory elements called imprinting control regions (ICRs) and enhancer-promoter (E-P) interactions shaped by local chromatin architecture. The Igf2/H19 locus employs allele-specific CTCF binding at the ICR to instruct enhancer accessibility to maternal H19 and paternal Igf2 promoters. Here, we investigate the CTCF-bound centrally conserved domain (CCD), intergenic to H19 and Igf2, and an adjacent widely expressed lncRNA. Using transgenic mice, deletion alleles reinforced CCD as a neonatal muscle-specific repressor of maternal Igf2. However, deletion of the abutting lncRNA did not affect Igf2 levels. Unexpectedly, in adult skeletal muscle where Igf2 is normally repressed, absence of CCD resulted in remarkable, high-level activation of Igf2 from both parental alleles. Through multimodal chromatin analyses, we identified a conserved putative adult skeletal muscle enhancer (PaSME) insulated between chromatin domains at ICR and CCD. We propose that removal of CCD allows PaSME to drive robust abnormal Igf2 activation on both alleles in adult skeletal muscle. Thus, we uncover CCD as a developmental biallelic muscle-specific repressor, adding a new layer of architectural regulation to the extensively studied Igf2/H19 locus.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper provides mechanistic insight into how 3D genome architecture and CTCF-bound boundaries regulate tissue-specific enhancer activity, which can inform interpretation of regulatory variants in complex traits. It is a mouse-focused, mechanistic study with no direct GWAS/PheWAS or human multi-omics integration, limiting direct applicability to large-scale human analyses.
+3) Which parts connect to your research:
+- Demonstrates how architectural features (CTCF boundaries, chromatin domains) influence enhancer-promoter interactions
+- Highlights tissue- and development-specific regulatory control of gene expression (context for multi-omics colocalization interpretation)
+- Provides a framework for integrating chromatin architecture data with gene regulation, relevant to prioritizing regulatory elements in GWAS/PheWAS
+- Illustrates how disruption of regulatory architecture can lead to aberrant gene activation, a potential mechanism under study in human disease
+- Serves as a model for multi-modal chromatin analyses that could be analogous to integrating 3D genome data with QTLs and expression
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40880432/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">reDA: differential abundance testing on scATAC-seq data using random walk with restart.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Zirui Chen, Jiao Hua, Lu Ba, Tianyun He, Boran Yang, Jing Qi, Shuilin Jin</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Bioinformatics (Oxford, England)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40880280</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Identifying cell states associated with disease progression or experimental perturbations from single-cell Assay for Transposase Accessible Chromatin using sequencing (scATAC-seq) data is critical for unraveling disease pathogenesis. However, the high dimensionality, extreme sparsity, and nearly binary nature of scATAC-seq data pose significant challenges. Here, we present reDA, a cluster-free computational framework that performs differential abundance testing based on the random walk with restart. Through comprehensive experiments on simulated and real datasets, reDA outperforms six baseline methods, demonstrating superior accuracy, computational efficiency, and the ability to capture disease-specific molecular signatures.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It presents a single-cell chromatin accessibility analysis method for identifying disease-associated cell states, which could inform regulatory interpretation of disease variants, but it does not directly address population-scale GWAS/PheWAS, multi-omics QTL colocalization, 3D genome perturbations, or therapeutic target prioritization.
+3) Which parts connect to your research: AI: uses a random walk with restart (graph-based AI approach); GWAS/PheWAS: could help interpret cell-type–specific regulatory contexts of disease variants; Colocalization: not addressed but could be integrated in future; 3D genome: not addressed but potential synergy; Therapeutic targeting: not addressed.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40880280/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Unveiling causal regulatory mechanisms through cell-state parallax.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Alexander P Wu, Rohit Singh, Christopher A Walsh, Bonnie Berger</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature communications</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Aug 29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40883263</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Genome-wide association studies (GWAS) identify numerous disease-linked genetic variants at noncoding genomic loci, yet therapeutic progress is hampered by the challenge of deciphering the regulatory ...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Genome-wide association studies (GWAS) identify numerous disease-linked genetic variants at noncoding genomic loci, yet therapeutic progress is hampered by the challenge of deciphering the regulatory roles of these loci in tissue-specific contexts. Single-cell multimodal assays that simultaneously profile chromatin accessibility and gene expression could predict tissue-specific causal links between noncoding loci and the genes they affect. However, current computational strategies either neglect the causal relationship between chromatin accessibility and transcription or lack variant-level precision, aggregating data across genomic ranges due to data sparsity. To address this, we introduce GrID-Net, a graph neural network approach that generalizes Granger causal inference to detect new causal locus-gene associations in graph-structured systems such as single-cell trajectories. Inspired by the principles of optical parallax, which reveals object depth from static snapshots, we hypothesize that causal mechanisms could be inferred from static single-cell snapshots by exploiting the time lag between epigenetic and transcriptional cell states, a concept we term "cell-state parallax." Applying GrID-Net to schizophrenia (SCZ) genetic variants, we increase variant coverage by 36% and uncovered noncoding mechanisms that dysregulate 132 genes, including key potassium transporters such as KCNG2 and SLC12A6. Furthermore, we discover evidence for the prominent role of neural transcription-factor binding disruptions in SCZ etiology. Our work not only provides a strategy for elucidating the tissue-specific impact of noncoding variants but also underscores the breakthrough potential of cell-state parallax in single-cell multiomics for discovering tissue-specific gene regulatory mechanisms.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It presents AI-driven causal inference to link noncoding regulatory variants to target genes using single-cell multi-omics, aligning with regulatory interpretation and target prioritization. However, it focuses on schizophrenia and single-cell data rather than large-scale UK Biobank GWAS/PheWAS or explicit 3D genome perturbation modeling and colocalization across thousands of traits.
+3) Which parts connect to your research:
+- Multi-omics integration (scATAC-seq and scRNA-seq) for variant-to-gene mapping
+- Graph neural network-based causal inference and the cell-state parallax concept (temporal causality from static single-cell data)
+- Tissue- and cell-type-specific regulatory mechanisms informing disease biology
+- Potential for identifying regulatory targets and pathways, contributing to AI-driven target prioritization
+- Variant-level precision and expanded regulatory coverage, relevant to refining GWAS/PheWAS interpretations
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40883263/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- bioRxiv Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-flask mr-4 text-orange-400"></i>
+                            <span class="gradient-text">bioRxiv Preprints</span>
+                            <span class="ml-4 text-lg text-gray-400">(3)</span>
+                        </div>
+                        <button class="section-toggle text-gray-400 hover:text-orange-400 text-sm font-medium flex items-center"
+                                onclick="toggleSection('biorxiv-section')" 
+                                id="biorxiv-toggle"
+                                data-expanded="true">
+                            <i class="fas fa-chevron-up mr-2"></i>Minimize Section
+                        </button>
+                    </h2>
+                    <div class="section-content" id="biorxiv-section">
+                        <div class="grid grid-cols-1 gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The multiscale distribution of radiation-induced DNA damage and its impact on local genome structure</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">H. Li, T. Xue, R. P. McCord</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.672161</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The three-dimensional genome structure is critical for the regulation of gene expression and repair of DNA damage. While previous work has characterized genome-wide sites of DNA damage caused by etopo...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The three-dimensional genome structure is critical for the regulation of gene expression and repair of DNA damage. While previous work has characterized genome-wide sites of DNA damage caused by etoposide or nucleases, the distribution of double-strand breaks (DSBs) caused by external radiation and how these interact with the 3D genome organization is less well understood. Here, we measure the genomic landscape of radiation-induced DNA damage using END-seq in fibroblasts and lymphoblasts after exposure to 5 Gy X-rays. We identify frequently broken regions and investigate the 3D genome properties around these breaks with Hi-C data. We observe that the distribution of robust breaks correlates with transcriptional and chromatin features of the genome. Transcriptionally active and decondensed regions, such as chromosome 19, the A compartment, and topologically associating domain (TAD) boundaries, show pronounced break probability. We also find evidence of DSB-induced loop formation in the vicinity of frequent radiation-induced breaks. Our data reveal that pre-existing 3D genome architecture influences the distribution of radiation-induced DSBs and that these breaks reshape local chromatin landscapes.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It investigates how 3D genome architecture influences the distribution and consequences of DNA damage, highlighting TAD boundaries, A/B compartments, and loop dynamics. While foundational for understanding regulatory architecture, it does not address GWAS/PheWAS, multi-omics QTLs, or therapeutic target discovery in disease contexts.
+3) Which parts connect to your research:
+- Emphasis on 3D genome features (Hi-C, TAD boundaries, loops, A compartment) relevant to interpreting regulatory interactions in GWAS/PheWAS and colocalization.
+- Concept that pre-existing chromatin structure shapes functional outcomes, informing how variant effects might be mediated through spatial genome organization.
+- Demonstration of dynamic loop formation in response to perturbation, inspiring ideas for in silico perturbation modeling within AI frameworks for target discovery.
+- Overall methodological alignment with integrating spatial chromatin data to prioritize regulatory elements and potential targets, which could be extended to disease contexts.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672161" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">A comparative GWAS of eye colour in light and dark eye genetic backgrounds defined by HERC2 rs12913832 polymorphism</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">C. Abbatangelo, F. Lona Durazo, M. Edwards, E. J. Parra</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.07.20.665796</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        rs12913832, a polymorphism located in an enhancer within the HERC2 gene, which is known to regulate OCA2 transcription, is heavily relied upon as a predictor of light versus dark eyes. Individuals wit...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        rs12913832, a polymorphism located in an enhancer within the HERC2 gene, which is known to regulate OCA2 transcription, is heavily relied upon as a predictor of light versus dark eyes. Individuals with the GG genotype are projected to have blue eyes, while individuals with the AA or AG genotypes are projected to have darker eye colours (primarily brown). However, eye colour is a polygenic trait, and previous studies have revealed that a significant proportion of individuals self-report an eye colour that is not concordant with their genotype at rs12913832. Herein, we address the question: What common markers are influencing eye colour in individuals whose self-reported phenotype does not correspond to the expected phenotype based on their rs12913832 genotype. Building upon our prior investigation of iris pigmentation genetics in individuals with an expected "blue eye" background (rs12913832:GG genotype) in a sample of the Canadian Partnership for Tomorrows Health (CanPath) cohort, this study extends the analysis to include individuals with an expected "brown eye" background (rs12913832:AA+AG). We identified variants in SLC45A2, TYRP1, TYR, SLC24A4 and TSPAN10, which may influence eye colour presentation in individuals with the rs12913832:GG genotype and variants in IRF4, TYRP1 and OCA2, which may influence eye colour presentation in individuals with the rs12913832:AA+AG genotype. These markers include well-known pigmentation-associated single nucleotide polymorphisms, such as rs16891982 (SLC45A2), rs1126809 (TYR), rs12203592 (IRF4), rs1800407 (OCA2) and rs6420484 (TSPAN10). Several of these loci were replicated using independent quantitative eye colour measures, including heterochromia and CIELAB colour dimensions. This research highlights the importance of gene-gene interactions and the polygenic nature of pigmentation traits, emphasizing modifying effects that can sometimes counteract the dominant influence of rs12913832, contributing to advancements in pigmentation genetics and forensic applications.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It presents a GWAS-based investigation of a polygenic trait (eye color) and discusses gene-gene interactions and regulatory variation, which aligns with GWAS and polygenic architecture concepts. However, it does not address UK Biobank-scale data, PheWAS, multi-omics QTLs with colocalization, AI/3D genome analyses, or therapeutic target prioritization.
+3) Which parts connect to your research: 
+- GWAS framework for a complex trait and identification of multiple pigmentation loci (e.g., SLC45A2, TYRP1, TYR, SLC24A4, TSPAN10, IRF4, OCA2)
+- Insights into gene-gene interactions and modifying effects on phenotype (epistasis)
+- Analysis of a regulatory element (HERC2 enhancer) influencing OCA2 transcription, illustrating regulatory genomics concepts
+- Replication with quantitative phenotypes (e.g., CIELAB measures), relevant to rigorous phenotype definition
+- Note: no explicit colocalization, multi-omics QTL integration, 3D genome analyses, ML/AI perturbation modeling, or therapeutic target prioritization are reported
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.07.20.665796" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">SAGA (Simplified Association Genomewide Analyses): a user-friendly Pipeline to Democratize Genome-Wide Association Studies</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">B. Cieza, N. Pandey, V. Ruhela, S. Ali, g. tosto</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-29</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.25.672146</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Genome-wide association studies (GWAS) have enabled clinicians and researchers to identify genetic variants linked to complex traits and diseases(1). However, conducting GWAS remains technically chall...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Genome-wide association studies (GWAS) have enabled clinicians and researchers to identify genetic variants linked to complex traits and diseases(1). However, conducting GWAS remains technically challenging without bioinformatics expertise due to required data preprocessing, software installation, and analysis scripting (2,3). SAGA is a BASH-based, open-source, fully automated pipeline that integrates three widely adopted tools -PLINK, GMMAT and SAIGE- for accessible, robust, and reproducible GWAS. After installation, users only provide standard genotype and phenotype files. The pipeline automates preprocessing, association testing, and visualization, outputting summary statistics, Manhattan plots, and quantile-quantile plot. SAGA enables robust GWAS for users with no scripting experience, expanding access to complex genetic analyses.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper presents a user-friendly, automated GWAS pipeline (SAGA) that consolidates PLINK, GMMAT, and SAIGE for scalable association testing, which aligns with the GWAS component of your research but does not address PheWAS, colocalization, multi-omics integration, AI-based target discovery, or 3D genome modeling.
+3) Which parts connect to your research: - Enables scalable GWAS analyses on large cohorts (relevant to UK Biobank-scale studies) using robust mixed-model approaches (SAIGE); - Produces summary statistics and visuals that can seed downstream analyses; - Serves as a reproducible, accessible backbone for GWAS before integrating with eQTL/pQTL colocalization and multi-omics data; - Lacks explicit PheWAS support, colocalization methods, 3D genome interpretation, and AI-driven perturbation analyses.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672146" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900/80 border-t border-gray-800 py-12 mt-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="flex justify-center items-center space-x-3 mb-6">
+                        <div class="bg-primary-500 p-2 rounded-lg">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">PaperParser AI</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4">
+                        © 2025 Daniel Zugasti. All rights reserved.
+                    </p>
+                    <div class="mt-6">
+                        <a href="https://danielzugasti.github.io/Paper-parser" 
+                           class="inline-flex items-center text-gray-300 hover:text-white transition-colors relative z-10"
+                           target="_blank"
+                           style="pointer-events: auto; cursor: pointer;">
+                            <i class="fas fa-home mr-2"></i>
+                            Home
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTop" 
+                    class="fixed bottom-8 right-8 bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <script>
+                // Abstract toggle functionality
+                function toggleAbstract(button) {
+                    const abstractContent = button.closest('.mb-6').querySelector('.abstract-content');
+                    const preview = abstractContent.querySelector('.abstract-preview');
+                    const full = abstractContent.querySelector('.abstract-full');
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.dataset.expanded === 'true';
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        preview.classList.remove('hidden');
+                        full.classList.add('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-down mr-1"></i>Show Full Abstract';
+                        button.dataset.expanded = 'false';
+                    } else {
+                        // Expand
+                        preview.classList.add('hidden');
+                        full.classList.remove('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-up mr-1"></i>Hide Full Abstract';
+                        button.dataset.expanded = 'true';
+                    }
+                }
+
+                // Section toggle functionality
+                function toggleSection(sectionId) {
+                    const section = document.getElementById(sectionId);
+                    const button = document.getElementById(sectionId.replace('-section', '-toggle'));
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.dataset.expanded === 'true';
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        section.classList.add('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Expand Section';
+                        button.dataset.expanded = 'false';
+                    } else {
+                        // Expand
+                        section.classList.remove('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>Minimize Section';
+                        button.dataset.expanded = 'true';
+                    }
+                }
+
+                // Scroll to top functionality
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.add('opacity-100', 'visible');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                
+                // Add smooth reveal animations for papers
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.paper-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            </script>
+        </body>
+        </html>
+        
