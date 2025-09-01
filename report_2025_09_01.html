@@ -162,12 +162,12 @@
                             <p class="text-sm text-gray-500 mt-1">Just Out</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-green-400 mb-2">0</div>
+                            <div class="text-4xl font-bold text-green-400 mb-2">1</div>
                             <p class="text-gray-400">AI-selected</p>
                             <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-yellow-400 mb-2">5</div>
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">4</div>
                             <p class="text-gray-400">AI-Selected</p>
                             <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
                         </div>
@@ -203,14 +203,14 @@
                     <div class="section-content" id="pubmed-section">
                         <div class="grid grid-cols-1 gap-8">
             
-                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-accent-500/50 bg-gradient-to-br from-accent-900/20 to-accent-800/10 relevance-glow-high">
                             <div class="flex items-start justify-between mb-6">
                                 <div class="flex items-center space-x-3">
                                     <div class="bg-primary-500/20 p-2 rounded-lg">
                                         <i class="fas fa-file-alt text-primary-400"></i>
                                     </div>
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
-                                        Somewhat Relevant
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent-500 text-white">
+                                        Highly Relevant
                                     </span>
                                 </div>
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
@@ -264,15 +264,15 @@
                                 <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
-                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It reviews methodological approaches to promote equity in genomic analyses, including GWAS, polygenic scores, and functional genomics, which is pertinent to robust study design and interpretation in diverse populations; however, it is a high-level overview and not focused on multi-omics integration, 3D genome analyses, or specific therapeutic target discovery. 
-3) Which parts connect to your research: 
-- Relevance to GWAS/PheWAS design and bias correction in diverse cohorts
-- Guidance on variant prioritization and functional genomics interpretation (colocalization context) under equity considerations
-- Implications for applying ML/AI methods with fairness and explainability in regulatory/therapeutic target discovery
-- Insights that could inform incorporation of spatial/3D genome data and multi-omics analyses with equity-focused methodologies
-- General framework for prioritizing druggable targets and pathways with attention to underrepresented populations
-4) If Highly Relevant, key reason to read: N/A</p>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Highly Relevant
+2) Brief justification: It is a methodological review focused on equity and fairness in genomic data analysis, directly addressing GWAS, polygenic scores, variant prioritization, and functional genomics—all core to your large-scale, diverse-population research and multi-omics integration.
+3) Which parts connect to your research:
+- Addresses biases and fairness in GWAS and polygenic score analyses across diverse populations, relevant to UK Biobank-style studies
+- Discusses methodological approaches to improve equity in statistical analyses and the potential impact on variant prioritization and functional genomics
+- Implications for multi-omics QTL interpretation and colocalization workflows through fairer, more generalizable methods
+- Highlights machine learning and AI considerations for reducing bias and improving explainability in genomic analyses
+- May inform robust cross-ancestry interpretations of regulatory elements and therapeutic target prioritization via equitable analytic practices
+4) If Highly Relevant, key reason to read: Provides actionable guidance on methodological choices to mitigate bias and improve equity in GWAS/PheWAS, polygenic scoring, and functional genomics analyses, enhancing generalizability and reliability of downstream colocalization, 3D genome interpretation, and target identification across diverse populations.</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
@@ -346,12 +346,14 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: This review covers GWAS-scale genetics of a highly polygenic trait and the convergence of monogenic and polygenic signals, providing useful context for large-scale association studies, but it does not address multi-omics QTLs, colocalization, 3D genome architecture, AI perturbation strategies, or therapeutic targeting that are central to your project.
-3) Which parts connect to your research:
-- GWAS framework for a highly polygenic trait (height), informing large-scale GWAS/PheWAS analyses.
-- Concept of convergent pathways between rare and common variants, useful for pathway- and gene-prioritization approaches.
-- Biological context of growth plate and developmental pathways as a basis for regulatory element interpretation.
-- Not explicitly discussing colocalization, eQTL/pQTL integration, 3D genome organization, AI/ML perturbation simulations, or drug target prioritization.
+2) Brief justification: The paper is a comprehensive review of height genetics, emphasizing large-scale GWAS and polygenic architecture, which aligns with GWAS-centric interests. However, it does not address multi-omics QTL integration, colocalization, 3D genome analyses, or AI-driven target discovery that are central to your workflow.
+3) Which parts connect to your research: 
+- GWAS: discusses large-scale GWAS and polygenic architecture relevant to trait mapping. 
+- PheWAS: not covered in the abstract. 
+- Colocalization: not addressed in the abstract. 
+- AI: not addressed. 
+- 3D genome: not addressed. 
+- Therapeutic targeting: highlights growth-related pathways (growth plate) that could inform potential druggable targets, albeit at a high level.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
@@ -377,13 +379,13 @@
                                 <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
                             </div>
                             
-                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Epigenome dynamics in early mammalian embryogenesis.</h3>
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Computational analysis of DNA methylation from long-read sequencing.</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-users mr-2 text-blue-400"></i>
                                     <span class="font-medium">Authors:</span>
-                                    <span class="ml-2 truncate">Adam Burton, Maria-Elena Torres-Padilla</span>
+                                    <span class="ml-2 truncate">Yilei Fu, Winston Timp, Fritz J Sedlazeck</span>
                                 </div>
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-journal-whills mr-2 text-green-400"></i>
@@ -398,7 +400,7 @@
                                 <div class="flex items-center text-gray-400">
                                     <i class="fas fa-hashtag mr-2 text-purple-400"></i>
                                     <span class="font-medium">PMID:</span>
-                                    <span class="ml-2 font-mono text-xs">40181107</span>
+                                    <span class="ml-2 font-mono text-xs">40155770</span>
                                 </div>
                             </div>
                             
@@ -413,10 +415,10 @@
                                 </h4>
                                 <div class="abstract-content">
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
-                                        During early embryonic development in mammals, the totipotency of the zygote - which is reprogrammed from the differentiated gametes - transitions to pluripotency by the blastocyst stage, coincident w...
+                                        DNA methylation is a critical epigenetic mechanism in numerous biological processes, including gene regulation, development, ageing and the onset of various diseases such as cancer. Studies of methyla...
                                     </p>
                                     <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
-                                        During early embryonic development in mammals, the totipotency of the zygote - which is reprogrammed from the differentiated gametes - transitions to pluripotency by the blastocyst stage, coincident with the first cell fate decision. These changes in cellular potency are accompanied by large-scale alterations in the nucleus, including major transcriptional, epigenetic and architectural remodelling, and the establishment of the DNA replication programme. Advances in low-input genomics and loss-of-function methodologies tailored to the pre-implantation embryo now enable these processes to be studied at an unprecedented level of molecular detail in vivo. Such studies have provided new insights into the genome-wide landscape of epigenetic reprogramming and chromatin dynamics during this fundamental period of pre-implantation development.
+                                        DNA methylation is a critical epigenetic mechanism in numerous biological processes, including gene regulation, development, ageing and the onset of various diseases such as cancer. Studies of methylation are increasingly using single-molecule long-read sequencing technologies to simultaneously measure epigenetic states such as DNA methylation with genomic variation. These long-read data sets have spurred the continuous development of advanced computational methods to gain insights into the roles of methylation in regulating chromatin structure and gene regulation. In this Review, we discuss the computational methods for calling methylation signals, contrasting methylation between samples, analysing cell-type diversity and gaining additional genomic insights, and then further discuss the challenges and future perspectives of tool development for DNA methylation research.
                                     </p>
                                 </div>
                             </div>
@@ -426,16 +428,17 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The paper reviews epigenome dynamics and chromatin architecture during early embryogenesis, offering insights into regulatory landscapes and 3D genome remodeling, which can inform but do not directly address GWAS/PheWAS, colocalization, or therapeutic targeting in human disease.
+2) Brief justification: It is a review of computational methods for calling and analyzing DNA methylation from long-read sequencing. While this informs epigenetic regulation and could complement multi-omics analyses, it does not directly address GWAS/PheWAS, colocalization, 3D genome perturbations, or therapeutic target prioritization.
 3) Which parts connect to your research: 
-- Discussion of genome-wide epigenetic reprogramming and chromatin dynamics relates to 3D genome organization and regulatory element interactions used in colocalization analyses for GWAS hits.
-- Epigenetic and architectural remodeling context informs interpretation of developmental-stage regulatory activity, relevant to temporal QTL/colocalization studies.
-- Methodological emphasis on perturbation and low-input genomics could inspire AI-driven perturbation models of regulatory networks to prioritize targets.
+- Provides context for integrating methylation data as an epigenetic layer in multi-omics analyses (eQTL/pQTL/meQTL frameworks). 
+- Discusses analysis of chromatin regulation and cellular context via methylation, which can inform regulatory element annotation used in colocalization with GWAS signals. 
+- Highlights challenges and future directions that could influence AI/ML approaches for linking epigenetic states to disease in the context of regulatory networks and potential drug targets. 
+- Long-read methylation information can enable allele-specific methylation and haplotype-aware analyses, aiding fine-mapping of regulatory variants relevant to complex traits.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
                             <div class="flex justify-between items-center">
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/40181107/" target="_blank" 
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40155770/" target="_blank" 
                                    class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                                     <i class="fas fa-external-link-alt mr-2"></i>
                                     View on PubMed
@@ -497,12 +500,12 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: The study appears to focus on how SMAD2 variants influence development, which aligns with regulatory genomics and signaling pathways. However, without an abstract, it is unclear whether it includes population-scale GWAS/PheWAS, multi-omics colocalization, or 3D genome perturbation analyses typical of your research program.
+2) Brief justification: The title suggests a study of how SMAD2 variants influence development in human models, which touches on regulatory variant effects and gene networks. However, there is no explicit indication of large-scale GWAS/PheWAS, multi-omics QTL integration, colocalization, or 3D genome perturbation analyses in the title (and the abstract is unavailable).
 3) Which parts connect to your research:
-- Potential regulatory variant effects on SMAD2 expression/function relevant to variant-to-disease interpretation.
-- Possible exploration of chromatin context and regulatory elements around SMAD2, linking to 3D genome organization and enhancer-promoter interactions.
-- Insights into TGF-beta/SMAD signaling as a therapeutic target, informing target prioritization.
-- If variants are linked to developmental phenotypes, potential implications for post-GWAS interpretation and disease mechanism mapping.
+- Potential regulatory variant effects: fits with investigating noncoding variants impacting gene regulation (eQTL/pQTL-like effects) and their link to traits, relevant to colocalization analyses if disease associations implicate SMAD2.
+- 3D genome/regulatory architecture: if study analyzes chromatin contacts or regulatory elements around SMAD2, it aligns with spatial genome organization and regulatory networks.
+- Therapeutic targeting: SMAD2/TGF-beta signaling is a druggable pathway; mechanistic insights could inform target prioritization.
+- Methodological relevance: human model systems and perturbation approaches may inform AI-driven causal inference and in silico perturbation workflows for regulatory networks.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
@@ -599,12 +602,12 @@
                                     <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
                                 </h4>
                                 <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
-2) Brief justification: It presents a GWAS-focused pipeline (IDEAL-GENOM) with PLINK/GCTA, scalability, and reproducibility, which aligns with GWAS components of large-scale studies. However, it does not address PheWAS, multi-omics QTL integration, colocalization, AI-driven analyses, 3D genome perturbations, or therapeutic target prioritization that are central to your research.
-3) Which parts connect to your research:
-- GWAS workflow: builds and executes GWAS analyses using established tools (PLINK, GCTA)
-- Scalability: supports large datasets and cloud/local deployment, relevant to UK Biobank-scale studies
-- Reproducibility: parameter sharing aids standardized, reproducible GWAS analyses
-- Limitations: no explicit coverage of PheWAS, multi-omics QTL colocalization, 3D genome architecture, AI/perturbation simulations, or drug-target prioritization
+2) Brief justification: The IDEAL-GENOM pipeline targets GWAS workflow optimization and scalable, reproducible analyses—useful for large-scale studies like UK Biobank. It does not address PheWAS, multi-omics QTL colocalization, AI/3D genome analyses, or therapeutic-target prioritization in its current form.
+3) Which parts connect to your research: 
+- GWAS: provides a scalable, reproducible framework for large GWAS analyses in big cohorts (local or cloud). 
+- PheWAS: could serve as a foundation to build PheWAS workflows on top of the GWAS pipeline. 
+- Colocalization / multi-omics QTLs: not addressed; would require integration with colocalization tools and QTL data. 
+- AI / 3D genome / therapeutic targeting: not addressed; would need substantial extensions for in silico perturbations, 3D genome modeling, and target prioritization.
 4) If Highly Relevant, key reason to read: N/A</p>
                             </div>
                     
