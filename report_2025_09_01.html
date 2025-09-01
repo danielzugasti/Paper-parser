@@ -1,0 +1,740 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Daily PubMed & bioRxiv Paper Report</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+            <script>
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                'primary': {
+                                    50: '#f0f9ff',
+                                    500: '#3b82f6',
+                                    600: '#2563eb',
+                                    700: '#1d4ed8',
+                                    900: '#1e3a8a'
+                                },
+                                'accent': {
+                                    400: '#34d399',
+                                    500: '#10b981',
+                                    600: '#059669'
+                                }
+                            },
+                            animation: {
+                                'fade-in': 'fadeIn 0.8s ease-in-out',
+                                'slide-up': 'slideUp 0.6s ease-out'
+                            }
+                        }
+                    }
+                }
+            </script>
+            <style>
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .glass-effect {
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .cyber-grid {
+                    background-image: 
+                        linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+                    background-size: 50px 50px;
+                }
+                .papers-section .grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                .paper-card {
+                    transition: all 0.3s ease;
+                    max-width: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                .paper-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+                }
+                .relevance-glow-high {
+                    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+                }
+                .relevance-glow-med {
+                    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+                }
+                .abstract-toggle {
+                    transition: all 0.2s ease;
+                }
+                .abstract-toggle:hover {
+                    transform: scale(1.05);
+                }
+                .abstract-content {
+                    transition: all 0.3s ease;
+                }
+                .section-toggle {
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+                }
+                .section-toggle:hover {
+                    transform: scale(1.05);
+                    color: rgb(99, 102, 241) !important;
+                }
+                .section-content {
+                    transition: all 0.4s ease;
+                    overflow: hidden;
+                }
+                .section-content.hidden {
+                    max-height: 0;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+            </style>
+        </head>
+        <body class="bg-gray-900 text-white min-h-screen">
+            <!-- Background Effects -->
+            <div class="fixed inset-0 cyber-grid opacity-10"></div>
+            <div class="fixed top-20 left-20 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+            <div class="fixed bottom-20 right-20 w-72 h-72 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+
+            <!-- Navigation -->
+            <nav class="relative z-50 bg-gray-900/80 glass-effect border-b border-gray-700 sticky top-0">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-primary-500 p-2 rounded-lg">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">PaperNova AI</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">
+                                <i class="fas fa-home mr-2"></i>Home
+                            </a>
+                            <span class="text-gray-500">|</span>
+                            <span class="text-sm text-gray-400">Daily Report</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+                <!-- Header -->
+                <div class="text-center mb-12 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="gradient-text">Daily Research Report</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-6">Monday, September 01, 2025</p>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800/50 glass-effect rounded-full px-6 py-3">
+                        <i class="fas fa-robot text-accent-400"></i>
+                        <span class="text-gray-300">AI-Powered Research Discovery</span>
+                    </div>
+                </div>
+        
+                <!-- Summary Stats -->
+                <div class="bg-gray-800/50 glass-effect rounded-3xl p-8 mb-12 border border-gray-700 animate-slide-up">
+                    <h2 class="text-2xl font-bold text-center mb-8 text-white">
+                        <i class="fas fa-chart-bar mr-3 text-accent-400"></i>Analysis Summary
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent-400 mb-2">29,829</div>
+                            <p class="text-gray-400">Papers Published</p>
+                            <p class="text-sm text-gray-500 mt-1">Just Out</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-400 mb-2">0</div>
+                            <p class="text-gray-400">AI-selected</p>
+                            <p class="text-sm text-gray-500 mt-1">Highly Relevant</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">5</div>
+                            <p class="text-gray-400">AI-Selected</p>
+                            <p class="text-sm text-gray-500 mt-1">Somewhat Relevant</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-400 mb-2">8</div>
+                            <p class="text-gray-400">AI-Filtered</p>
+                            <p class="text-sm text-gray-500 mt-1">Not Relevant</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <p class="text-gray-400">
+                            <i class="fas fa-filter mr-2 text-accent-400"></i>
+                            PaperNovaAI scanned 29,829 papers just out, filtering out the noise to identify 5 relevant studies tailored to your research focus
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- PubMed Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-database mr-4 text-primary-400"></i>
+                            <span class="gradient-text">PubMed Papers</span>
+                            <span class="ml-4 text-lg text-gray-400">(4)</span>
+                        </div>
+                        <button class="section-toggle text-gray-400 hover:text-primary-400 text-sm font-medium flex items-center"
+                                onclick="toggleSection('pubmed-section')" 
+                                id="pubmed-toggle"
+                                data-expanded="true">
+                            <i class="fas fa-chevron-up mr-2"></i>Minimize Section
+                        </button>
+                    </h2>
+                    <div class="section-content" id="pubmed-section">
+                        <div class="grid grid-cols-1 gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Methodological opportunities in genomic data analysis to advance health equity.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Brieuc Lehmann, Leandra Bräuninger, Yoonsu Cho, Fabian Falck, Smera Jayadeva, Michael Katell, Thuy Nguyen, Antonella Perini, Sam Tallman, Maxine Mackintosh, Matt Silver, Karoline Kuchenbäcker, David Leslie, Nilanjan Chatterjee, Chris Holmes</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature reviews. Genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Sep</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40369311</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        The causes and consequences of inequities in genomic research and medicine are complex and widespread. However, it is widely acknowledged that underrepresentation of diverse populations in human genet...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        The causes and consequences of inequities in genomic research and medicine are complex and widespread. However, it is widely acknowledged that underrepresentation of diverse populations in human genetics research risks exacerbating existing health disparities. Efforts to improve diversity are ongoing, but an often-overlooked source of inequity is the choice of analytical methods used to process, analyse and interpret genomic data. This choice can influence all areas of genomic research, from genome-wide association studies and polygenic score development to variant prioritization and functional genomics. New statistical and machine learning techniques to understand, quantify and correct for the impact of biases in genomic data are emerging within the wider genomic research and genomic medicine ecosystems. At this crucial time point, it is important to clarify where improvements in methods and practices can, or cannot, have a role in improving equity in genomics. Here, we review existing approaches to promote equity and fairness in statistical analysis for genomics, and propose future methodological developments that are likely to yield the most impact for equity.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It reviews methodological approaches to promote equity in genomic analyses, including GWAS, polygenic scores, and functional genomics, which is pertinent to robust study design and interpretation in diverse populations; however, it is a high-level overview and not focused on multi-omics integration, 3D genome analyses, or specific therapeutic target discovery. 
+3) Which parts connect to your research: 
+- Relevance to GWAS/PheWAS design and bias correction in diverse cohorts
+- Guidance on variant prioritization and functional genomics interpretation (colocalization context) under equity considerations
+- Implications for applying ML/AI methods with fairness and explainability in regulatory/therapeutic target discovery
+- Insights that could inform incorporation of spatial/3D genome data and multi-omics analyses with equity-focused methodologies
+- General framework for prioritizing druggable targets and pathways with attention to underrepresented populations
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40369311/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">The genetic basis of human height.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Louise S Bicknell, Joel N Hirschhorn, Ravi Savarirayan</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature reviews. Genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Sep</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40189669</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Human height is a model polygenic trait - additive effects of many individual variants create continuous, genetically determined variation in this phenotype. Height can also be severely affected by si...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Human height is a model polygenic trait - additive effects of many individual variants create continuous, genetically determined variation in this phenotype. Height can also be severely affected by single-gene variants in monogenic disorders, often causing severe alterations in stature relative to population averages. Deciphering the genetic basis of height provides understanding into the biology of growth and is also of relevance to disease, as increased or decreased height relative to population averages has been epidemiologically and genetically associated with an altered risk of cancer or cardiometabolic diseases. With recent large-scale genome-wide association studies of human height reaching saturation, its genetic architecture has become clearer. Genes implicated by both monogenic and polygenic studies converge on common developmental or cellular pathways that affect stature, including at the growth plate, a key site of skeletal growth. In this Review, we summarize the genetic contributors to height, from ultra-rare monogenic disorders that severely affect growth to common alleles that act across multiple pathways.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: This review covers GWAS-scale genetics of a highly polygenic trait and the convergence of monogenic and polygenic signals, providing useful context for large-scale association studies, but it does not address multi-omics QTLs, colocalization, 3D genome architecture, AI perturbation strategies, or therapeutic targeting that are central to your project.
+3) Which parts connect to your research:
+- GWAS framework for a highly polygenic trait (height), informing large-scale GWAS/PheWAS analyses.
+- Concept of convergent pathways between rare and common variants, useful for pathway- and gene-prioritization approaches.
+- Biological context of growth plate and developmental pathways as a basis for regulatory element interpretation.
+- Not explicitly discussing colocalization, eQTL/pQTL integration, 3D genome organization, AI/ML perturbation simulations, or drug target prioritization.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40189669/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Epigenome dynamics in early mammalian embryogenesis.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Adam Burton, Maria-Elena Torres-Padilla</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature reviews. Genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Sep</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40181107</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-primary-400 hover:text-primary-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        During early embryonic development in mammals, the totipotency of the zygote - which is reprogrammed from the differentiated gametes - transitions to pluripotency by the blastocyst stage, coincident w...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        During early embryonic development in mammals, the totipotency of the zygote - which is reprogrammed from the differentiated gametes - transitions to pluripotency by the blastocyst stage, coincident with the first cell fate decision. These changes in cellular potency are accompanied by large-scale alterations in the nucleus, including major transcriptional, epigenetic and architectural remodelling, and the establishment of the DNA replication programme. Advances in low-input genomics and loss-of-function methodologies tailored to the pre-implantation embryo now enable these processes to be studied at an unprecedented level of molecular detail in vivo. Such studies have provided new insights into the genome-wide landscape of epigenetic reprogramming and chromatin dynamics during this fundamental period of pre-implantation development.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The paper reviews epigenome dynamics and chromatin architecture during early embryogenesis, offering insights into regulatory landscapes and 3D genome remodeling, which can inform but do not directly address GWAS/PheWAS, colocalization, or therapeutic targeting in human disease.
+3) Which parts connect to your research: 
+- Discussion of genome-wide epigenetic reprogramming and chromatin dynamics relates to 3D genome organization and regulatory element interactions used in colocalization analyses for GWAS hits.
+- Epigenetic and architectural remodeling context informs interpretation of developmental-stage regulatory activity, relevant to temporal QTL/colocalization studies.
+- Methodological emphasis on perturbation and low-input genomics could inspire AI-driven perturbation models of regulatory networks to prioritize targets.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40181107/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-primary-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-gray-500 bg-gray-700/50 px-3 py-1 rounded-full">PubMed</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">Decoding cell fate: human models reveal how SMAD2 variants shape development.</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">Samira Musah</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-journal-whills mr-2 text-green-400"></i>
+                                    <span class="font-medium">Journal:</span>
+                                    <span class="ml-2 text-green-300">Nature reviews. Genetics</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Published:</span>
+                                    <span class="ml-2">2025 Sep</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-hashtag mr-2 text-purple-400"></i>
+                                    <span class="font-medium">PMID:</span>
+                                    <span class="ml-2 font-mono text-xs">40715724</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify">
+                                        No abstract available
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-primary-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: The study appears to focus on how SMAD2 variants influence development, which aligns with regulatory genomics and signaling pathways. However, without an abstract, it is unclear whether it includes population-scale GWAS/PheWAS, multi-omics colocalization, or 3D genome perturbation analyses typical of your research program.
+3) Which parts connect to your research:
+- Potential regulatory variant effects on SMAD2 expression/function relevant to variant-to-disease interpretation.
+- Possible exploration of chromatin context and regulatory elements around SMAD2, linking to 3D genome organization and enhancer-promoter interactions.
+- Insights into TGF-beta/SMAD signaling as a therapeutic target, informing target prioritization.
+- If variants are linked to developmental phenotypes, potential implications for post-GWAS interpretation and disease mechanism mapping.
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/40715724/" target="_blank" 
+                                   class="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on PubMed
+                                </a>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- bioRxiv Papers Section -->
+                <div class="mb-16 animate-slide-up">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-flask mr-4 text-orange-400"></i>
+                            <span class="gradient-text">bioRxiv Preprints</span>
+                            <span class="ml-4 text-lg text-gray-400">(1)</span>
+                        </div>
+                        <button class="section-toggle text-gray-400 hover:text-orange-400 text-sm font-medium flex items-center"
+                                onclick="toggleSection('biorxiv-section')" 
+                                id="biorxiv-toggle"
+                                data-expanded="true">
+                            <i class="fas fa-chevron-up mr-2"></i>Minimize Section
+                        </button>
+                    </h2>
+                    <div class="section-content" id="biorxiv-section">
+                        <div class="grid grid-cols-1 gap-8">
+            
+                        <div class="paper-card glass-effect rounded-2xl p-8 border border-yellow-500/50 bg-gradient-to-br from-yellow-900/20 to-yellow-800/10 relevance-glow-med">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="bg-orange-500/20 p-2 rounded-lg">
+                                        <i class="fas fa-flask text-orange-400"></i>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-500 text-white">
+                                        Somewhat Relevant
+                                    </span>
+                                </div>
+                                <span class="text-xs text-orange-300 bg-orange-900/50 px-3 py-1 rounded-full">bioRxiv</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-4 leading-relaxed">IDEAL GENOM: Integrated Downstream Analytical Pipeline for Genomic Analysis</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-users mr-2 text-blue-400"></i>
+                                    <span class="font-medium">Authors:</span>
+                                    <span class="ml-2 truncate">L. G. Gonzalez Ricardo, A. M. M. Tenghe, A. Ashok Kumar Sreelatha, M. Sharma</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-flask mr-2 text-orange-400"></i>
+                                    <span class="font-medium">Source:</span>
+                                    <span class="ml-2 text-orange-300">bioRxiv (preprint)</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-calendar mr-2 text-yellow-400"></i>
+                                    <span class="font-medium">Posted:</span>
+                                    <span class="ml-2">2025-08-31</span>
+                                </div>
+                                <div class="flex items-center text-gray-400">
+                                    <i class="fas fa-fingerprint mr-2 text-purple-400"></i>
+                                    <span class="font-medium">DOI:</span>
+                                    <span class="ml-2 font-mono text-xs">10.1101/2025.08.27.672528</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                                    <i class="fas fa-align-left mr-2 text-gray-400"></i>Abstract
+                                    <button class="ml-auto text-xs text-orange-400 hover:text-orange-300 transition-colors abstract-toggle" 
+                                            onclick="toggleAbstract(this)" 
+                                            data-expanded="false">
+                                        <i class="fas fa-chevron-down mr-1"></i>Show Full Abstract
+                                    </button>
+                                </h4>
+                                <div class="abstract-content">
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-preview">
+                                        Background: Since the release of the first human genome draft, there has been an exponential increase in the development of technologies that have offered unprecedented opportunities to unravel the ge...
+                                    </p>
+                                    <p class="text-gray-300 leading-relaxed text-justify abstract-full hidden">
+                                        Background: Since the release of the first human genome draft, there has been an exponential increase in the development of technologies that have offered unprecedented opportunities to unravel the genetic underpinnings of rare and complex diseases. However, despite the progress, the challenge persists. This includes the need for developing efficient computational tools to analyse large genomic datasets. The availability of clinical information, along with the development of cost-effective arrays that can scan hundreds of thousands of patients and healthy subjects to identify underlying risk variants, necessitates the development of tools that can streamline and automate the processing of millions of genetic markers. Results: To address this challenge, we present IDEAL-GENOM (Integrated Downstream Analytical Pipeline for Genomic Analysis), a Python-based framework designed to streamline the analytical workflow commonly implemented in genome-wide association studies (GWAS) settings. IDEAL-GENOM integrates widely used tools such as PLINK and GCTA along with custom-developed functionalities, enabling reproducible results through parameter sharing. Initial testing demonstrates that our framework reduces quality control processing time by 10\%, requiring minimal user intervention. Additionally, IDEAL-GENOM supports both local and cloud-based environments, enhancing its accessibility and scalability. Conclusions: IDEAL-GENOM pipeline offers a simplified GWAS pipeline that will allow beginners and advanced users to leverage the in-built functionalities to perform GWAS analysis for complex diseases.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="mb-6 bg-gray-700/30 rounded-xl p-6 border-l-4 border-orange-500">
+                                <h4 class="text-sm font-semibold text-white mb-3 flex items-center">
+                                    <i class="fas fa-robot mr-2 text-accent-400"></i>AI Evaluation
+                                </h4>
+                                <p class="text-gray-300 leading-relaxed">1) Relevance: Somewhat Relevant
+2) Brief justification: It presents a GWAS-focused pipeline (IDEAL-GENOM) with PLINK/GCTA, scalability, and reproducibility, which aligns with GWAS components of large-scale studies. However, it does not address PheWAS, multi-omics QTL integration, colocalization, AI-driven analyses, 3D genome perturbations, or therapeutic target prioritization that are central to your research.
+3) Which parts connect to your research:
+- GWAS workflow: builds and executes GWAS analyses using established tools (PLINK, GCTA)
+- Scalability: supports large datasets and cloud/local deployment, relevant to UK Biobank-scale studies
+- Reproducibility: parameter sharing aids standardized, reproducible GWAS analyses
+- Limitations: no explicit coverage of PheWAS, multi-omics QTL colocalization, 3D genome architecture, AI/perturbation simulations, or drug-target prioritization
+4) If Highly Relevant, key reason to read: N/A</p>
+                            </div>
+                    
+                            <div class="flex justify-between items-center">
+                                <a href="https://www.biorxiv.org/content/10.1101/2025.08.27.672528" target="_blank" 
+                                   class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    View on bioRxiv
+                                </a>
+                            </div>
+                        </div>
+                
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900/80 border-t border-gray-800 py-12 mt-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="flex justify-center items-center space-x-3 mb-6">
+                        <div class="bg-primary-500 p-2 rounded-lg">
+                            <i class="fas fa-brain text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">PaperNova AI</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4">
+                        © 2025 Daniel Zugasti. All rights reserved.
+                    </p>
+                    <div class="mt-6">
+                        <a href="index.html" 
+                           class="inline-flex items-center text-gray-300 hover:text-white transition-colors relative z-10"
+                           style="pointer-events: auto; cursor: pointer;">
+                            <i class="fas fa-home mr-2"></i>
+                            Home
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTop" 
+                    class="fixed bottom-8 right-8 bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <script>
+                // Abstract toggle functionality
+                function toggleAbstract(button) {
+                    const abstractContent = button.closest('.mb-6').querySelector('.abstract-content');
+                    const preview = abstractContent.querySelector('.abstract-preview');
+                    const full = abstractContent.querySelector('.abstract-full');
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.dataset.expanded === 'true';
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        preview.classList.remove('hidden');
+                        full.classList.add('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-down mr-1"></i>Show Full Abstract';
+                        button.dataset.expanded = 'false';
+                    } else {
+                        // Expand
+                        preview.classList.add('hidden');
+                        full.classList.remove('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-up mr-1"></i>Hide Full Abstract';
+                        button.dataset.expanded = 'true';
+                    }
+                }
+
+                // Section toggle functionality
+                function toggleSection(sectionId) {
+                    const section = document.getElementById(sectionId);
+                    const button = document.getElementById(sectionId.replace('-section', '-toggle'));
+                    const icon = button.querySelector('i');
+                    const isExpanded = button.dataset.expanded === 'true';
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        section.classList.add('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Expand Section';
+                        button.dataset.expanded = 'false';
+                    } else {
+                        // Expand
+                        section.classList.remove('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>Minimize Section';
+                        button.dataset.expanded = 'true';
+                    }
+                }
+
+                // Scroll to top functionality
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.add('opacity-100', 'visible');
+                    } else {
+                        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                
+                // Add smooth reveal animations for papers
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.paper-card').forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            </script>
+        </body>
+        </html>
+        
